@@ -43,7 +43,7 @@ namespace Gruppenarbeit_HSP
                     double c;
                     Console.WriteLine("Möchten Sie einen Kopfspiel eingeben? Ja=1 Nein=0");
                     int t = int.Parse(Console.ReadLine());
-                if (t = 1)
+                if (t == 1)
                 {
                     c = Convert.ToDouble(Console.ReadLine());
                     if (c >= 0.1 * m && c <= 0.3 * m)
