@@ -35,6 +35,40 @@ namespace Gruppenarbeit_HSP
                 //Grundkreisdurchmesser
                 db = d * Math.Cos(angle);
 
+                c = Kopfspiel (m);  //Unterprogramm zur bestimmung der Kopfspiel
+                
+                static double Kopfspiel(double m)
+                {
+
+                    double c;
+                    Console.WriteLine("Möchten Sie einen Kopfspiel eingeben? Ja=1 Nein=0");
+                    int t = int.Parse(Console.ReadLine());
+                if (t == 1)
+                {
+                    c = Convert.ToDouble(Console.ReadLine());
+                    if (c >= 0.1 * m && c <= 0.3 * m)
+                    {
+                        return c;
+                    }
+
+                    else if (c < 0.1 * m || c > 0.3 * m)
+                    {
+                        Console.WriteLine("Bitte geben Sie einen gültigen Wert ein");
+                        do
+
+                            c = Convert.ToDouble(Console.ReadLine());
+                        while (c >= 0.1 * m && c <= 0.3 * m);
+                        {
+                            return c;
+                        }
+
+                    }
+                }
+                else
+                    c = 0.167 * m;
+                return c;
+                }
+
                 //Ausgabe
                 Console.WriteLine("Zahnfußhöhe: " + hf);
                 Console.WriteLine("Zahnkopfhöhe: " + ha);
