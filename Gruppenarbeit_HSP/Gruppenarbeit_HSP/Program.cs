@@ -4,6 +4,104 @@ namespace Gruppenarbeit_HSP
 {
     class Program
     {
+        //Modul
+        public double Modul(double d, double z)
+        {
+            double m = d / z;
+            return m;
+        }
+
+        //Teilung
+        public double Teilung(double m)
+        {
+            double p = Math.PI * m;
+            return p;
+        }
+
+        //Kopfspiel
+        public double Kopfspiel(double m)
+        {
+            double c = 0.167 * m;
+            return c;
+        }
+
+        //Kopfkreisdurchmesser außenverzahnt
+        public double Kopfkreisdurchmesser_a(double d, double m)
+        {
+            double da = d + 2 * m;
+            return da;
+        }
+
+        //Fußkreisdurchmesser außenverzahnt 
+        public double Fußkreisdurchmesser_a(double d, double m, double c)
+        {
+            double df = d - 2 * (m + c);
+            return df;
+        }
+
+        //Kopfkreisdurchmesser innenverzahnt
+        public double Kopfkreisdurchmesser_i(double d, double m)
+        {
+            double da = d - 2 + m;
+            return da;
+        }
+
+        //Fußkreisdurchmesser innenverzahnt
+        public double Fußkreisdurchmesser_i(double d, double m, double c)
+        {
+            double df = 2 + 2 * (m + c);
+            return df;
+        }
+
+        //Grundkreisdurchmesser
+        public double Grundkreisdurchmesser(double d)
+        {
+            double nw = 20 * Math.PI / 180;
+            double dg = d * Math.Cos(nw);
+            return dg;
+        }
+
+        //Zahnkopfhöhe
+        public double Zahnkopfhöhe(double m)
+        {
+            double ha = m;
+            return ha;
+        }
+
+        //Zahnfußhöhe
+        public double Zahnfußhöhe(double m, double c)
+        {
+            double hf = m + c;
+            return hf;
+        }
+
+        //Zahnhöhe
+        public double Zahnhöhe(double m, double c)
+        {
+            double h = 2 + m + c;
+            return h;
+        }
+
+        //Volumen
+        public double Volumen(double da, double b)
+        {
+            double v = Math.Pow(da / 2, 2) * b;
+            return v;
+        }
+
+        //Achsabstand mit außenliegendem Gegenrad
+        public double Achsabstand_a(double d1, double d2)
+        {
+            double aa = (d2 + d1) / 2;
+            return aa;
+        }
+
+        //Achsabstand mit innenliegendem Gegenrad
+        public double Achsabstand_i(double d1, double d2)
+        {
+            double ai = (d2 - d1) / 2;
+            return ai;
+        }
         static void Main(string[] args)
         {
 
@@ -151,105 +249,6 @@ namespace Gruppenarbeit_HSP
             //Ende
             Console.ReadKey();
 
-        }
-
-        //Modul
-        public double Modul(double d, double z)
-        {
-            double m = d / z;
-            return m;
-        }
-
-        //Teilung
-        public double Teilung(double m)
-        {
-            double p = Math.PI * m;
-            return p;
-        }
-
-        //Kopfspiel
-        public double Kopfspiel(double m)
-        {
-            double c = 0.167 * m;
-            return c;
-        }
-
-        //Kopfkreisdurchmesser außenverzahnt
-        public double Kopfkreisdurchmesser_a(double d, double m)
-        {
-            double da = d + 2 * m;
-            return da;
-        }
-
-        //Fußkreisdurchmesser außenverzahnt 
-        public double Fußkreisdurchmesser_a(double d, double m, double c)
-        {
-            double df = d - 2 * (m + c);
-            return df;
-        }
-
-        //Kopfkreisdurchmesser innenverzahnt
-        public double Kopfkreisdurchmesser_i(double d, double m)
-        {
-            double da = d - 2 + m;
-            return da;
-        }
-
-        //Fußkreisdurchmesser innenverzahnt
-        public double Fußkreisdurchmesser_i(double d, double m, double c)
-        {
-            double df = 2 + 2 * (m + c);
-            return df;
-        }
-
-        //Grundkreisdurchmesser
-        public double Grundkreisdurchmesser(double d)
-        {
-            double nw = 20 * Math.PI / 180;
-            double dg = d * Math.Cos(nw);
-            return dg;
-        }
-
-        //Zahnkopfhöhe
-        public double Zahnkopfhöhe(double m)
-        {
-            double ha = m;
-            return ha;
-        }
-
-        //Zahnfußhöhe
-        public double Zahnfußhöhe(double m, double c)
-        {
-            double hf = m + c;
-            return hf;
-        }
-
-        //Zahnhöhe
-        public double Zahnhöhe(double m, double c)
-        {
-            double h = 2 + m + c;
-            return h;
-        }
-
-        //Volumen
-        public double Volumen(double da, double b)
-        {
-            double v = Math.Pow(da / 2, 2) * b;
-            return v;
-        }
-
-        //Achsabstand mit außenliegendem Gegenrad
-        public double Achsabstand_a(double d1, double d2)
-        {
-            double aa = (d2 + d1) / 2;
-            return aa;
-        }
-
-        //Achsabstand mit innenliegendem Gegenrad
-        public double Achsabstand_i(double d1, double d2)
-        {
-            double ai = (d2 - d1) / 2;
-            return ai;
         }
     }
 }
