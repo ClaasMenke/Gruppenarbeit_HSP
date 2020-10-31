@@ -182,6 +182,8 @@ namespace Gruppenarbeit_HSP
                 double v2 = prg.Volumen(da2, b2);
                 Console.WriteLine("Volumen Zahnrad2: " + v2);
 
+                Console.WriteLine("");
+
                 //Achsabstand
                 double aa = prg.Achsabstand_a(d2, d1);
                 Console.WriteLine("Achsabstand: " + aa);
@@ -235,6 +237,8 @@ namespace Gruppenarbeit_HSP
                 Console.WriteLine("Zahnhöhe Zahnrad2: " + h2);
                 double v2 = prg.Volumen(da2, b2);
                 Console.WriteLine("Volumen Zahnrad2: " + v2);
+
+                Console.WriteLine("");
 
                 //Achsabstand
                 double ai = prg.Achsabstand_i(d2, d1);
