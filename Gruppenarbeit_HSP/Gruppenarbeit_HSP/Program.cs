@@ -114,7 +114,9 @@ namespace Gruppenarbeit_HSP
             //außenverzahnte Zahnräder
             if (ii == 1)
             {
-                //Eingabeparameter
+                Console.Clear();
+
+                //Eingangsparameter Zahnrad1
                 Console.WriteLine("Bitte geben Sie den Modul [mm] von Zhanrad1 an und bestätigen anschließend mit Enter: ");
                 double m11 = Convert.ToDouble(Console.ReadLine());
                 Console.WriteLine("Bitte geben Sie die Zähnezahl von Zahnrad1 an und bestätigen anschließend mit Enter: ");
@@ -125,7 +127,9 @@ namespace Gruppenarbeit_HSP
                 double b11 = Convert.ToDouble(Console.ReadLine());
 
                 Console.WriteLine("");
+                Console.WriteLine("");
 
+                //Eingangsparameter Zahnrad2
                 Console.WriteLine("Bitte geben Sie den Modul [mm] von Zhanrad2 an und bestätigen anschließend mit Enter: ");
                 double m12 = Convert.ToDouble(Console.ReadLine());
                 Console.WriteLine("Bitte geben Sie die Zähnezahl von Zahnrad2 an und bestätigen anschließend mit Enter: ");
@@ -135,6 +139,8 @@ namespace Gruppenarbeit_HSP
                 Console.WriteLine("Bitte geben Sie die Breite [mm] von Zahnrad2 an und bestätigen sie mit Enter: ");
                 double b12 = Convert.ToDouble(Console.ReadLine());
 
+                Console.WriteLine("");
+                Console.WriteLine("-----------------------------------------------------------------------------");
                 Console.WriteLine("");
 
                 //Ergebnisse Zahnrad1
@@ -157,6 +163,7 @@ namespace Gruppenarbeit_HSP
                 double v11 = prg.Volumen(da11, b11);
                 Console.WriteLine("Volumen Zahnrad1: " + v11 + " mm^3");
 
+                Console.WriteLine("");
                 Console.WriteLine("");
 
                 //Ergebnisse Zahnrad2
@@ -189,7 +196,9 @@ namespace Gruppenarbeit_HSP
             //innenverzahnte Zahnräder
             else if (ii == 2)
             {
-                //Eingabeparameter
+                Console.Clear();
+
+                //Eingangsparameter Zahnrad1
                 Console.WriteLine("Bitte geben Sie den Modul [mm] von Zhanrad1 (innenverzahnt) an und bestätigen anschließend mit Enter: ");
                 double m21 = Convert.ToDouble(Console.ReadLine());
                 Console.WriteLine("Bitte geben Sie die Zähnezahl von Zahnrad1 (innenverzahnt) an und bestätigen anschließend mit Enter: ");
@@ -200,7 +209,9 @@ namespace Gruppenarbeit_HSP
                 double b21 = Convert.ToDouble(Console.ReadLine());
 
                 Console.WriteLine("");
+                Console.WriteLine("");
 
+                //Eingangsparameter Zahnrad2
                 Console.WriteLine("Bitte geben Sie den Modul [mm] von Zhanrad2 an und bestätigen anschließend mit Enter: ");
                 double m22 = Convert.ToDouble(Console.ReadLine());
                 Console.WriteLine("Bitte geben Sie die Zähnezahl von Zahnrad2 an und bestätigen anschließend mit Enter: ");
@@ -209,6 +220,10 @@ namespace Gruppenarbeit_HSP
                 double d22 = Convert.ToDouble(Console.ReadLine());
                 Console.WriteLine("Bitte geben Sie die Breite [mm] von Zahnrad2 an und bestätigen sie mit Enter: ");
                 double b22 = Convert.ToDouble(Console.ReadLine());
+
+                Console.WriteLine("");
+                Console.WriteLine("-----------------------------------------------------------------------------");
+                Console.WriteLine("");
 
                 //Ergebnisse Zahnrad1
                 double p21 = prg.Teilung(m21);
@@ -230,6 +245,7 @@ namespace Gruppenarbeit_HSP
                 double v21 = prg.Volumen(da21, b21);
                 Console.WriteLine("Volumen Zahnrad1: " + v21 + " mm^3");
 
+                Console.WriteLine("");
                 Console.WriteLine("");
 
                 //Ergebnisse Zahnrad2
@@ -261,6 +277,7 @@ namespace Gruppenarbeit_HSP
 
             else
             {
+                Console.Clear();
                 Console.WriteLine("Fehler: Auswahl wurde nicht erkannt, starten Sie das Programm bitte neu!");
             }
 
