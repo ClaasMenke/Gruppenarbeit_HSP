@@ -4,12 +4,6 @@ namespace Gruppenarbeit_HSP
 {
     class Program
     {
-        //Modul
-        public double Modul(double d, double z)
-        {
-            double m = d / z;
-            return Math.Round(m, 2);
-        }
 
         //Teilung
         public double Teilung(double m)
@@ -26,9 +20,9 @@ namespace Gruppenarbeit_HSP
         }
 
         //Kopfkreisdurchmesser außenverzahnt
-        public double Kopfkreisdurchmesser_a(double d, double m)
+        public double Kopfkreisdurchmesser_a(double m, double z)
         {
-            double da = d + 2 * m;
+            double da = m * (z + 2);
             return Math.Round(da, 2);
         }
 
@@ -40,9 +34,9 @@ namespace Gruppenarbeit_HSP
         }
 
         //Kopfkreisdurchmesser innenverzahnt
-        public double Kopfkreisdurchmesser_i(double d, double m)
+        public double Kopfkreisdurchmesser_i(double m, double z)
         {
-            double da = d - 2 + m;
+            double da = m * (z - 2); 
             return Math.Round(da, 2);
         }
 
@@ -108,26 +102,10 @@ namespace Gruppenarbeit_HSP
             //Einleitung
             Console.WriteLine("Herzlich Willkommen.");
             Console.WriteLine("Diese Software hilft Ihnen bei der Berechnung von Zahnrädern.");
-
             Console.WriteLine("");
 
             //Anweisungen
-            Console.WriteLine("Bitte geben Sie die Zähnezahl von Zahnrad1 an und bestätigen anschließend mit Enter: ");
-            int z1 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Bitte geben Sie den Teilkreisdurchmesser [mm] von Zahnrad1 an und bestätigen anschließend mit Enter: ");
-            double d1 = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Bitte geben Sie die Breite [mm] von Zahnrad1 an und bestätigen sie mit Enter: ");
-            double b1 = Convert.ToDouble(Console.ReadLine());
-
-            Console.WriteLine("");
-
-            Console.WriteLine("Bitte geben Sie die Zähnezahl von Zahnrad2 an und bestätigen anschließend mit Enter: ");
-            int z2 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Bitte geben Sie den Teilkreisdurchmesser [mm] von Zahnrad2 an und bestätigen anschließend mit Enter: ");
-            double d2 = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Bitte geben Sie die Breite [mm] von Zahnrad2 an und bestätigen sie mit Enter: ");
-            double b2 = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Bitte wählen Sie jetzt ob Sie außenverzahnte(1) oder innenverzahnte(2) Zahnräder berechnen möchten und bestätigen anschließend mit Enter.");
+            Console.WriteLine("Bitte wählen Sie ob Sie Zahnräder mit außenliegendem Gegenrad(1) oder Zahnräder mit innenliegendem Gegenrad(2) berechnen möchten und bestätigen anschließend mit Enter.");
             int ii = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("");
 
@@ -136,112 +114,148 @@ namespace Gruppenarbeit_HSP
             //außenverzahnte Zahnräder
             if (ii == 1)
             {
+                //Eingabeparameter
+                Console.WriteLine("Bitte geben Sie den Modul [mm] von Zhanrad1 an und bestätigen anschließend mit Enter: ");
+                double m11 = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Bitte geben Sie die Zähnezahl von Zahnrad1 an und bestätigen anschließend mit Enter: ");
+                int z11 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Bitte geben Sie den Teilkreisdurchmesser [mm] von Zahnrad1 an und bestätigen anschließend mit Enter: ");
+                double d11 = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Bitte geben Sie die Breite [mm] von Zahnrad1 an und bestätigen sie mit Enter: ");
+                double b11 = Convert.ToDouble(Console.ReadLine());
+
+                Console.WriteLine("");
+
+                Console.WriteLine("Bitte geben Sie den Modul [mm] von Zhanrad2 an und bestätigen anschließend mit Enter: ");
+                double m21 = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Bitte geben Sie die Zähnezahl von Zahnrad2 an und bestätigen anschließend mit Enter: ");
+                int z21 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Bitte geben Sie den Teilkreisdurchmesser [mm] von Zahnrad2 an und bestätigen anschließend mit Enter: ");
+                double d21 = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Bitte geben Sie die Breite [mm] von Zahnrad2 an und bestätigen sie mit Enter: ");
+                double b21 = Convert.ToDouble(Console.ReadLine());
+
+                Console.WriteLine("");
+
                 //Ergebnisse Zahnrad1
-                double m1 = prg.Modul(d1, z1);
-                Console.WriteLine("Modul Zahnrad1: " + m1 + " mm");
-                double p1 = prg.Teilung(m1);
-                Console.WriteLine("Teilung Zahnrad1: " + p1 + " mm");
-                double c1 = prg.Kopfspiel(m1);
-                Console.WriteLine("Kopfspiel Zahnrad1: " + c1 + " mm");
-                double da1 = prg.Kopfkreisdurchmesser_a(d1, m1);
-                Console.WriteLine("Kopfkreisdurchmesser Zahnrad1: " + da1 + " mm");
-                double df1 = prg.Fußkreisdurchmesser_a(d1, m1, c1);
-                Console.WriteLine("Fußkreisdurchmesser Zahnrad1: " + df1 + " mm");
-                double dg1 = prg.Grundkreisdurchmesser(d1);
-                Console.WriteLine("Grundkreisdurchmesser Zahnrad1: " + dg1 + " mm");
-                double ha1 = prg.Zahnkopfhöhe(m1);
-                Console.WriteLine("Zahnkopfhöhe Zahnrad1: " + ha1 + " mm");
-                double hf1 = prg.Zahnfußhöhe(m1, c1);
-                Console.WriteLine("Zahnfußhöhe Zahnrad1: " + hf1 + " mm");
-                double h1 = prg.Zahnhöhe(m1, c1);
-                Console.WriteLine("Zahnhöhe Zahnrad1: " + h1 + " mm");
-                double v1 = prg.Volumen(da1, b1);
-                Console.WriteLine("Volumen Zahnrad1: " + v1 + " mm^3");
+                double p11 = prg.Teilung(m11);
+                Console.WriteLine("Teilung Zahnrad1: " + p11 + " mm");
+                double c11 = prg.Kopfspiel(m11);
+                Console.WriteLine("Kopfspiel Zahnrad1: " + c11 + " mm");
+                double da11 = prg.Kopfkreisdurchmesser_a(m11, z11);
+                Console.WriteLine("Kopfkreisdurchmesser Zahnrad1: " + da11 + " mm");
+                double df11 = prg.Fußkreisdurchmesser_a(d11, m11, c11);
+                Console.WriteLine("Fußkreisdurchmesser Zahnrad1: " + df11 + " mm");
+                double dg11 = prg.Grundkreisdurchmesser(d11);
+                Console.WriteLine("Grundkreisdurchmesser Zahnrad1: " + dg11 + " mm");
+                double ha11 = prg.Zahnkopfhöhe(m11);
+                Console.WriteLine("Zahnkopfhöhe Zahnrad1: " + ha11 + " mm");
+                double hf11 = prg.Zahnfußhöhe(m11, c11);
+                Console.WriteLine("Zahnfußhöhe Zahnrad1: " + hf11 + " mm");
+                double h11 = prg.Zahnhöhe(m11, c11);
+                Console.WriteLine("Zahnhöhe Zahnrad1: " + h11 + " mm");
+                double v11 = prg.Volumen(da11, b11);
+                Console.WriteLine("Volumen Zahnrad1: " + v11 + " mm^3");
 
                 Console.WriteLine("");
 
                 //Ergebnisse Zahnrad2
-                double m2 = prg.Modul(d2, z2);
-                Console.WriteLine("Modul Zahnrad2: " + m2 + " mm");
-                double p2 = prg.Teilung(m2);
-                Console.WriteLine("Teilung Zahnrad2: " + p2 + " mm");
-                double c2 = prg.Kopfspiel(m2);
-                Console.WriteLine("Kopfspiel Zahnrad2: " + c2 + " mm");
-                double da2 = prg.Kopfkreisdurchmesser_a(d2, m2);
-                Console.WriteLine("Kopfkreisdurchmesser Zahnrad2: " + da2 + " mm");
-                double df2 = prg.Fußkreisdurchmesser_a(d2, m2, c2);
-                Console.WriteLine("Fußkreisdurchmesser Zahnrad2: " + df2 + " mm");
-                double dg2 = prg.Grundkreisdurchmesser(d2);
-                Console.WriteLine("Grundkreisdurchmesser Zahnrad2: " + dg2 + " mm");
-                double ha2 = prg.Zahnkopfhöhe(m2);
-                Console.WriteLine("Zahnkopfhöhe Zahnrad2: " + ha2 + " mm");
-                double hf2 = prg.Zahnfußhöhe(m2, c2);
-                Console.WriteLine("Zahnfußhöhe Zahnrad2: " + hf2 + " mm");
-                double h2 = prg.Zahnhöhe(m2, c2);
-                Console.WriteLine("Zahnhöhe Zahnrad2: " + h2 + " mm");
-                double v2 = prg.Volumen(da2, b2);
-                Console.WriteLine("Volumen Zahnrad2: " + v2 + " mm^3");
+                double p21 = prg.Teilung(m21);
+                Console.WriteLine("Teilung Zahnrad2: " + p21 + " mm");
+                double c21 = prg.Kopfspiel(m21);
+                Console.WriteLine("Kopfspiel Zahnrad2: " + c21 + " mm");
+                double da21 = prg.Kopfkreisdurchmesser_a(m21, z21);
+                Console.WriteLine("Kopfkreisdurchmesser Zahnrad2: " + da21 + " mm");
+                double df21 = prg.Fußkreisdurchmesser_a(d21, m21, c21);
+                Console.WriteLine("Fußkreisdurchmesser Zahnrad2: " + df21 + " mm");
+                double dg21 = prg.Grundkreisdurchmesser(d21);
+                Console.WriteLine("Grundkreisdurchmesser Zahnrad2: " + dg21 + " mm");
+                double ha21 = prg.Zahnkopfhöhe(m21);
+                Console.WriteLine("Zahnkopfhöhe Zahnrad2: " + ha21 + " mm");
+                double hf21 = prg.Zahnfußhöhe(m21, c21);
+                Console.WriteLine("Zahnfußhöhe Zahnrad2: " + hf21 + " mm");
+                double h21 = prg.Zahnhöhe(m21, c21);
+                Console.WriteLine("Zahnhöhe Zahnrad2: " + h21 + " mm");
+                double v21 = prg.Volumen(da21, b21);
+                Console.WriteLine("Volumen Zahnrad2: " + v21 + " mm^3");
 
                 Console.WriteLine("");
 
                 //Achsabstand
-                double aa = prg.Achsabstand_a(d2, d1);
+                double aa = prg.Achsabstand_a(d21, d11);
                 Console.WriteLine("Achsabstand: " + aa + " mm");
             }
 
             //innenverzahnte Zahnräder
             else if (ii == 2)
             {
+                //Eingabeparameter
+                Console.WriteLine("Bitte geben Sie den Modul [mm] von Zhanrad1 (innenverzahnt) an und bestätigen anschließend mit Enter: ");
+                double m12 = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Bitte geben Sie die Zähnezahl von Zahnrad1 (innenverzahnt) an und bestätigen anschließend mit Enter: ");
+                int z12 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Bitte geben Sie den Teilkreisdurchmesser [mm] von Zahnrad1 (innenverzahnt) an und bestätigen anschließend mit Enter: ");
+                double d12 = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Bitte geben Sie die Breite [mm] von Zahnrad1 (innenverzahnt) an und bestätigen sie mit Enter: ");
+                double b12 = Convert.ToDouble(Console.ReadLine());
+
+                Console.WriteLine("");
+
+                Console.WriteLine("Bitte geben Sie den Modul [mm] von Zhanrad2 an und bestätigen anschließend mit Enter: ");
+                double m22 = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Bitte geben Sie die Zähnezahl von Zahnrad2 an und bestätigen anschließend mit Enter: ");
+                int z22 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Bitte geben Sie den Teilkreisdurchmesser [mm] von Zahnrad2 an und bestätigen anschließend mit Enter: ");
+                double d22 = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Bitte geben Sie die Breite [mm] von Zahnrad2 an und bestätigen sie mit Enter: ");
+                double b22 = Convert.ToDouble(Console.ReadLine());
+
                 //Ergebnisse Zahnrad1
-                double m1 = prg.Modul(d1, z1);
-                Console.WriteLine("Modul Zahnrad1: " + m1 + " mm");
-                double p1 = prg.Teilung(m1);
-                Console.WriteLine("Teilung Zahnrad1: " + p1 + " mm");
-                double c1 = prg.Kopfspiel(m1);
-                Console.WriteLine("Kopfspiel Zahnrad1: " + c1 + " mm");
-                double da1 = prg.Kopfkreisdurchmesser_i(d1, m1);
-                Console.WriteLine("Kopfkreisdurchmesser Zahnrad1: " + da1 + " mm");
-                double df1 = prg.Fußkreisdurchmesser_i(d1, m1, c1);
-                Console.WriteLine("Fußkreisdurchmesser Zahnrad1: " + df1 + " mm");
-                double dg1 = prg.Grundkreisdurchmesser(d1);
-                Console.WriteLine("Grundkreisdurchmesser Zahnrad1: " + dg1 + " mm");
-                double ha1 = prg.Zahnkopfhöhe(m1);
-                Console.WriteLine("Zahnkopfhöhe Zahnrad1: " + ha1 + " mm");
-                double hf1 = prg.Zahnfußhöhe(m1, c1);
-                Console.WriteLine("Zahnfußhöhe Zahnrad1: " + hf1 + " mm");
-                double h1 = prg.Zahnhöhe(m1, c1);
-                Console.WriteLine("Zahnhöhe Zahnrad1: " + h1 + " mm");
-                double v1 = prg.Volumen(da1, b1);
-                Console.WriteLine("Volumen Zahnrad1: " + v1 + " mm^3");
+                double p12 = prg.Teilung(m12);
+                Console.WriteLine("Teilung Zahnrad1: " + p12 + " mm");
+                double c12 = prg.Kopfspiel(m12);
+                Console.WriteLine("Kopfspiel Zahnrad1: " + c12 + " mm");
+                double da12 = prg.Kopfkreisdurchmesser_i(m12, z12);
+                Console.WriteLine("Kopfkreisdurchmesser Zahnrad1: " + da12 + " mm");
+                double df12 = prg.Fußkreisdurchmesser_i(d12, m12, c12);
+                Console.WriteLine("Fußkreisdurchmesser Zahnrad1: " + df12 + " mm");
+                double dg12 = prg.Grundkreisdurchmesser(d12);
+                Console.WriteLine("Grundkreisdurchmesser Zahnrad1: " + dg12 + " mm");
+                double ha12 = prg.Zahnkopfhöhe(m12);
+                Console.WriteLine("Zahnkopfhöhe Zahnrad1: " + ha12 + " mm");
+                double hf12 = prg.Zahnfußhöhe(m12, c12);
+                Console.WriteLine("Zahnfußhöhe Zahnrad1: " + hf12 + " mm");
+                double h12 = prg.Zahnhöhe(m12, c12);
+                Console.WriteLine("Zahnhöhe Zahnrad1: " + h12 + " mm");
+                double v12 = prg.Volumen(da12, b12);
+                Console.WriteLine("Volumen Zahnrad1: " + v12 + " mm^3");
 
                 Console.WriteLine("");
 
                 //Ergebnisse Zahnrad2
-                double m2 = prg.Modul(d2, z2);
-                Console.WriteLine("Modul Zahnrad2: " + m2 + " mm");
-                double p2 = prg.Teilung(m2);
-                Console.WriteLine("Teilung Zahnrad2: " + p2 + " mm");
-                double c2 = prg.Kopfspiel(m2);
-                Console.WriteLine("Kopfspiel Zahnrad2: " + c2);
-                double da2 = prg.Kopfkreisdurchmesser_i(d2, m2);
-                Console.WriteLine("Kopfkreisdurchmesser Zahnrad2: " + da2 + " mm");
-                double df2 = prg.Fußkreisdurchmesser_i(d2, m2, c2);
-                Console.WriteLine("Fußkreisdurchmesser Zahnrad2: " + df2 + " mm");
-                double dg2 = prg.Grundkreisdurchmesser(d2);
-                Console.WriteLine("Grundkreisdurchmesser Zahnrad2: " + dg2 + " mm");
-                double ha2 = prg.Zahnkopfhöhe(m2);
-                Console.WriteLine("Zahnkopfhöhe Zahnrad2: " + ha2 + " mm");
-                double hf2 = prg.Zahnfußhöhe(m2, c2);
-                Console.WriteLine("Zahnfußhöhe Zahnrad2: " + hf2 + " mm");
-                double h2 = prg.Zahnhöhe(m2, c2);
-                Console.WriteLine("Zahnhöhe Zahnrad2: " + h2 + " mm");
-                double v2 = prg.Volumen(da2, b2);
-                Console.WriteLine("Volumen Zahnrad2: " + v2 + " mm^3");
+                double p22 = prg.Teilung(m22);
+                Console.WriteLine("Teilung Zahnrad2: " + p22 + " mm");
+                double c22 = prg.Kopfspiel(m22);
+                Console.WriteLine("Kopfspiel Zahnrad2: " + c22);
+                double da22 = prg.Kopfkreisdurchmesser_a(m22, z22);
+                Console.WriteLine("Kopfkreisdurchmesser Zahnrad2: " + da22 + " mm");
+                double df22 = prg.Fußkreisdurchmesser_a(d22, m22, c22);
+                Console.WriteLine("Fußkreisdurchmesser Zahnrad2: " + df22 + " mm");
+                double dg22 = prg.Grundkreisdurchmesser(d22);
+                Console.WriteLine("Grundkreisdurchmesser Zahnrad2: " + dg22 + " mm");
+                double ha22 = prg.Zahnkopfhöhe(m22);
+                Console.WriteLine("Zahnkopfhöhe Zahnrad2: " + ha22 + " mm");
+                double hf22 = prg.Zahnfußhöhe(m22, c22);
+                Console.WriteLine("Zahnfußhöhe Zahnrad2: " + hf22 + " mm");
+                double h22 = prg.Zahnhöhe(m22, c22);
+                Console.WriteLine("Zahnhöhe Zahnrad2: " + h22 + " mm");
+                double v22 = prg.Volumen(da22, b22);
+                Console.WriteLine("Volumen Zahnrad2: " + v22 + " mm^3");
 
                 Console.WriteLine("");
 
                 //Achsabstand
-                double ai = prg.Achsabstand_i(d2, d1);
+                double ai = prg.Achsabstand_i(d22, d12);
                 Console.WriteLine("Achsabstand: " + ai + " mm");
             }
 
