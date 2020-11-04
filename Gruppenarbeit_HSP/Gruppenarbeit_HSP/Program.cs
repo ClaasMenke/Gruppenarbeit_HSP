@@ -6,29 +6,29 @@ namespace Gruppenarbeit_HSP
     {
 
         //Teilung
-        public double Teilung(double m)
-        {
+        public double Teilung(double m)     // public double Teilung = die erstellung einer Variablen, Datentyp schließt Kommazahlen mit ein
+        {                                   // m = Modul
             double p = Math.PI * m;
-            return Math.Round(p, 2);
+            return Math.Round(p, 2);        // Ausgabe von p auf zwei Nachkommastellen gerundet
         }
 
         //Kopfspiel
         public double Kopfspiel(double m)
         {
-            double c = 0.167 * m;
+            double c = 0.167 * m;           // 0.167 * m angenommen, da am häufigsten verwendet
             return Math.Round(c, 2);
         }
 
         //Kopfkreisdurchmesser außenverzahnt
-        public double Kopfkreisdurchmesser_a(double m, double z)
+        public double Kopfkreisdurchmesser_a(double m, double z)    // z = Zähnezahl
         {
             double da = m * (z + 2);
             return Math.Round(da, 2);
         }
 
         //Fußkreisdurchmesser außenverzahnt 
-        public double Fußkreisdurchmesser_a(double d, double m, double c)
-        {
+        public double Fußkreisdurchmesser_a(double d, double m, double c)   // d = Teilkreisdurchmesser
+        {                                                                   // c = Kopfspiel
             double df = d - 2 * (m + c);
             return Math.Round(df, 2);
         }
@@ -43,15 +43,15 @@ namespace Gruppenarbeit_HSP
         //Fußkreisdurchmesser innenverzahnt
         public double Fußkreisdurchmesser_i(double d, double m, double c)
         {
-            double df = 2 + 2 * (m + c);
+            double df = d + 2 * (m + c);
             return Math.Round(df, 2);
         }
 
         //Grundkreisdurchmesser
         public double Grundkreisdurchmesser(double d)
         {
-            double nw = 20 * Math.PI / 180;
-            double dg = d * Math.Cos(nw);
+            double nw = 20 * Math.PI / 180;     // nw = Normaleingriffswinkel (20 Grad nach Normverzahnung)
+            double dg = d * Math.Cos(nw);       // dg = Grundkreisdurchmesser
             return Math.Round(dg, 2);
         }
 
@@ -77,14 +77,14 @@ namespace Gruppenarbeit_HSP
         }
 
         //Volumen
-        public double Volumen(double da, double b)
-        {
-            double v = Math.Pow(da / 2, 2) * b;
+        public double Volumen(double da, double b)  // da = zuvor berechneter Kopfkreisdurchmesser
+        {                                           // b = Breite Zahnrad
+            double v = Math.Pow(da / 2, 2) * b;     // Math.pow = da/2 wird potenziert mit 2 als Exponenten
             return Math.Round(v, 2);
         }
 
         //Achsabstand mit außenliegendem Gegenrad
-        public double Achsabstand_a(double d1, double d2)
+        public double Achsabstand_a(double d1, double d2)   // d1 = Durchmesser Zahnrad 1/ d2 = für Zr 2
         {
             double aa = (d2 + d1) / 2;
             return Math.Round(aa, 2);
@@ -96,8 +96,8 @@ namespace Gruppenarbeit_HSP
             double ai = (d2 - d1) / 2;
             return Math.Round(ai, 2);
         }
-        static void Main(string[] args)
-        {
+        static void Main(string[] args)     // static void = das folgende gehört zu der Klasse program und
+        {                                   // besitzt keinen Rückgabewert 
 
             //Einleitung
             Console.WriteLine("Herzlich Willkommen.");
@@ -106,19 +106,19 @@ namespace Gruppenarbeit_HSP
 
             //Anweisungen
             Console.WriteLine("Bitte wählen Sie ob Sie Zahnräder mit außenliegendem Gegenrad(1) oder Zahnräder mit innenliegendem Gegenrad(2) berechnen möchten und bestätigen anschließend mit Enter.");
-            int ii = Convert.ToInt32(Console.ReadLine());
+            int ii = Convert.ToInt32(Console.ReadLine());   // Variable ii wird durch Eingabe erhalten, int = eine Ganzzahl
             Console.WriteLine("");
 
-            Program prg = new Program();
+            Program prg = new Program();    // in der Klasse Program läuft folgendes:
 
             //außenverzahnte Zahnräder
-            if (ii == 1)
+            if (ii == 1)                // für den Fall der Eingabe von 1 läuft folgende Abfrage:
             {
                 Console.Clear();
 
                 //Eingangsparameter Zahnrad1
                 Console.WriteLine("Bitte geben Sie den Modul [mm] von Zahnrad1 an und bestätigen anschließend mit Enter: ");
-                double m11 = Convert.ToDouble(Console.ReadLine());
+                double m11 = Convert.ToDouble(Console.ReadLine());      // Variable m11 wird erstellt und der Eingabe zugeordnet
                 Console.WriteLine("Bitte geben Sie die Zähnezahl von Zahnrad1 an und bestätigen anschließend mit Enter: ");
                 int z11 = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Bitte geben Sie den Teilkreisdurchmesser [mm] von Zahnrad1 an und bestätigen anschließend mit Enter: ");
@@ -144,8 +144,8 @@ namespace Gruppenarbeit_HSP
                 Console.WriteLine("");
 
                 //Ergebnisse Zahnrad1
-                double p11 = prg.Teilung(m11);
-                Console.WriteLine("Teilung Zahnrad1: " + p11 + " mm");
+                double p11 = prg.Teilung(m11);      // die in der Klasse program geschriebenen Berechnungen werden mithilfe der Eingabe ausgeführt
+                Console.WriteLine("Teilung Zahnrad1: " + p11 + " mm");  // und mit diesem Text ausgeführt
                 double c11 = prg.Kopfspiel(m11);
                 Console.WriteLine("Kopfspiel Zahnrad1: " + c11 + " mm");
                 double da11 = prg.Kopfkreisdurchmesser_a(m11, z11);
@@ -194,7 +194,7 @@ namespace Gruppenarbeit_HSP
             }
 
             //innenverzahnte Zahnräder
-            else if (ii == 2)
+            else if (ii == 2)           // gleich wie zuvor, nur für den Fall der Eingabe von 2
             {
                 Console.Clear();
 
@@ -276,14 +276,14 @@ namespace Gruppenarbeit_HSP
             }
 
             else
-            {
-                Console.Clear();
+            {   // Wenn die Eingabe weder 1 noch 2 war
+                Console.Clear();    // Console wird geleert sodass nur noch folgendes zu sehen ist:
                 Console.WriteLine("Fehler: Auswahl wurde nicht erkannt, starten Sie das Programm bitte neu!");
             }
 
             //Ende
-            Console.ReadKey();
-
+            Console.ReadKey();  // wartet auf eine Eingabe vom Benutzer, verhindert das automatische
+                                // schließen der Console
         }
     }
 }
