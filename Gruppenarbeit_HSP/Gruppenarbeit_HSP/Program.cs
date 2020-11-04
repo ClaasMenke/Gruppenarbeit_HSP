@@ -117,7 +117,7 @@ namespace Gruppenarbeit_HSP
                 Console.Clear();
 
                 //Eingangsparameter Zahnrad1
-                Console.WriteLine("Bitte geben Sie den Modul [mm] von Zhanrad1 an und bestätigen anschließend mit Enter: ");
+                Console.WriteLine("Bitte geben Sie den Modul [mm] von Zahnrad1 an und bestätigen anschließend mit Enter: ");
                 double m11 = Convert.ToDouble(Console.ReadLine());
                 Console.WriteLine("Bitte geben Sie die Zähnezahl von Zahnrad1 an und bestätigen anschließend mit Enter: ");
                 int z11 = Convert.ToInt32(Console.ReadLine());
@@ -130,7 +130,7 @@ namespace Gruppenarbeit_HSP
                 Console.WriteLine("");
 
                 //Eingangsparameter Zahnrad2
-                Console.WriteLine("Bitte geben Sie den Modul [mm] von Zhanrad2 an und bestätigen anschließend mit Enter: ");
+                Console.WriteLine("Bitte geben Sie den Modul [mm] von Zahnrad2 an und bestätigen anschließend mit Enter: ");
                 double m12 = Convert.ToDouble(Console.ReadLine());
                 Console.WriteLine("Bitte geben Sie die Zähnezahl von Zahnrad2 an und bestätigen anschließend mit Enter: ");
                 int z12 = Convert.ToInt32(Console.ReadLine());
@@ -199,7 +199,7 @@ namespace Gruppenarbeit_HSP
                 Console.Clear();
 
                 //Eingangsparameter Zahnrad1
-                Console.WriteLine("Bitte geben Sie den Modul [mm] von Zhanrad1 (innenverzahnt) an und bestätigen anschließend mit Enter: ");
+                Console.WriteLine("Bitte geben Sie den Modul [mm] von Zahnrad1 (innenverzahnt) an und bestätigen anschließend mit Enter: ");
                 double m21 = Convert.ToDouble(Console.ReadLine());
                 Console.WriteLine("Bitte geben Sie die Zähnezahl von Zahnrad1 (innenverzahnt) an und bestätigen anschließend mit Enter: ");
                 int z21 = Convert.ToInt32(Console.ReadLine());
@@ -212,7 +212,7 @@ namespace Gruppenarbeit_HSP
                 Console.WriteLine("");
 
                 //Eingangsparameter Zahnrad2
-                Console.WriteLine("Bitte geben Sie den Modul [mm] von Zhanrad2 an und bestätigen anschließend mit Enter: ");
+                Console.WriteLine("Bitte geben Sie den Modul [mm] von Zahnrad2 an und bestätigen anschließend mit Enter: ");
                 double m22 = Convert.ToDouble(Console.ReadLine());
                 Console.WriteLine("Bitte geben Sie die Zähnezahl von Zahnrad2 an und bestätigen anschließend mit Enter: ");
                 int z22 = Convert.ToInt32(Console.ReadLine());
