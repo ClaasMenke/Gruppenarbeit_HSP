@@ -13,26 +13,40 @@ namespace Gruppenarbeit_HSP
 
             //Eingangsparameter Zahnrad1
             Console.WriteLine("Bitte geben Sie den Modul [mm] von Zahnrad1 (innenverzahnt) an und bestätigen anschließend mit Enter: ");
-            double m21 = Convert.ToDouble(Console.ReadLine());
+            string moudle21 = Console.ReadLine();
+            double m21 = getmodule21(moudle21);
+
             Console.WriteLine("Bitte geben Sie die Zähnezahl von Zahnrad1 (innenverzahnt) an und bestätigen anschließend mit Enter: ");
-            int z21 = Convert.ToInt32(Console.ReadLine());
+            string zahnrad21 = Console.ReadLine();
+            double z21 = getzahnrad21(zahnrad21);
+
             Console.WriteLine("Bitte geben Sie den Teilkreisdurchmesser [mm] von Zahnrad1 (innenverzahnt) an und bestätigen anschließend mit Enter: ");
-            double d21 = Convert.ToDouble(Console.ReadLine());
+            string Teilkreisdurchmesser21 = Console.ReadLine();
+            double d21 = getTeilkreisdurchmesser21(Teilkreisdurchmesser21);
+
             Console.WriteLine("Bitte geben Sie die Breite [mm] von Zahnrad1 (innenverzahnt) an und bestätigen sie mit Enter: ");
-            double b21 = Convert.ToDouble(Console.ReadLine());
+            string Breite21 = Console.ReadLine();
+            double b21 = getBreite21(Breite21);
 
             Console.WriteLine("");
             Console.WriteLine("");
 
             //Eingangsparameter Zahnrad2
             Console.WriteLine("Bitte geben Sie den Modul [mm] von Zahnrad2 an und bestätigen anschließend mit Enter: ");
-            double m22 = Convert.ToDouble(Console.ReadLine());
+            string moudle22 = Console.ReadLine();
+            double m22 = getmodule22(moudle22);
+
             Console.WriteLine("Bitte geben Sie die Zähnezahl von Zahnrad2 an und bestätigen anschließend mit Enter: ");
-            int z22 = Convert.ToInt32(Console.ReadLine());
+            string zahnrad22 = Console.ReadLine();
+            double z22 = getzahnrad21(zahnrad22);
+
             Console.WriteLine("Bitte geben Sie den Teilkreisdurchmesser [mm] von Zahnrad2 an und bestätigen anschließend mit Enter: ");
-            double d22 = Convert.ToDouble(Console.ReadLine());
+            string Teilkreisdurchmesser22 = Console.ReadLine();
+            double d22= getTeilkreisdurchmesser22(Teilkreisdurchmesser22);
+
             Console.WriteLine("Bitte geben Sie die Breite [mm] von Zahnrad2 an und bestätigen sie mit Enter: ");
-            double b22 = Convert.ToDouble(Console.ReadLine());
+            string Breite22 = Console.ReadLine();
+            double b22 = getBreite21(Breite22);
 
             Console.WriteLine("");
             Console.WriteLine("-----------------------------------------------------------------------------");
@@ -86,6 +100,182 @@ namespace Gruppenarbeit_HSP
             //Achsabstand
             double ai = brg.Achsabstand_i(d22, d21);
             Console.WriteLine("Achsabstand: " + ai + " mm");
+        }
+        public static double getmodule21(string moudle21)
+        {
+            while (true)
+                try
+                {
+                    double m21 = Convert.ToDouble(moudle21);
+                    if (m21 > 0)
+                    {
+                        return m21;
+                    }
+                    else if (m21 <= 0)
+                    {
+                        Console.WriteLine("bitten zahlen groessen als 0 gegebn");
+                        moudle21 = Console.ReadLine();
+                    }
+                }
+                catch
+                {
+                    Console.WriteLine("bitten zahlen eintippen");
+                    moudle21 = Console.ReadLine();
+                }
+        }
+        public static double getzahnrad21(string zahnrad21)
+        {
+            while (true)
+                try
+                {
+                    double z21 = Convert.ToDouble(zahnrad21);
+                    if (z21 > 0)
+                    {
+                        return z21;
+                    }
+                    else if (z21 <= 0)
+                    {
+                        Console.WriteLine("bitten zahlen groessen als 0 gegebn");
+                        zahnrad21 = Console.ReadLine();
+                    }
+                }
+                catch
+                {
+                    Console.WriteLine("bitten zahlen eintippen");
+                    zahnrad21 = Console.ReadLine();
+                }
+        }
+        public static double getTeilkreisdurchmesser21(string Teilkreisdurchmesser21)
+        {
+            while (true)
+                try
+                {
+                    double d21 = Convert.ToDouble(Teilkreisdurchmesser21);
+                    if (d21 > 0)
+                    {
+                        return d21;
+                    }
+                    else if (d21 <= 0)
+                    {
+                        Console.WriteLine("bitten zahlen groessen als 0 gegebn");
+                        Teilkreisdurchmesser21 = Console.ReadLine();
+                    }
+                }
+                catch
+                {
+                    Console.WriteLine("bitten zahlen eintippen");
+                    Teilkreisdurchmesser21 = Console.ReadLine();
+                }
+        }
+        public static double getBreite21(string Breite21)
+        {
+            while (true)
+                try
+                {
+                    double b21 = Convert.ToDouble(Breite21);
+                    if (b21 > 0)
+                    {
+                        return b21;
+                    }
+                    else if (b21 <= 0)
+                    {
+                        Console.WriteLine("bitten zahlen groessen als 0 gegebn");
+                        Breite21 = Console.ReadLine();
+                    }
+                }
+                catch
+                {
+                    Console.WriteLine("bitten zahlen eintippen");
+                    Breite21 = Console.ReadLine();
+                }
+        }
+        public static double getmodule22(string moudle22)
+        {
+            while (true)
+                try
+                {
+                    double m22 = Convert.ToDouble(moudle22);
+                    if (m22 > 0)
+                    {
+                        return m22;
+                    }
+                    else if (m22 <= 0)
+                    {
+                        Console.WriteLine("bitten zahlen groessen als 0 gegebn");
+                        moudle22 = Console.ReadLine();
+                    }
+                }
+                catch
+                {
+                    Console.WriteLine("bitten zahlen eintippen");
+                    moudle22 = Console.ReadLine();
+                }
+        }
+        public static double getzahnrad22(string zahnrad22)
+        {
+            while (true)
+                try
+                {
+                    double z22 = Convert.ToDouble(zahnrad22);
+                    if (z22 > 0)
+                    {
+                        return z22;
+                    }
+                    else if (z22 <= 0)
+                    {
+                        Console.WriteLine("bitten zahlen groessen als 0 gegebn");
+                        zahnrad22 = Console.ReadLine();
+                    }
+                }
+                catch
+                {
+                    Console.WriteLine("bitten zahlen eintippen");
+                    zahnrad22 = Console.ReadLine();
+                }
+        }
+        public static double getTeilkreisdurchmesser22(string Teilkreisdurchmesser22)
+        {
+            while (true)
+                try
+                {
+                    double d22 = Convert.ToDouble(Teilkreisdurchmesser22);
+                    if (d22 > 0)
+                    {
+                        return d22;
+                    }
+                    else if (d22 <= 0)
+                    {
+                        Console.WriteLine("bitten zahlen groessen als 0 gegebn");
+                        Teilkreisdurchmesser22 = Console.ReadLine();
+                    }
+                }
+                catch
+                {
+                    Console.WriteLine("bitten zahlen eintippen");
+                    Teilkreisdurchmesser22= Console.ReadLine();
+                }
+        }
+        public static double getBreite22(string Breite22)
+        {
+            while (true)
+                try
+                {
+                    double b22 = Convert.ToDouble(Breite22);
+                    if (b22 > 0)
+                    {
+                        return b22;
+                    }
+                    else if (b22 <= 0)
+                    {
+                        Console.WriteLine("bitten zahlen groessen als 0 gegebn");
+                        Breite22 = Console.ReadLine();
+                    }
+                }
+                catch
+                {
+                    Console.WriteLine("bitten zahlen eintippen");
+                    Breite22 = Console.ReadLine();
+                }
         }
     }
 }

@@ -14,27 +14,32 @@ namespace Gruppenarbeit_HSP
 
             //Anweisungen
             Console.WriteLine("Bitte wählen Sie ob Sie Zahnräder mit außenliegendem Gegenrad(1) oder Zahnräder mit innenliegendem Gegenrad(2) berechnen möchten und bestätigen anschließend mit Enter.");
-            int ii = Convert.ToInt32(Console.ReadLine());   // Variable ii wird durch Eingabe erhalten, int = eine Ganzzahl
+            string ii = "";   // Variable ii wird durch Eingabe erhalten, int = eine Ganzzahl
             Console.WriteLine("");
-
-            //außenverzahnte Zahnräder
-            if (ii == 1)                // für den Fall der Eingabe von 1 läuft folgende Abfrage:
+            while (ii != "1" && ii != "2")
             {
-                Außenverzahnung Az1 = new Außenverzahnung();
-                Az1.außenverzahnteZahnräder();
-            }
+                ii = Console.ReadLine();
+                //außenverzahnte Zahnräder
+                if (ii == "1")                // für den Fall der Eingabe von 1 läuft folgende Abfrage:
+                {
+                    Außenverzahnung Az1 = new Außenverzahnung();
+                    Az1.außenverzahnteZahnräder();
+                }
 
-            //innenverzahnte Zahnräder
-            else if (ii == 2)           // gleich wie zuvor, nur für den Fall der Eingabe von 2
-            {
-                Innenverzahnung Iz1 = new Innenverzahnung();
-                Iz1.innenverzahnteZahnräder();
-            }
+                //innenverzahnte Zahnräder
+                else if (ii == "2")           // gleich wie zuvor, nur für den Fall der Eingabe von 2
+                {
+                    Innenverzahnung Iz1 = new Innenverzahnung();
+                    Iz1.innenverzahnteZahnräder();
+                }
 
-            else
-            {   // Wenn die Eingabe weder 1 noch 2 war
-                Console.Clear();    // Console wird geleert sodass nur noch folgendes zu sehen ist:
-                Console.WriteLine("Fehler: Auswahl wurde nicht erkannt, starten Sie das Programm bitte neu!");
+                else
+                {   // Wenn die Eingabe weder 1 noch 2 war
+                    Console.Clear();    // Console wird geleert sodass nur noch folgendes zu sehen ist:
+                    Console.WriteLine("Fehler: Auswahl wurde nicht erkannt\nBitte wählen Sie ob Sie Zahnräder mit außenliegendem Gegenrad(1) oder Zahnräder mit innenliegendem Gegenrad(2)  ");
+                   
+                   
+                }
             }
 
             //Ende
