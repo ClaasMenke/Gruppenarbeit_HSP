@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gruppenarbeit_HSP_neu", "Gruppenarbeit_HSP_neu\Gruppenarbeit_HSP_neu.csproj", "{CD067AEB-EE74-435B-AE5D-6B5B7AD5B23E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CD067AEB-EE74-435B-AE5D-6B5B7AD5B23E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD067AEB-EE74-435B-AE5D-6B5B7AD5B23E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD067AEB-EE74-435B-AE5D-6B5B7AD5B23E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD067AEB-EE74-435B-AE5D-6B5B7AD5B23E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0F60A7BA-4F99-46C0-9E5E-D59DBE7AA628}
+	EndGlobalSection
+EndGlobal
