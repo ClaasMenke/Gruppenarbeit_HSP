@@ -8,8 +8,23 @@ namespace Gruppenarbeit_HSP_neu
 {
     class Program
     {
+
+        Program()
+        {
+            Window Fenster = new Window();  //Um graphisches objekt anzuzeigen, element aus wpf = Window
+            Fenster.Title = "Zahnradberechnungen";
+
+            GUI ourGUI = new GUI();
+            Fenster.Content = ourGUI;
+            Fenster.ShowDialog();
+
+        }
+
+        [STAThread]         // wird in nur einem Kern ausgeführt
         static void Main(string[] args)
         {
+            new Program();
+
             //Einleitung
             Console.WriteLine("Herzlich Willkommen.");
             Console.WriteLine("Diese Software hilft Ihnen bei der Berechnung von Zahnrädern.");
@@ -48,6 +63,8 @@ namespace Gruppenarbeit_HSP_neu
             //Ende
             Console.ReadKey();  // wartet auf eine Eingabe vom Benutzer, verhindert das automatische
                                 // schließen der Console
+
+         
         }
     }
 }
