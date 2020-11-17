@@ -4,9 +4,61 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Gruppenarbeit_HSP_neu"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="#FFFEFBFB" Margin="-96,-68,-170,-120">
-            
+             mc:Ignorable="d" Height="535.492" Width="881.664">
+    <Grid Background="#FFFEFBFB" Margin="0">
+        <TreeView Name="trv_Auswahl" HorizontalAlignment="Left" Height="443" Margin="10,10,0,0" VerticalAlignment="Top" Width="284">
+            <TreeViewItem Header="Außenverzahnte Zahnräder" Name="itm_außen" FontSize="16">
+                <TreeViewItem Header="Zahnrad 1" Name="itm_außen1"/>
+                <TreeViewItem Header="Zahnrad 2" Name="itm_außen2"/>
+            </TreeViewItem>
+            <TreeViewItem Header="Innenverzahnte Zahnräder" Name="itm_innen" FontSize="16">
+                <TreeViewItem Header="Zahnrad 1" Name="itm_innen1"/>
+                <TreeViewItem Header="Zahnrad 2" Name="itm_innen2"/>
+            </TreeViewItem>
+        </TreeView>
+
+        <Label Name="lab_Rad1" Content="Bitte geben Sie die folgenden Größen an [in mm] für Zahnrad 1" HorizontalAlignment="Left" Margin="351,36,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.333,-0.325" Height="44" Width="474" FontSize="16"/>
+        <Label Name="lab_Rad2" Content="Bitte geben Sie die folgenden Größen an [in mm] für Zahnrad 2" HorizontalAlignment="Left" Margin="351,36,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.333,-0.325" Height="44" Width="474" FontSize="16" Visibility="Hidden" />
+        <Button Name="btn_Rechne" Content="Berechnen" Margin="724,466,56.5,35.5" FontSize="16" RenderTransformOrigin="0.917,1.158" Cursor="Hand" Click="btn_Rechne_Click"/>
+
+        <StackPanel Orientation="Vertical">
+            <Label Name="lab_Modul" Content="Modul:" HorizontalAlignment="Left" Margin="420,115,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.323,0.926" FontSize="16" Height="32" Width="68"/>
+            <Label Name="lab_Zähnezahl" Content="Zähnezahl:" HorizontalAlignment="Left" Margin="420,50,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.323,0.926" FontSize="16" Height="36" Width="90"/>
+            <Label Name="lab_Teilk" Content="Teilkreisdurchmesser:" HorizontalAlignment="Left" Margin="420,50,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.323,0.926" FontSize="16" Height="39" Width="171"/>
+            <Label Name="lab_Breite" Content="Breite:" HorizontalAlignment="Left" Margin="420,50,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.323,0.926" FontSize="16" Height="32" Width="68"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical">
+            <TextBox Name="tb_Modul_außen1" HorizontalAlignment="Left" Height="32" Margin="600,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" FontSize="16"/>
+            <TextBox Name="tb_Zähnezahl_außen1" HorizontalAlignment="Left" Height="32" Margin="600,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" FontSize="16"/>
+            <TextBox Name="tb_Teilk_außen1" HorizontalAlignment="Left" Height="32" Margin="600,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" FontSize="16"/>
+            <TextBox Name="tb_Breite_außen1" HorizontalAlignment="Left" Height="32" Margin="600,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" FontSize="16"/>
+        </StackPanel>
+        
+        <StackPanel Orientation="Vertical">
+            <TextBox Name="tb_Modul_außen2" HorizontalAlignment="Left" Height="32" Margin="600,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" FontSize="16" Visibility="Hidden"/>
+            <TextBox Name="tb_Zähnezahl_außen2" HorizontalAlignment="Left" Height="32" Margin="600,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" FontSize="16" Visibility="Hidden"/>
+            <TextBox Name="tb_Teilk_außen2" HorizontalAlignment="Left" Height="32" Margin="600,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" FontSize="16" Visibility="Hidden"/>
+            <TextBox Name="tb_Breite_außen2" HorizontalAlignment="Left" Height="32" Margin="600,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" FontSize="16" Visibility="Hidden"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical">
+            <TextBox Name="tb_Modul_innen1" HorizontalAlignment="Left" Height="32" Margin="600,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" FontSize="16" Visibility="Hidden"/>
+            <TextBox Name="tb_Zähnezahl_innen1" HorizontalAlignment="Left" Height="32" Margin="600,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" FontSize="16" Visibility="Hidden"/>
+            <TextBox Name="tb_Teilk_innen1" HorizontalAlignment="Left" Height="32" Margin="600,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" FontSize="16" Visibility="Hidden"/>
+            <TextBox Name="tb_Breite_innen1" HorizontalAlignment="Left" Height="32" Margin="600,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" FontSize="16" Visibility="Hidden"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical">
+            <TextBox Name="tb_Modul_innen2" HorizontalAlignment="Left" Height="32" Margin="600,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" FontSize="16" Visibility="Hidden"/>
+            <TextBox Name="tb_Zähnezahl_innen2" HorizontalAlignment="Left" Height="32" Margin="600,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" FontSize="16" Visibility="Hidden"/>
+            <TextBox Name="tb_Teilk_innen2" HorizontalAlignment="Left" Height="32" Margin="600,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" FontSize="16" Visibility="Hidden"/>
+            <TextBox Name="tb_Breite_innen2" HorizontalAlignment="Left" Height="32" Margin="600,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" FontSize="16" Visibility="Hidden"/>
+        </StackPanel>
+
+
+
+
+
     </Grid>
 </UserControl>

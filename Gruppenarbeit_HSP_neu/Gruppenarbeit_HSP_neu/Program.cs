@@ -16,10 +16,13 @@ namespace Gruppenarbeit_HSP_neu
             Fenster.Title = "Zahnradberechnungen";
 
             GUI ourGUI = new GUI();
+            // ansprechen einer Variablen in gui ourGUI.labRad1.content = "Bitte eingeben von...."
             Fenster.Content = ourGUI;
             Fenster.ShowDialog();
-
-        }
+            
+          
+            
+       }
 
         [STAThread]         // wird in nur einem Kern ausgeführt
         static void Main(string[] args)

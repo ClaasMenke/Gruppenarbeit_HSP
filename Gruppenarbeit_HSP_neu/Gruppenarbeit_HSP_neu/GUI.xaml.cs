@@ -23,6 +23,16 @@ namespace Gruppenarbeit_HSP_neu
         public GUI()
         {
             InitializeComponent();
+
+   
         }
+
+        private void btn_Rechne_Click(object sender, RoutedEventArgs e) // hier kommt rein, was passiert wenn der Button gecklickt wird
+        {
+
+        }
+
     }
+
+   
 }
