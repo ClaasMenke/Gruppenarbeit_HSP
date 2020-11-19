@@ -49,7 +49,7 @@
   <ItemGroup>
     <Compile Include="Außenverzahnung.cs" />
     <Compile Include="Berechnungen.cs" />
-    <Compile Include="GUI.xaml.cs">
+    <Compile Include="GUI.cs">
       <DependentUpon>GUI.xaml</DependentUpon>
     </Compile>
     <Compile Include="Innenverzahnung.cs" />
