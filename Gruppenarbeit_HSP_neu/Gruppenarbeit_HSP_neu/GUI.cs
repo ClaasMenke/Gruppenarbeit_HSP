@@ -32,9 +32,12 @@ namespace Gruppenarbeit_HSP_neu
         {
             tbc_innen.Visibility = Visibility.Hidden;
             tbc_außen.Visibility = Visibility.Visible;
-            grd_außenEinzel.Visibility = Visibility.Visible;
-            grd_außenGegenrad1.Visibility = Visibility.Hidden;
-            grd_außenGegenrad2.Visibility = Visibility.Hidden;
+            grd_EingabeAußenEinzel.Visibility = Visibility.Visible;
+            grd_EingabeAußenGegenrad1.Visibility = Visibility.Hidden;
+            grd_EingabeAußenGegenrad2.Visibility = Visibility.Hidden;
+            grd_AusgabeAußenEinzel.Visibility = Visibility.Visible;
+            grd_AusgabeAußenGegenrad1.Visibility = Visibility.Hidden;
+            grd_AusgabeAußenGegenrad2.Visibility = Visibility.Hidden;
 
         }
 
@@ -43,27 +46,36 @@ namespace Gruppenarbeit_HSP_neu
         {
             tbc_außen.Visibility = Visibility.Hidden;
             tbc_innen.Visibility = Visibility.Visible;
-            grd_innenEinzel.Visibility = Visibility.Visible;
-            grd_innenGegenrad1.Visibility = Visibility.Hidden;
-            grd_innenGegenrad2.Visibility = Visibility.Hidden;
+            grd_EingabeInnenEinzel.Visibility = Visibility.Visible;
+            grd_EingabeInnenGegenrad1.Visibility = Visibility.Hidden;
+            grd_EingabeInnenGegenrad2.Visibility = Visibility.Hidden;
+            grd_AusgabeInnenEinzel.Visibility = Visibility.Visible;
+            grd_AusgabeInnenGegenrad1.Visibility = Visibility.Hidden;
+            grd_AusgabeInnenGegenrad2.Visibility = Visibility.Hidden;
         }
 
         private void tvi_außen2_Selected(object sender, RoutedEventArgs e)
         {
             tbc_innen.Visibility = Visibility.Hidden;
             tbc_außen.Visibility = Visibility.Visible;
-            grd_außenGegenrad1.Visibility = Visibility.Visible;
-            grd_außenGegenrad2.Visibility = Visibility.Visible;
-            grd_außenEinzel.Visibility = Visibility.Hidden;
+            grd_EingabeAußenGegenrad1.Visibility = Visibility.Visible;
+            grd_EingabeAußenGegenrad2.Visibility = Visibility.Visible;
+            grd_EingabeAußenEinzel.Visibility = Visibility.Hidden;
+            grd_AusgabeAußenEinzel.Visibility = Visibility.Hidden;
+            grd_AusgabeAußenGegenrad1.Visibility = Visibility.Visible;
+            grd_AusgabeAußenGegenrad2.Visibility = Visibility.Visible;
         }
 
         private void tvi_innen2_Selected(object sender, RoutedEventArgs e)
         {
             tbc_außen.Visibility = Visibility.Hidden;
             tbc_innen.Visibility = Visibility.Visible;
-            grd_innenEinzel.Visibility = Visibility.Hidden;
-            grd_innenGegenrad1.Visibility = Visibility.Visible;
-            grd_innenGegenrad2.Visibility = Visibility.Visible;
+            grd_EingabeInnenEinzel.Visibility = Visibility.Hidden;
+            grd_EingabeInnenGegenrad1.Visibility = Visibility.Visible;
+            grd_EingabeInnenGegenrad2.Visibility = Visibility.Visible;
+            grd_AusgabeInnenEinzel.Visibility = Visibility.Hidden;
+            grd_AusgabeInnenGegenrad1.Visibility = Visibility.Visible;
+            grd_AusgabeInnenGegenrad2.Visibility = Visibility.Visible;
         }
 
     }
