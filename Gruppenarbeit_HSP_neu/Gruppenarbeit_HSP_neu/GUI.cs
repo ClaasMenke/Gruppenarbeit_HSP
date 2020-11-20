@@ -28,6 +28,7 @@ namespace Gruppenarbeit_HSP_neu
    
         }
 
+        //wenn TreeviewItem "außenverzahnte Stirnräder..Zahnrad einzeln" ausgewählt ist
         private void tvi_außen1_Selected(object sender, RoutedEventArgs e)
         {
             tbc_innen.Visibility = Visibility.Hidden;
@@ -41,7 +42,7 @@ namespace Gruppenarbeit_HSP_neu
 
         }
 
-
+        // wenn TreeviewItem "innenverzahnte Stirnräder.. Zahnrad einzeln" ausgewählt ist
         private void tvi_innen1_Selected(object sender, RoutedEventArgs e)
         {
             tbc_außen.Visibility = Visibility.Hidden;
@@ -54,6 +55,7 @@ namespace Gruppenarbeit_HSP_neu
             grd_AusgabeInnenGegenrad2.Visibility = Visibility.Hidden;
         }
 
+        //wenn TvI "außenverzahnte Stirnräder... mit Gegenrad" ausgewählt ist
         private void tvi_außen2_Selected(object sender, RoutedEventArgs e)
         {
             tbc_innen.Visibility = Visibility.Hidden;
@@ -66,6 +68,7 @@ namespace Gruppenarbeit_HSP_neu
             grd_AusgabeAußenGegenrad2.Visibility = Visibility.Visible;
         }
 
+        //wenn TvI "innenverzahnte Stirnräder... mit Gegenrad" ausgewählt ist
         private void tvi_innen2_Selected(object sender, RoutedEventArgs e)
         {
             tbc_außen.Visibility = Visibility.Hidden;
@@ -78,6 +81,8 @@ namespace Gruppenarbeit_HSP_neu
             grd_AusgabeInnenGegenrad2.Visibility = Visibility.Visible;
         }
 
+        //Button Exit
+        private void btn_Exit_Click(object sender, RoutedEventArgs e) => Application.Current.Shutdown();
     }
 
    

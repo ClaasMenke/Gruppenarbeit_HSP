@@ -133,11 +133,13 @@
                         <TextBox x:Name="tbx_Zahnfußhoehe_außenGegenrad2" HorizontalAlignment="Right" Height="23" Margin="0,196,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
                         <TextBox x:Name="tbx_Zahnhoehe_außenGegenrad2" HorizontalAlignment="Right" Height="23" Margin="0,222,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
                         <TextBox x:Name="tbx_Volumen_außenGegenrad2" HorizontalAlignment="Right" Height="23" Margin="0,248,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                        <Label x:Name="lab_Achsabstand_außen" Content="Achsabstand:" HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom" Height="25"/>
+                        <TextBox x:Name="tbx_Achsabstand_außen" HorizontalAlignment="Right" Height="23" Margin="0,0,10,10" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Bottom" Width="120"/>
                     </Grid>
                 </Grid>
             </TabItem>
 
-            <!--TaControl für Innenverzahnung-->
+            <!--TabControl für Innenverzahnung-->
         </TabControl>
         <TabControl x:Name="tbc_innen" HorizontalAlignment="Left" Height="443" Margin="299,10,0,0" VerticalAlignment="Top" Width="573">
             <!--TabItem Innen Eingabe -->
@@ -167,7 +169,7 @@
                         <TextBox x:Name="tbx_Breite_innenGegenrad1" HorizontalAlignment="Right" Height="23" Margin="0,256,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
                         <Label x:Name="lab_innenEingabeGegenrad1" Content="Für das erste, innenverzahnte Stirnrad:" Margin="10,0,10,0" VerticalAlignment="Top" FontWeight="Bold"/>
                     </Grid>
-                    <!--Grid EIngabeParameter Innen mit Gegenrad... außenverzahntes Zahnrad-->
+                    <!--Grid EingabeParameter Innen mit Gegenrad... außenverzahntes Zahnrad-->
                     <Grid x:Name="grd_EingabeInnenGegenrad2" HorizontalAlignment="Left" Height="341" Margin="295,0,0,10" VerticalAlignment="Bottom" Width="271">
                         <Label x:Name="lab_Modul_innenGegenrad2" Content="Modul:" HorizontalAlignment="Left" Margin="10,0,0,269" VerticalAlignment="Bottom"/>
                         <Label x:Name="lab_Zaehnezahl_innenGegenrad2" Content="Zähnezahl:" HorizontalAlignment="Left" Margin="10,0,0,199" VerticalAlignment="Bottom"/>
@@ -252,9 +254,13 @@
                         <TextBox x:Name="tbx_Zahnfußhoehe_innenGegenrad2" HorizontalAlignment="Right" Height="23" Margin="0,196,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
                         <TextBox x:Name="tbx_Zahnhoehe_innenGegenrad2" HorizontalAlignment="Right" Height="23" Margin="0,222,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
                         <TextBox x:Name="tbx_Volumen_innenGegenrad2" HorizontalAlignment="Right" Height="23" Margin="0,248,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                        <Label x:Name="lab_Achsabstand_innen" Content="Achsabstand:" HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom" Height="25"/>
+                        <TextBox x:Name="tbx_Achsabstand_innen" HorizontalAlignment="Right" Height="23" Margin="0,0,10,10" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Bottom" Width="120"/>
                     </Grid>
                 </Grid>
             </TabItem>
         </TabControl>
+        <Button x:Name="btn_Exit" Content="Exit" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="75" FontWeight="Bold" Click="btn_Exit_Click"/>
+        <Button x:Name="btn_Berechne" Content="Berechne" HorizontalAlignment="Right" Margin="0,0,90,10" VerticalAlignment="Bottom" Width="75" FontWeight="Bold"/>
     </Grid>
 </UserControl>
