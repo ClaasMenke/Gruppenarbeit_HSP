@@ -80,15 +80,16 @@
                         <Label x:Name="lab_Zahnfußhoehe_außenEinzel" Content="Zahnfußhöhe:" HorizontalAlignment="Left" Margin="10,196,0,0" VerticalAlignment="Top" Height="25"/>
                         <Label x:Name="lab_Zahnhoehe_außenEinzel" Content="Zahnhöhe:" HorizontalAlignment="Left" Margin="10,222,0,0" VerticalAlignment="Top" Height="25"/>
                         <Label x:Name="lab_Volumen_außenEinzel" Content="Volumen:" HorizontalAlignment="Left" Margin="10,248,0,0" Height="25" VerticalAlignment="Top"/>
-                        <TextBox x:Name="tbx_Teilung_außenEinzel" HorizontalAlignment="Right" Height="23" Margin="0,40,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Kopfspiel_außenEinzel" HorizontalAlignment="Right" Height="23" Margin="0,66,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Kopfkreisdurchmesser_außenEinzel" HorizontalAlignment="Right" Height="23" Margin="0,92,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Fußkreisdurchmesser_außenEinzel" HorizontalAlignment="Right" Height="23" Margin="0,118,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Grundkreisdurchmesser_außenEinzel" HorizontalAlignment="Right" Height="23" Margin="0,144,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Zahnkopfhoehe_außenEinzel" HorizontalAlignment="Right" Height="23" Margin="0,170,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Zahnfußhoehe_außenEinzel" HorizontalAlignment="Right" Height="23" Margin="0,196,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Zahnhoehe_außenEinzel" HorizontalAlignment="Right" Height="23" Margin="0,222,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Volumen_außenEinzel" HorizontalAlignment="Right" Height="23" Margin="0,248,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                        <!--Ergebnisse-->
+                        <Label x:Name="lab_Teilung_außenEinzelErgebnis" Content="" HorizontalAlignment="Right" Margin="0,40,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Kopfspiel_außenEinzelErgebnis" Content="" HorizontalAlignment="Right" Margin="0,66,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Kopfkreisdurchmesser_außenEinzelErgebnis" Content="" HorizontalAlignment="Right" Margin="0,92,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Fußkreisdurchmesser_außenEinzelErgebnis" Content="" HorizontalAlignment="Right" Margin="0,118,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Grundkreisdurchmesser_außenEinzelErgebnis" Content="" HorizontalAlignment="Right" Margin="0,144,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Zahnkopfhoehe_außenEinzelErgebnis" Content="" HorizontalAlignment="Right" Margin="0,170,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Zahnfußhoehe_außenEinzelErgebnis" Content="" HorizontalAlignment="Right" Margin="0,196,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Zahnhoehe_außenEinzelErgebnis" Content="" HorizontalAlignment="Right" Margin="0,222,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Volumen_außenEinzelErgebnis" Content="" HorizontalAlignment="Right" Margin="0,248,10,0" Height="25" VerticalAlignment="Top"/>
                     </Grid>
                     <!--Grid Ausgabe Außen Gegenrad1-->
                     <Grid x:Name="grd_AusgabeAußenGegenrad1" HorizontalAlignment="Left" Margin="10,0,0,10" Width="271" Height="341" VerticalAlignment="Bottom">
@@ -102,15 +103,16 @@
                         <Label x:Name="lab_Zahnfußhoehe_außenGegenrad1" Content="Zahnfußhöhe:" HorizontalAlignment="Left" Margin="10,196,0,0" VerticalAlignment="Top" Height="25"/>
                         <Label x:Name="lab_Zahnhoehe_außenGegenrad1" Content="Zahnhöhe:" HorizontalAlignment="Left" Margin="10,222,0,0" VerticalAlignment="Top" Height="25"/>
                         <Label x:Name="lab_Volumen_außenGegenrad1" Content="Volumen:" HorizontalAlignment="Left" Margin="10,248,0,0" Height="25" VerticalAlignment="Top"/>
-                        <TextBox x:Name="tbx_Teilung_außenGegenrad1" HorizontalAlignment="Right" Height="23" Margin="0,40,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Kopfspiel_außenGegenrad1" HorizontalAlignment="Right" Height="23" Margin="0,66,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Kopfkreisdurchmesser_außenGegenrad1" HorizontalAlignment="Right" Height="23" Margin="0,92,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Fußkreisdurchmesser_außenGegenrad1" HorizontalAlignment="Right" Height="23" Margin="0,118,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Grundkreisdurchmesser_außenGegenrad1" HorizontalAlignment="Right" Height="23" Margin="0,144,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Zahnkopfhoehe_außenGegenrad1" HorizontalAlignment="Right" Height="23" Margin="0,170,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Zahnfußhoehe_außenGegenrad1" HorizontalAlignment="Right" Height="23" Margin="0,196,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Zahnhoehe_außenGegenrad1" HorizontalAlignment="Right" Height="23" Margin="0,222,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Volumen_außenGegenrad1" HorizontalAlignment="Right" Height="23" Margin="0,248,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                        <!--Ergebnisse-->
+                        <Label x:Name="lab_Teilung_außenGegenrad1Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,40,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Kopfspiel_außenGegenrad1Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,66,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Kopfkreisdurchmesser_außenGegenrad1Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,92,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Fußkreisdurchmesser_außenGegenrad1Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,118,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Grundkreisdurchmesser_außenGegenrad1Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,144,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Zahnkopfhoehe_außenGegenrad1Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,170,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Zahnfußhoehe_außenGegenrad1Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,196,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Zahnhoehe_außenGegenrad1Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,222,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Volumen_außenGegenrad1Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,248,10,0" Height="25" VerticalAlignment="Top"/>
                     </Grid>
                     <!--Grid Ausgabe Außen Gegenrad2-->
                     <Grid x:Name="grd_AusgabeAußenGegenrad2" HorizontalAlignment="Right" Margin="0,0,10,10" Width="271" Height="341" VerticalAlignment="Bottom">
@@ -124,17 +126,18 @@
                         <Label x:Name="lab_Zahnfußhoehe_außenGegenrad2" Content="Zahnfußhöhe:" HorizontalAlignment="Left" Margin="10,196,0,0" VerticalAlignment="Top" Height="25"/>
                         <Label x:Name="lab_Zahnhoehe_außenGegenrad2" Content="Zahnhöhe:" HorizontalAlignment="Left" Margin="10,222,0,0" VerticalAlignment="Top" Height="25"/>
                         <Label x:Name="lab_Volumen_außenGegenrad2" Content="Volumen:" HorizontalAlignment="Left" Margin="10,248,0,0" Height="25" VerticalAlignment="Top"/>
-                        <TextBox x:Name="tbx_Teilung_außenGegenrad2" HorizontalAlignment="Right" Height="23" Margin="0,40,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Kopfspiel_außenGegenrad2" HorizontalAlignment="Right" Height="23" Margin="0,66,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Kopfkreisdurchmesser_außenGegenrad2" HorizontalAlignment="Right" Height="23" Margin="0,92,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Fußkreisdurchmesser_außenGegenrad2" HorizontalAlignment="Right" Height="23" Margin="0,118,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Grundkreisdurchmesser_außenGegenrad2" HorizontalAlignment="Right" Height="23" Margin="0,144,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Zahnkopfhoehe_außenGegenrad2" HorizontalAlignment="Right" Height="23" Margin="0,170,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Zahnfußhoehe_außenGegenrad2" HorizontalAlignment="Right" Height="23" Margin="0,196,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Zahnhoehe_außenGegenrad2" HorizontalAlignment="Right" Height="23" Margin="0,222,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Volumen_außenGegenrad2" HorizontalAlignment="Right" Height="23" Margin="0,248,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
                         <Label x:Name="lab_Achsabstand_außen" Content="Achsabstand:" HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom" Height="25"/>
-                        <TextBox x:Name="tbx_Achsabstand_außen" HorizontalAlignment="Right" Height="23" Margin="0,0,10,10" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Bottom" Width="120"/>
+                        <!--Ergebnisse-->
+                        <Label x:Name="lab_Teilung_außenGegenrad2Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,40,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Kopfspiel_außenGegenrad2Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,66,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Kopfkreisdurchmesser_außenGegenrad2Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,92,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Fußkreisdurchmesser_außenGegenrad2Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,118,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Grundkreisdurchmesser_außenGegenrad2Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,144,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Zahnkopfhoehe_außenGegenrad2Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,170,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Zahnfußhoehe_außenGegenrad2Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,196,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Zahnhoehe_außenGegenrad2Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,222,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Volumen_außenGegenrad2Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,248,10,0" Height="25" VerticalAlignment="Top"/>
+                        <Label x:Name="lab_Achsabstand_außenErgebnis" Content="" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Height="25"/>
                     </Grid>
                 </Grid>
             </TabItem>
@@ -201,15 +204,16 @@
                         <Label x:Name="lab_Zahnfußhoehe_innenEinzel" Content="Zahnfußhöhe:" HorizontalAlignment="Left" Margin="10,196,0,0" VerticalAlignment="Top" Height="25"/>
                         <Label x:Name="lab_Zahnhoehe_innenEinzel" Content="Zahnhöhe:" HorizontalAlignment="Left" Margin="10,222,0,0" VerticalAlignment="Top" Height="25"/>
                         <Label x:Name="lab_Volumen_innenEinzel" Content="Volumen:" HorizontalAlignment="Left" Margin="10,248,0,0" Height="25" VerticalAlignment="Top"/>
-                        <TextBox x:Name="tbx_Teilung_innenEinzel" HorizontalAlignment="Right" Height="23" Margin="0,40,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Kopfspiel_innenEinzel" HorizontalAlignment="Right" Height="23" Margin="0,66,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Kopfkreisdurchmesser_innenEinzel" HorizontalAlignment="Right" Height="23" Margin="0,92,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Fußkreisdurchmesser_innenEinzel" HorizontalAlignment="Right" Height="23" Margin="0,118,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Grundkreisdurchmesser_innenEinzel" HorizontalAlignment="Right" Height="23" Margin="0,144,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Zahnkopfhoehe_innenEinzel" HorizontalAlignment="Right" Height="23" Margin="0,170,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Zahnfußhoehe_innenEinzel" HorizontalAlignment="Right" Height="23" Margin="0,196,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Zahnhoehe_innenEinzel" HorizontalAlignment="Right" Height="23" Margin="0,222,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Volumen_innenEinzel" HorizontalAlignment="Right" Height="23" Margin="0,248,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                        <!--Ergebnisse-->
+                        <Label x:Name="lab_Teilung_innenEinzelErgebnis" Content="" HorizontalAlignment="Right" Margin="0,40,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Kopfspiel_innenEinzelErgebnis" Content="" HorizontalAlignment="Right" Margin="0,66,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Kopfkreisdurchmesser_innenEinzelErgebnis" Content="" HorizontalAlignment="Right" Margin="0,92,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Fußkreisdurchmesser_innenEinzelErgebnis" Content="" HorizontalAlignment="Right" Margin="0,118,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Grundkreisdurchmesser_innenEinzelErgebnis" Content="" HorizontalAlignment="Right" Margin="0,144,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Zahnkopfhoehe_innenEinzelErgebnis" Content="" HorizontalAlignment="Right" Margin="0,170,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Zahnfußhoehe_innenEinzelErgebnis" Content="" HorizontalAlignment="Right" Margin="0,196,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Zahnhoehe_innenEinzelErgebnis" Content="" HorizontalAlignment="Right" Margin="0,222,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Volumen_innenEinzelErgebnis" Content="" HorizontalAlignment="Right" Margin="0,248,10,0" Height="25" VerticalAlignment="Top"/>
                     </Grid>
                     <!--Grid Ausgabe Innen Gegenrad1-->
                     <Grid x:Name="grd_AusgabeInnenGegenrad1" HorizontalAlignment="Left" Margin="10,0,0,10" Width="271" Height="341" VerticalAlignment="Bottom">
@@ -223,15 +227,16 @@
                         <Label x:Name="lab_Zahnfußhoehe_innenGegenrad1" Content="Zahnfußhöhe:" HorizontalAlignment="Left" Margin="10,196,0,0" VerticalAlignment="Top" Height="25"/>
                         <Label x:Name="lab_Zahnhoehe_innenGegenrad1" Content="Zahnhöhe:" HorizontalAlignment="Left" Margin="10,222,0,0" VerticalAlignment="Top" Height="25"/>
                         <Label x:Name="lab_Volumen_innenGegenrad1" Content="Volumen:" HorizontalAlignment="Left" Margin="10,248,0,0" Height="25" VerticalAlignment="Top"/>
-                        <TextBox x:Name="tbx_Teilung_innenGegenrad1" HorizontalAlignment="Right" Height="23" Margin="0,40,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Kopfspiel_innenGegenrad1" HorizontalAlignment="Right" Height="23" Margin="0,66,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Kopfkreisdurchmesser_innenGegenrad1" HorizontalAlignment="Right" Height="23" Margin="0,92,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Fußkreisdurchmesser_innenGegenrad1" HorizontalAlignment="Right" Height="23" Margin="0,118,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Grundkreisdurchmesser_innenGegenrad1" HorizontalAlignment="Right" Height="23" Margin="0,144,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Zahnkopfhoehe_innenGegenrad1" HorizontalAlignment="Right" Height="23" Margin="0,170,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Zahnfußhoehe_innenGegenrad1" HorizontalAlignment="Right" Height="23" Margin="0,196,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Zahnhoehe_innenGegenrad1" HorizontalAlignment="Right" Height="23" Margin="0,222,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Volumen_innenGegenrad1" HorizontalAlignment="Right" Height="23" Margin="0,248,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                        <!--Ergebnisse-->
+                        <Label x:Name="lab_Teilung_innenGegenrad1Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,40,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Kopfspiel_innenGegenrad1Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,66,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Kopfkreisdurchmesser_innenGegenrad1Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,92,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Fußkreisdurchmesser_innenGegenrad1Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,118,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Grundkreisdurchmesser_innenGegenrad1Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,144,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Zahnkopfhoehe_innenGegenrad1Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,170,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Zahnfußhoehe_innenGegenrad1Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,196,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Zahnhoehe_innenGegenrad1Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,222,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Volumen_innenGegenrad1Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,248,10,0" Height="25" VerticalAlignment="Top"/>
                     </Grid>
                     <!--Grid Ausgabe Innen Gegenrad2-->
                     <Grid x:Name="grd_AusgabeInnenGegenrad2" HorizontalAlignment="Right" Margin="0,0,10,10" Width="271" Height="341" VerticalAlignment="Bottom">
@@ -245,22 +250,26 @@
                         <Label x:Name="lab_Zahnfußhoehe_innenGegenrad2" Content="Zahnfußhöhe:" HorizontalAlignment="Left" Margin="10,196,0,0" VerticalAlignment="Top" Height="25"/>
                         <Label x:Name="lab_Zahnhoehe_innenGegenrad2" Content="Zahnhöhe:" HorizontalAlignment="Left" Margin="10,222,0,0" VerticalAlignment="Top" Height="25"/>
                         <Label x:Name="lab_Volumen_innenGegenrad2" Content="Volumen:" HorizontalAlignment="Left" Margin="10,248,0,0" Height="25" VerticalAlignment="Top"/>
-                        <TextBox x:Name="tbx_Teilung_innenGegenrad2" HorizontalAlignment="Right" Height="23" Margin="0,40,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Kopfspiel_innenGegenrad2" HorizontalAlignment="Right" Height="23" Margin="0,66,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Kopfkreisdurchmesser_innenGegenrad2" HorizontalAlignment="Right" Height="23" Margin="0,92,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Fußkreisdurchmesser_innenGegenrad2" HorizontalAlignment="Right" Height="23" Margin="0,118,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Grundkreisdurchmesser_innenGegenrad2" HorizontalAlignment="Right" Height="23" Margin="0,144,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Zahnkopfhoehe_innenGegenrad2" HorizontalAlignment="Right" Height="23" Margin="0,170,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Zahnfußhoehe_innenGegenrad2" HorizontalAlignment="Right" Height="23" Margin="0,196,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Zahnhoehe_innenGegenrad2" HorizontalAlignment="Right" Height="23" Margin="0,222,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Volumen_innenGegenrad2" HorizontalAlignment="Right" Height="23" Margin="0,248,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
                         <Label x:Name="lab_Achsabstand_innen" Content="Achsabstand:" HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom" Height="25"/>
-                        <TextBox x:Name="tbx_Achsabstand_innen" HorizontalAlignment="Right" Height="23" Margin="0,0,10,10" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Bottom" Width="120"/>
+                        <!--Ergebnisse-->
+                        <Label x:Name="lab_Teilung_innenGegenrad2Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,40,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Kopfspiel_innenGegenrad2Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,66,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Kopfkreisdurchmesser_innenGegenrad2Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,92,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Fußkreisdurchmesser_innenGegenrad2Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,118,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Grundkreisdurchmesser_innenGegenrad2Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,144,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Zahnkopfhoehe_innenGegenrad2Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,170,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Zahnfußhoehe_innenGegenrad2Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,196,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Zahnhoehe_innenGegenrad2Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,222,10,0" VerticalAlignment="Top" Height="25"/>
+                        <Label x:Name="lab_Volumen_innenGegenrad2Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,248,10,0" Height="25" VerticalAlignment="Top"/>
+                        <Label x:Name="lab_Achsabstand_innenErgebnis" Content="" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Height="25"/>
                     </Grid>
                 </Grid>
             </TabItem>
         </TabControl>
         <Button x:Name="btn_Exit" Content="Exit" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="75" FontWeight="Bold" Click="btn_Exit_Click"/>
-        <Button x:Name="btn_Berechne" Content="Berechne" HorizontalAlignment="Right" Margin="0,0,90,10" VerticalAlignment="Bottom" Width="75" FontWeight="Bold"/>
+        <Button x:Name="btn_Berechne_außenEinzel" Content="Berechne" HorizontalAlignment="Right" Margin="0,0,90,10" VerticalAlignment="Bottom" Width="75" FontWeight="Bold" Click="btn_Berechne_außenEinzel_Click_1"/>
+        <Button x:Name="btn_Berechne_außenGegenrad" Content="Berechne" HorizontalAlignment="Right" Margin="0,0,90,10" VerticalAlignment="Bottom" Width="75" FontWeight="Bold" Click="btn_Berechne_außenEinzel_Click_1"/>
+        <Button x:Name="btn_Berechne_innenEinzel" Content="Berechne" HorizontalAlignment="Right" Margin="0,0,90,10" VerticalAlignment="Bottom" Width="75" FontWeight="Bold" Click="btn_Berechne_außenEinzel_Click_1"/>
+        <Button x:Name="btn_Berechne_innenGegenrad" Content="Berechne" HorizontalAlignment="Right" Margin="0,0,90,10" VerticalAlignment="Bottom" Width="75" FontWeight="Bold" Click="btn_Berechne_außenEinzel_Click_1"/>
     </Grid>
 </Window>
