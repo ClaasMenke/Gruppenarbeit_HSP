@@ -10,6 +10,7 @@ namespace Gruppenarbeit_HSP_neu
     class Program
     {
 
+
         Program()
         {
             Window Fenster = new Window();  //Um graphisches objekt anzuzeigen, element aus wpf = Window
@@ -19,10 +20,9 @@ namespace Gruppenarbeit_HSP_neu
             // ansprechen einer Variablen in gui ourGUI.labRad1.content = "Bitte eingeben von...."
             Fenster.Content = ourGUI;
             Fenster.ShowDialog();
-            
-          
-            
-       }
+
+
+        }
 
         [STAThread]         // wird in nur einem Kern ausgeführt
         static void Main(string[] args)
