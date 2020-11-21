@@ -30,10 +30,10 @@
                         <Label x:Name="lab_Zaehnezahl_außenEinzel" Content="Zähnezahl:" HorizontalAlignment="Left" Margin="10,0,0,199" VerticalAlignment="Bottom"/>
                         <Label x:Name="lab_Teilkreisdurchmesser_außenEinzel" Content="Teilkreisdurchmesser:" HorizontalAlignment="Left" Margin="10,0,0,129" VerticalAlignment="Bottom"/>
                         <Label x:Name="lab_Breite_außeneinzel" Content="Breite:" HorizontalAlignment="Left" Margin="10,0,0,59" VerticalAlignment="Bottom"/>
-                        <TextBox x:Name="tbx_Modul_außenEinzel" HorizontalAlignment="Right" Height="23" Margin="0,0,10,272" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Bottom" Width="120"/>
-                        <TextBox x:Name="tbx_Zaehnezahl_außenEinzel" HorizontalAlignment="Right" Height="23" Margin="0,0,10,202" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Bottom" Width="120"/>
-                        <TextBox x:Name="tbx_Teilkreisdurchmesser_außenEinzel" HorizontalAlignment="Right" Height="23" Margin="0,0,10,132" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Bottom" Width="120"/>
-                        <TextBox x:Name="tbx_Breite_außenEinzel" HorizontalAlignment="Right" Height="23" Margin="0,0,10,62" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Bottom" Width="120"/>
+                        <TextBox x:Name="tbx_Modul_außenEinzel" HorizontalAlignment="Right" Height="23" Margin="0,0,10,272" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Width="120"/>
+                        <TextBox x:Name="tbx_Zaehnezahl_außenEinzel" HorizontalAlignment="Right" Height="23" Margin="0,0,10,202" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Width="120"/>
+                        <TextBox x:Name="tbx_Teilkreisdurchmesser_außenEinzel" HorizontalAlignment="Right" Height="23" Margin="0,0,10,132" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Width="120"/>
+                        <TextBox x:Name="tbx_Breite_außenEinzel" HorizontalAlignment="Right" Height="23" Margin="0,0,10,62" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Width="120"/>
                         <Label x:Name="lab_außenEingabeEinzel" Content="Für ein einzelnes außenverzahntes Stirnrad:" Margin="10,0,10,0" Height="26" VerticalAlignment="Top" FontWeight="Bold"/>
                     </Grid>
                     <Label x:Name="lab_außenEingabe" Content="Bitte geben Sie folgende Parameter [in mm] an:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="280" FontWeight="Bold"/>
@@ -43,10 +43,10 @@
                         <Label x:Name="lab_Zaehnezahl_außenGegenrad1" Content="Zähnezahl:" HorizontalAlignment="Left" Margin="10,0,0,199" VerticalAlignment="Bottom"/>
                         <Label x:Name="lab_Teilkreisdurchmesser_außenGegenrad1" Content="Teilkreisdurchmesser:" HorizontalAlignment="Left" Margin="10,0,0,129" VerticalAlignment="Bottom"/>
                         <Label x:Name="lab_Breite_außenGegenrad1" Content="Breite:" HorizontalAlignment="Left" Margin="10,0,0,59" VerticalAlignment="Bottom"/>
-                        <TextBox x:Name="tbx_Modul_außenGegenrad1" HorizontalAlignment="Right" Height="23" Margin="0,46,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Zaehnezahl_außenGegenrad1" HorizontalAlignment="Right" Height="23" Margin="0,116,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Teilkreisdurchmesser_außenGegenrad1" HorizontalAlignment="Right" Height="23" Margin="0,186,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Breite_außenGegenrad1" HorizontalAlignment="Right" Height="23" Margin="0,256,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                        <TextBox x:Name="tbx_Modul_außenGegenrad1" HorizontalAlignment="Right" Height="23" Margin="0,46,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                        <TextBox x:Name="tbx_Zaehnezahl_außenGegenrad1" HorizontalAlignment="Right" Height="23" Margin="0,116,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                        <TextBox x:Name="tbx_Teilkreisdurchmesser_außenGegenrad1" HorizontalAlignment="Right" Height="23" Margin="0,186,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                        <TextBox x:Name="tbx_Breite_außenGegenrad1" HorizontalAlignment="Right" Height="23" Margin="0,256,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
                         <Label x:Name="lab_außenEingabeGegenrad1" Content="Für das erste außenverzahnte Stirnrad:" Margin="10,0,10,0" VerticalAlignment="Top" FontWeight="Bold"/>
                     </Grid>
                     <!--Grid für die EingabeParameter für Stirnräder mit außenverzahntem Gegenrad... Zahnrad2-->
@@ -55,10 +55,10 @@
                         <Label x:Name="lab_Zaehnezahl_außenGegenrad2" Content="Zähnezahl:" HorizontalAlignment="Left" Margin="10,0,0,199" VerticalAlignment="Bottom"/>
                         <Label x:Name="lab_Teilkreisdurchmesser_außenGegenrad2" Content="Teilkreisdurchmesser:" HorizontalAlignment="Left" Margin="10,0,0,129" VerticalAlignment="Bottom"/>
                         <Label x:Name="lab_Breite_außenGegenrad2" Content="Breite:" HorizontalAlignment="Left" Margin="10,0,0,59" VerticalAlignment="Bottom"/>
-                        <TextBox x:Name="tbx_Modul_außenGegenrad2" HorizontalAlignment="Right" Height="23" Margin="0,46,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Zaehnezahl_außenGegenrad2" HorizontalAlignment="Right" Height="23" Margin="0,116,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Teilkreisdurchmesser_außenGegenrad2" HorizontalAlignment="Right" Height="23" Margin="0,190,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Breite_außenGegenrad2" HorizontalAlignment="Right" Height="23" Margin="0,256,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                        <TextBox x:Name="tbx_Modul_außenGegenrad2" HorizontalAlignment="Right" Height="23" Margin="0,46,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                        <TextBox x:Name="tbx_Zaehnezahl_außenGegenrad2" HorizontalAlignment="Right" Height="23" Margin="0,116,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                        <TextBox x:Name="tbx_Teilkreisdurchmesser_außenGegenrad2" HorizontalAlignment="Right" Height="23" Margin="0,190,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                        <TextBox x:Name="tbx_Breite_außenGegenrad2" HorizontalAlignment="Right" Height="23" Margin="0,256,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
                         <Label x:Name="lab_außenEingabeGegenrad2" Content="Für das zweite außenverzahnte Stirnrad:" VerticalAlignment="Top" Margin="10,0,10,0" FontWeight="Bold"/>
                     </Grid>
                 </Grid>
@@ -154,10 +154,10 @@
                         <Label x:Name="lab_Zaehnezahl_innenEinzel" Content="Zähnezahl:" HorizontalAlignment="Left" Margin="10,0,0,199" VerticalAlignment="Bottom"/>
                         <Label x:Name="lab_Teilkreisdurchmesser_innenEinzel" Content="Teilkreisdurchmesser:" HorizontalAlignment="Left" Margin="10,0,0,129" VerticalAlignment="Bottom"/>
                         <Label x:Name="lab_Breite_innenEinzel" Content="Breite:" HorizontalAlignment="Left" Margin="10,0,0,59" VerticalAlignment="Bottom"/>
-                        <TextBox x:Name="tbx_Modul_innenEinzel" HorizontalAlignment="Right" Height="23" Margin="0,46,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Zaehnezahl_innenEinzel" HorizontalAlignment="Right" Height="23" Margin="0,116,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Teilkreisdurchmesser_innenEinzel" HorizontalAlignment="Right" Height="23" Margin="0,186,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Breite_innenEinzel" HorizontalAlignment="Right" Height="23" Margin="0,256,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                        <TextBox x:Name="tbx_Modul_innenEinzel" HorizontalAlignment="Right" Height="23" Margin="0,46,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                        <TextBox x:Name="tbx_Zaehnezahl_innenEinzel" HorizontalAlignment="Right" Height="23" Margin="0,116,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                        <TextBox x:Name="tbx_Teilkreisdurchmesser_innenEinzel" HorizontalAlignment="Right" Height="23" Margin="0,186,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                        <TextBox x:Name="tbx_Breite_innenEinzel" HorizontalAlignment="Right" Height="23" Margin="0,256,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
                         <Label x:Name="lab_innenEingabeEinzel" Content="Für ein einzelnes innenverzahntes Stirnrad:" Margin="10,0,10,0" VerticalAlignment="Top" FontWeight="Bold"/>
                     </Grid>
                     <!--Grid EingabeParameter Innen mit Gegenrad... innenverzahntes Zahnrad-->
@@ -166,10 +166,10 @@
                         <Label x:Name="lab_Zaehnezahl_innenGegenrad1" Content="Zähnezahl:" HorizontalAlignment="Left" Margin="10,0,0,199" VerticalAlignment="Bottom"/>
                         <Label x:Name="lab_Teilkreisdurchmesser_innenGegenrad1" Content="Teilkreisdurchmesser:" HorizontalAlignment="Left" Margin="10,0,0,129" VerticalAlignment="Bottom"/>
                         <Label x:Name="lab_Breite_innenGegenrad1" Content="Breite:" HorizontalAlignment="Left" Margin="10,0,0,59" VerticalAlignment="Bottom"/>
-                        <TextBox x:Name="tbx_Modul_innenGegenrad1" HorizontalAlignment="Right" Height="23" Margin="0,46,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Zaehnezahl_innenGegenrad1" HorizontalAlignment="Right" Height="23" Margin="0,116,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Teilkreisdurchmesser_innenGegenrad1" HorizontalAlignment="Right" Height="23" Margin="0,186,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Breite_innenGegenrad1" HorizontalAlignment="Right" Height="23" Margin="0,256,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                        <TextBox x:Name="tbx_Modul_innenGegenrad1" HorizontalAlignment="Right" Height="23" Margin="0,46,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                        <TextBox x:Name="tbx_Zaehnezahl_innenGegenrad1" HorizontalAlignment="Right" Height="23" Margin="0,116,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                        <TextBox x:Name="tbx_Teilkreisdurchmesser_innenGegenrad1" HorizontalAlignment="Right" Height="23" Margin="0,186,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                        <TextBox x:Name="tbx_Breite_innenGegenrad1" HorizontalAlignment="Right" Height="23" Margin="0,256,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
                         <Label x:Name="lab_innenEingabeGegenrad1" Content="Für das erste, innenverzahnte Stirnrad:" Margin="10,0,10,0" VerticalAlignment="Top" FontWeight="Bold"/>
                     </Grid>
                     <!--Grid EingabeParameter Innen mit Gegenrad... außenverzahntes Zahnrad-->
@@ -178,10 +178,10 @@
                         <Label x:Name="lab_Zaehnezahl_innenGegenrad2" Content="Zähnezahl:" HorizontalAlignment="Left" Margin="10,0,0,199" VerticalAlignment="Bottom"/>
                         <Label x:Name="lab_Teilkreisdurchmesser_innenGegenrad2" Content="Teilkreisdurchmesser:" HorizontalAlignment="Left" Margin="10,0,0,129" VerticalAlignment="Bottom"/>
                         <Label x:Name="lab_Breite_innenGegenrad2" Content="Breite:" HorizontalAlignment="Left" Margin="10,0,0,59" VerticalAlignment="Bottom"/>
-                        <TextBox x:Name="tbx_Modul_innenGegenrad2" HorizontalAlignment="Right" Height="23" Margin="0,46,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Zaehnezahl_innenGegenrad2" HorizontalAlignment="Right" Height="23" Margin="0,116,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Teilkreisdurchmesser_innenGegenrad2" HorizontalAlignment="Right" Height="23" Margin="0,186,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="tbx_Breite_innenGegenrad2" HorizontalAlignment="Right" Height="23" Margin="0,256,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                        <TextBox x:Name="tbx_Modul_innenGegenrad2" HorizontalAlignment="Right" Height="23" Margin="0,46,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                        <TextBox x:Name="tbx_Zaehnezahl_innenGegenrad2" HorizontalAlignment="Right" Height="23" Margin="0,116,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                        <TextBox x:Name="tbx_Teilkreisdurchmesser_innenGegenrad2" HorizontalAlignment="Right" Height="23" Margin="0,186,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                        <TextBox x:Name="tbx_Breite_innenGegenrad2" HorizontalAlignment="Right" Height="23" Margin="0,256,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
                         <Label x:Name="lab_innenEingabeGegenrad2" Content="Für das zweite, außenverzahnte Stirnrad:" Margin="10,0,10,0" VerticalAlignment="Top" FontWeight="Bold"/>
                     </Grid>
                     <Label x:Name="lab_innenEingabe" Content="Bitte geben Sie folgende Parameter [in mm] an:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="547" FontWeight="Bold"/>
@@ -268,8 +268,8 @@
         </TabControl>
         <Button x:Name="btn_Exit" Content="Exit" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="75" FontWeight="Bold" Click="btn_Exit_Click"/>
         <Button x:Name="btn_Berechne_außenEinzel" Content="Berechne" HorizontalAlignment="Right" Margin="0,0,90,10" VerticalAlignment="Bottom" Width="75" FontWeight="Bold" Click="btn_Berechne_außenEinzel_Click_1"/>
-        <Button x:Name="btn_Berechne_außenGegenrad" Content="Berechne" HorizontalAlignment="Right" Margin="0,0,90,10" VerticalAlignment="Bottom" Width="75" FontWeight="Bold" Click="btn_Berechne_außenEinzel_Click_1"/>
-        <Button x:Name="btn_Berechne_innenEinzel" Content="Berechne" HorizontalAlignment="Right" Margin="0,0,90,10" VerticalAlignment="Bottom" Width="75" FontWeight="Bold" Click="btn_Berechne_außenEinzel_Click_1"/>
-        <Button x:Name="btn_Berechne_innenGegenrad" Content="Berechne" HorizontalAlignment="Right" Margin="0,0,90,10" VerticalAlignment="Bottom" Width="75" FontWeight="Bold" Click="btn_Berechne_außenEinzel_Click_1"/>
+        <Button x:Name="btn_Berechne_außenGegenrad" Content="Berechne" HorizontalAlignment="Right" Margin="0,0,90,10" VerticalAlignment="Bottom" Width="75" FontWeight="Bold" Click="btn_Berechne_außenGegenrad_Click_1"/>
+        <Button x:Name="btn_Berechne_innenEinzel" Content="Berechne" HorizontalAlignment="Right" Margin="0,0,90,10" VerticalAlignment="Bottom" Width="75" FontWeight="Bold" Click="btn_Berechne_innenEinzel_Click_1"/>
+        <Button x:Name="btn_Berechne_innenGegenrad" Content="Berechne" HorizontalAlignment="Right" Margin="0,0,90,10" VerticalAlignment="Bottom" Width="75" FontWeight="Bold" Click="btn_Berechne_innenGegenrad_Click_1"/>
     </Grid>
 </Window>
