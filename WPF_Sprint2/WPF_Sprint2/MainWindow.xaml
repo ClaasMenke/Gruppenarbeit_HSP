@@ -9,13 +9,13 @@
     <Grid Margin="0,0,0,0">
         <!--Treeview: Auswahl welche Art Zahnrad berechnet werden soll-->
         <TreeView Name="trv_Auswahl" Margin="10,10,622,82">
-            <TreeViewItem Header="außenverzahnte Stirnräder" x:Name="tvi_außen" FontSize="16">
+            <TreeViewItem Header="Außenverzahnte Stirnräder" x:Name="tvi_außen" FontSize="16">
                 <TreeViewItem Header="Zahnrad einzeln" x:Name="tvi_außen1" Selected="tvi_außen1_Selected"/>
-                <TreeViewItem Header="mit außenliegendem Gegenrad" x:Name="tvi_außen2" Selected="tvi_außen2_Selected"/>
+                <TreeViewItem Header="Mit außenliegendem Gegenrad" x:Name="tvi_außen2" Selected="tvi_außen2_Selected"/>
             </TreeViewItem>
-            <TreeViewItem Header="innenverzahnte Stirnräder" x:Name="tvi_innen" FontSize="16">
+            <TreeViewItem Header="Innenverzahnte Stirnräder" x:Name="tvi_innen" FontSize="16">
                 <TreeViewItem Header="Zahnrad einzeln" x:Name="tvi_innen1" Selected="tvi_innen1_Selected"/>
-                <TreeViewItem Header="mit innenliegendem Gegenrad" x:Name="tvi_innen2" Selected="tvi_innen2_Selected"/>
+                <TreeViewItem Header="Mit innenliegendem Gegenrad" x:Name="tvi_innen2" Selected="tvi_innen2_Selected"/>
             </TreeViewItem>
         </TreeView>
 
@@ -36,7 +36,7 @@
                         <TextBox x:Name="tbx_Breite_außenEinzel" HorizontalAlignment="Right" Height="23" Margin="0,0,10,30" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Width="120"/>
                         <Label x:Name="lab_außenEingabeEinzel" Content="Für ein einzelnes außenverzahntes Stirnrad:" Margin="0,0,0,0" Height="26" VerticalAlignment="Top" FontWeight="Bold"/>
                     </Grid>
-                    <Label x:Name="lab_außenEingabe" Content="Bitte geben Sie folgende Parameter [in mm] an:" HorizontalAlignment="Left" Margin="0,-7,0,0" VerticalAlignment="Top" Width="280" FontWeight="Bold"/>
+                    <Label x:Name="lab_außenEingabe" Content="Bitte geben Sie folgende Parameter [in mm] an." HorizontalAlignment="Left" Margin="0,-7,0,0" VerticalAlignment="Top" Width="280" FontWeight="Bold"/>
                     
                     <!--Grid für die EingabeParameter für Stirnräder mit außenverzahntem Gegenrad... Zahnrad1-->
                     <Grid x:Name="grd_EingabeAußenGegenrad1" HorizontalAlignment="Left" Height="315" Margin="0,0,0,10" VerticalAlignment="Bottom" Width="550">
@@ -68,10 +68,9 @@
             <!--TabItem für die Ausgabe bei außenverzahnten Stirnrädern-->
             <TabItem x:Name="tbi_außenAusgabe" Header="Ausgabe">
                 <Grid x:Name="grd_TabControlAußenAusgabe" Background="#FFE5E5E5">
-                    <Label x:Name="lab_ErgebnisseAußen" Content="Ergebnisse für außenverzahnte Stirnräder:" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
                     <!--Grid Ausgabe Außen Einzel-->
-                    <Grid x:Name="grd_AusgabeAußenEinzel" HorizontalAlignment="Left" Margin="0,0,0,10" Width="550" Height="315" VerticalAlignment="Bottom">
-                        <Label x:Name="lab_AusgabeAußenEinzel" Content="Für ein einzelnes außenverzahntes Stirnrad:" Margin="0,10,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="25"/>
+                    <Grid x:Name="grd_AusgabeAußenEinzel" HorizontalAlignment="Left" Margin="0,0,0,10" Width="550" Height="335" VerticalAlignment="Bottom">
+                        <Label x:Name="lab_AusgabeAußenEinzel" Content="Einzelnes außenverzahntes Stirnrad:" Margin="0,10,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="25"/>
                         <Label x:Name="lab_Teilung_außenEinzel" Content="Teilung:" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" Height="25"/>
                         <Label x:Name="lab_Kopfspiel_außenEinzel" Content="Kopfspiel:" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Height="25"/>
                         <Label x:Name="lab_Kopfkreisdurchmesser_außenEinzel" Content="Kopfkreisdurchmesser:" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" Height="25"/>
@@ -94,7 +93,7 @@
                     </Grid>
                     <!--Grid Ausgabe Außen Gegenrad1-->
                     <Grid x:Name="grd_AusgabeAußenGegenrad1" HorizontalAlignment="Left" Margin="0,0,0,10" Width="550" Height="335" VerticalAlignment="Bottom">
-                        <Label x:Name="lab_AusgabeAußenGegenrad1" Content="Für das erste außenverzahnte Stirnrad:" Margin="0,25,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="25"/>
+                        <Label x:Name="lab_AusgabeAußenGegenrad1" Content="Erstes außenverzahntes Stirnrad:" Margin="0,10,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="25"/>
                         <Label x:Name="lab_Teilung_außenGegenrad1" Content="Teilung:" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" Height="25"/>
                         <Label x:Name="lab_Kopfspiel_außenGegenrad1" Content="Kopfspiel:" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Height="25"/>
                         <Label x:Name="lab_Kopfkreisdurchmesser_außenGegenrad1" Content="Kopfkreisdurchmesser:" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" Height="25"/>
@@ -117,7 +116,7 @@
                     </Grid>
                     <!--Grid Ausgabe Außen Gegenrad2-->
                     <Grid x:Name="grd_AusgabeAußenGegenrad2" HorizontalAlignment="Left" Margin="0,0,0,10" Width="550" Height="335" VerticalAlignment="Bottom">
-                        <Label x:Name="lab_AusgabeAußenGegenrad2" Content="Für das zweite außenverzahnte Stirnrad:" Margin="300,10,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="25"/>
+                        <Label x:Name="lab_AusgabeAußenGegenrad2" Content="Zweites außenverzahntes Stirnrad:" Margin="300,10,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="25"/>
                         <Label x:Name="lab_Teilung_außenGegenrad2" Content="Teilung:" HorizontalAlignment="Left" Margin="300,40,0,0" VerticalAlignment="Top" Height="25"/>
                         <Label x:Name="lab_Kopfspiel_außenGegenrad2" Content="Kopfspiel:" HorizontalAlignment="Left" Margin="300,70,0,0" VerticalAlignment="Top" Height="25"/>
                         <Label x:Name="lab_Kopfkreisdurchmesser_außenGegenrad2" Content="Kopfkreisdurchmesser:" HorizontalAlignment="Left" Margin="300,100,0,0" VerticalAlignment="Top" Height="25"/>
@@ -185,17 +184,16 @@
                         <TextBox x:Name="tbx_Breite_innenGegenrad2" HorizontalAlignment="Right" Height="23" Margin="0,0,0,30" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Width="120"/>
                         <Label x:Name="lab_innenEingabeGegenrad2" Content="Für das zweite, außenverzahnte Stirnrad:" Margin="300,0,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
                     </Grid>
-                    <Label x:Name="lab_innenEingabe" Content="Bitte geben Sie folgende Parameter [in mm] an:" HorizontalAlignment="Left" Margin="0,-7,0,0" VerticalAlignment="Top" Width="547" FontWeight="Bold"/>
+                    <Label x:Name="lab_innenEingabe" Content="Bitte geben Sie folgende Parameter [in mm] an." HorizontalAlignment="Left" Margin="0,-7,0,0" VerticalAlignment="Top" Width="547" FontWeight="Bold"/>
                 </Grid>
             </TabItem>
 
             <!--TabItem Ausgabe Innenverzahnung-->
             <TabItem x:Name="tbi_innenAusgabe" Header="Ausgabe">
                 <Grid Background="#FFE5E5E5">
-                    <Label x:Name="lab_ErgebnisseInnen" Content="Ergebnisse für innenverzahnte Stirnräder:" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
                     <!--Grid Ausgabe Innen Einzel-->
-                    <Grid x:Name="grd_AusgabeInnenEinzel" HorizontalAlignment="Left" Margin="0,0,0,10" Width="550" Height="315" VerticalAlignment="Bottom">
-                        <Label x:Name="lab_AusgabeInnenEinzel" Content="Für ein einzelnes innenverzahntes Stirnrad:" Margin="0,10,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="25"/>
+                    <Grid x:Name="grd_AusgabeInnenEinzel" HorizontalAlignment="Left" Margin="0,0,0,10" Width="550" Height="335" VerticalAlignment="Bottom">
+                        <Label x:Name="lab_AusgabeInnenEinzel" Content="Einzelnes innenverzahntes Stirnrad:" Margin="0,10,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="25"/>
                         <Label x:Name="lab_Teilung_innenEinzel" Content="Teilung:" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" Height="25"/>
                         <Label x:Name="lab_Kopfspiel_innenEinzel" Content="Kopfspiel:" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Height="25"/>
                         <Label x:Name="lab_Kopfkreisdurchmesser_innenEinzel" Content="Kopfkreisdurchmesser:" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" Height="25"/>
@@ -218,7 +216,7 @@
                     </Grid>
                     <!--Grid Ausgabe Innen Gegenrad1-->
                     <Grid x:Name="grd_AusgabeInnenGegenrad1" HorizontalAlignment="Left" Margin="0,0,0,10" Width="550" Height="335" VerticalAlignment="Bottom">
-                        <Label x:Name="lab_AusgabeInnenGegenrad1" Content="Für das erste, innenverzahnte Stirnrad:" Margin="0,25,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="25"/>
+                        <Label x:Name="lab_AusgabeInnenGegenrad1" Content="Erstes, innenverzahntes Stirnrad:" Margin="0,10,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="25"/>
                         <Label x:Name="lab_Teilung_innenGegenrad1" Content="Teilung:" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" Height="25"/>
                         <Label x:Name="lab_Kopfspiel_innenGegenrad1" Content="Kopfspiel:" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Height="25"/>
                         <Label x:Name="lab_Kopfkreisdurchmesser_innenGegenrad1" Content="Kopfkreisdurchmesser:" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" Height="25"/>
@@ -241,7 +239,7 @@
                     </Grid>
                     <!--Grid Ausgabe Innen Gegenrad2-->
                     <Grid x:Name="grd_AusgabeInnenGegenrad2" HorizontalAlignment="Left" Margin="0,0,0,10" Width="550" Height="335" VerticalAlignment="Bottom">
-                        <Label x:Name="lab_AusgabeInnenGegenrad2" Content="Für das zweite, außenverzahnte Stirnrad:" Margin="300,10,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="25"/>
+                        <Label x:Name="lab_AusgabeInnenGegenrad2" Content="Zweites, außenverzahntes Stirnrad:" Margin="300,10,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="25"/>
                         <Label x:Name="lab_Teilung_innenGegenrad2" Content="Teilung:" HorizontalAlignment="Left" Margin="300,40,0,0" VerticalAlignment="Top" Height="25"/>
                         <Label x:Name="lab_Kopfspiel_innenGegenrad2" Content="Kopfspiel:" HorizontalAlignment="Left" Margin="300,70,0,0" VerticalAlignment="Top" Height="25"/>
                         <Label x:Name="lab_Kopfkreisdurchmesser_innenGegenrad2" Content="Kopfkreisdurchmesser:" HorizontalAlignment="Left" Margin="300,100,0,0" VerticalAlignment="Top" Height="25"/>
@@ -267,10 +265,10 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        <Button x:Name="btn_Exit" Content="Exit" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="75" FontWeight="Bold" Click="btn_Exit_Click" Cursor="Hand"/>
-        <Button x:Name="btn_Berechne_außenEinzel" Content="Berechne" HorizontalAlignment="Right" Margin="0,0,90,10" VerticalAlignment="Bottom" Width="75" FontWeight="Bold" Click="btn_Berechne_außenEinzel_Click_1" Cursor="Hand"/>
-        <Button x:Name="btn_Berechne_außenGegenrad" Content="Berechne" HorizontalAlignment="Right" Margin="0,0,90,10" VerticalAlignment="Bottom" Width="75" FontWeight="Bold" Click="btn_Berechne_außenGegenrad_Click_1" Cursor="Hand"/>
-        <Button x:Name="btn_Berechne_innenEinzel" Content="Berechne" HorizontalAlignment="Right" Margin="0,0,90,10" VerticalAlignment="Bottom" Width="75" FontWeight="Bold" Click="btn_Berechne_innenEinzel_Click_1" Cursor="Hand"/>
-        <Button x:Name="btn_Berechne_innenGegenrad" Content="Berechne" HorizontalAlignment="Right" Margin="0,0,90,10" VerticalAlignment="Bottom" Width="75" FontWeight="Bold" Click="btn_Berechne_innenGegenrad_Click_1" Cursor="Hand"/>
+        <Button x:Name="btn_Exit" Content="Exit" HorizontalAlignment="Right" Margin="0,0,10,30" VerticalAlignment="Bottom" Width="110" FontWeight="Bold" Click="btn_Exit_Click" Cursor="Hand" Background="#FFB1B4B2"/>
+        <Button x:Name="btn_Berechne_außenEinzel" Content="Berechne" HorizontalAlignment="Right" Margin="0,0,125,30" VerticalAlignment="Bottom" Width="110" FontWeight="Bold" Click="btn_Berechne_außenEinzel_Click_1" Cursor="Hand" Background="#FFAFB9FB"/>
+        <Button x:Name="btn_Berechne_außenGegenrad" Content="Berechne" HorizontalAlignment="Right" Margin="0,0,125,30" VerticalAlignment="Bottom" Width="110" FontWeight="Bold" Click="btn_Berechne_außenGegenrad_Click_1" Cursor="Hand" Background="#FFAFB9FB"/>
+        <Button x:Name="btn_Berechne_innenEinzel" Content="Berechne" HorizontalAlignment="Right" Margin="0,0,125,30" VerticalAlignment="Bottom" Width="110" FontWeight="Bold" Click="btn_Berechne_innenEinzel_Click_1" Cursor="Hand" Background="#FFAFB9FB"/>
+        <Button x:Name="btn_Berechne_innenGegenrad" Content="Berechne" HorizontalAlignment="Right" Margin="0,0,125,30" VerticalAlignment="Bottom" Width="110" FontWeight="Bold" Click="btn_Berechne_innenGegenrad_Click_1" Cursor="Hand" Background="#FFAFB9FB"/>
     </Grid>
 </Window>
