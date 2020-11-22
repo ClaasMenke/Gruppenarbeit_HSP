@@ -8,7 +8,7 @@
         Title="Zahnradberechnungen" Height="525.25" Width="920.75" Icon="gear_icon.ico" ResizeMode="NoResize">
     <Grid Margin="0,0,0,0">
         <!--Treeview: Auswahl welche Art Zahnrad berechnet werden soll-->
-        <TreeView Name="trv_Auswahl" Margin="10,10,622,82">
+        <TreeView Name="trv_Auswahl" Margin="10,10,622,75">
             <TreeViewItem Header="Außenverzahnte Stirnräder" x:Name="tvi_außen" FontSize="16">
                 <TreeViewItem Header="Zahnrad einzeln" x:Name="tvi_außen1" Selected="tvi_außen1_Selected"/>
                 <TreeViewItem Header="Mit außenliegendem Gegenrad" x:Name="tvi_außen2" Selected="tvi_außen2_Selected"/>
@@ -20,7 +20,7 @@
         </TreeView>
 
         <!--TabControl für außenverzahnte Stirnräder-->
-        <TabControl x:Name="tbc_außen" Margin="0,0,10,82" HorizontalAlignment="Right" Width="566" Height="363" VerticalAlignment="Bottom">
+        <TabControl x:Name="tbc_außen" Margin="0,0,10,75" HorizontalAlignment="Right" Width="566" Height="363" VerticalAlignment="Bottom">
             <!--TabItem für die EingabeParameter-->
             <TabItem x:Name="tbi_außenEingabe" Header="Eingabe">
                 <Grid x:Name="grd_TabControlAußenEingabe" Background="#FFE5E5E5" Margin="0,0,0,0">
@@ -37,7 +37,7 @@
                         <Label x:Name="lab_außenEingabeEinzel" Content="Für ein einzelnes außenverzahntes Stirnrad:" Margin="0,0,0,0" Height="26" VerticalAlignment="Top" FontWeight="Bold"/>
                     </Grid>
                     <Label x:Name="lab_außenEingabe" Content="Bitte geben Sie folgende Parameter [in mm] an." HorizontalAlignment="Left" Margin="0,-7,0,0" VerticalAlignment="Top" Width="280" FontWeight="Bold"/>
-                    
+
                     <!--Grid für die EingabeParameter für Stirnräder mit außenverzahntem Gegenrad... Zahnrad1-->
                     <Grid x:Name="grd_EingabeAußenGegenrad1" HorizontalAlignment="Left" Height="315" Margin="0,0,0,10" VerticalAlignment="Bottom" Width="550">
                         <Label x:Name="lab_Modul_außenGegenrad1" Content="Modul:" HorizontalAlignment="Left" Margin="10,0,0,240" VerticalAlignment="Bottom"/>
@@ -144,7 +144,7 @@
 
             <!--TabControl für Innenverzahnung-->
         </TabControl>
-        <TabControl x:Name="tbc_innen" HorizontalAlignment="Right" Height="363" Margin="0,0,10,82" VerticalAlignment="Bottom" Width="566">
+        <TabControl x:Name="tbc_innen" HorizontalAlignment="Right" Height="363" Margin="0,0,10,75" VerticalAlignment="Bottom" Width="566">
             <!--TabItem Innen Eingabe -->
             <TabItem x:Name="tbi_innenEingabe" Header="Eingabe">
                 <Grid x:Name="grd_TabControlInnenEingabe" Background="#FFE5E5E5" Margin="0,0,0,0">
@@ -265,10 +265,11 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        <Button x:Name="btn_Exit" Content="Exit" HorizontalAlignment="Right" Margin="0,0,10,30" VerticalAlignment="Bottom" Width="110" FontWeight="Bold" Click="btn_Exit_Click" Cursor="Hand" Background="#FFB1B4B2"/>
-        <Button x:Name="btn_Berechne_außenEinzel" Content="Berechne" HorizontalAlignment="Right" Margin="0,0,125,30" VerticalAlignment="Bottom" Width="110" FontWeight="Bold" Click="btn_Berechne_außenEinzel_Click_1" Cursor="Hand" Background="#FFAFB9FB"/>
-        <Button x:Name="btn_Berechne_außenGegenrad" Content="Berechne" HorizontalAlignment="Right" Margin="0,0,125,30" VerticalAlignment="Bottom" Width="110" FontWeight="Bold" Click="btn_Berechne_außenGegenrad_Click_1" Cursor="Hand" Background="#FFAFB9FB"/>
-        <Button x:Name="btn_Berechne_innenEinzel" Content="Berechne" HorizontalAlignment="Right" Margin="0,0,125,30" VerticalAlignment="Bottom" Width="110" FontWeight="Bold" Click="btn_Berechne_innenEinzel_Click_1" Cursor="Hand" Background="#FFAFB9FB"/>
-        <Button x:Name="btn_Berechne_innenGegenrad" Content="Berechne" HorizontalAlignment="Right" Margin="0,0,125,30" VerticalAlignment="Bottom" Width="110" FontWeight="Bold" Click="btn_Berechne_innenGegenrad_Click_1" Cursor="Hand" Background="#FFAFB9FB"/>
+        <Button x:Name="btn_Exit" Content="Exit" HorizontalAlignment="Right" Margin="0,0,10,27.5" VerticalAlignment="Bottom" Width="110" FontWeight="Bold" Click="btn_Exit_Click" Cursor="Hand"/>
+        <Button x:Name="btn_Berechne_außenEinzel" Content="Berechne" HorizontalAlignment="Right" Margin="0,0,125,27.5" VerticalAlignment="Bottom" Width="110" FontWeight="Bold" Click="btn_Berechne_außenEinzel_Click_1" Cursor="Hand"/>
+        <Button x:Name="btn_Berechne_außenGegenrad" Content="Berechne" HorizontalAlignment="Right" Margin="0,0,125,27.5" VerticalAlignment="Bottom" Width="110" FontWeight="Bold" Click="btn_Berechne_außenGegenrad_Click_1" Cursor="Hand"/>
+        <Button x:Name="btn_Berechne_innenEinzel" Content="Berechne" HorizontalAlignment="Right" Margin="0,0,125,27.5" VerticalAlignment="Bottom" Width="110" FontWeight="Bold" Click="btn_Berechne_innenEinzel_Click_1" Cursor="Hand"/>
+        <Button x:Name="btn_Berechne_innenGegenrad" Content="Berechne" HorizontalAlignment="Right" Margin="0,0,125,27.5" VerticalAlignment="Bottom" Width="110" FontWeight="Bold" Click="btn_Berechne_innenGegenrad_Click_1" Cursor="Hand"/>
+        <Image x:Name="img_LogoJadehs" HorizontalAlignment="Right" Height="77" Margin="0,0,10,0" VerticalAlignment="Top" Width="145" Source="jadehs-logo.png"/>
     </Grid>
 </Window>

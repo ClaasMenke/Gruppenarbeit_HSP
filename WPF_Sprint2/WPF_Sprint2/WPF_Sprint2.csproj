@@ -98,5 +98,8 @@
   <ItemGroup>
     <Resource Include="gear_icon.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="jadehs-logo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
