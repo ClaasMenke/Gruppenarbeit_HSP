@@ -5,11 +5,6 @@ VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gruppenarbeit_HSP_neu", "Gruppenarbeit_HSP_neu\Gruppenarbeit_HSP_neu.csproj", "{CD067AEB-EE74-435B-AE5D-6B5B7AD5B23E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{872567A5-1B49-4FFF-8D2D-64ED2687486D}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\..\..\Desktop\gear.PNG = ..\..\..\..\Desktop\gear.PNG
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
