@@ -122,7 +122,7 @@ namespace WPF_Sprint2
             tbx_Teilkreisdurchmesser_Zahnrad1.Clear();
             tbx_Teilkreisdurchmesser_Zahnrad1.Background = Brushes.White;
             tbx_Breite_Zahnrad1.Clear();
-            tbx_Breite_Zahnrad1.Backgrund = Brushes.White;
+            tbx_Breite_Zahnrad1.Background = Brushes.White;
 
             lab_Teilung_Zahnrad1Ergebnis.Content = "";
             lab_Kopfspiel_Zahnrad1Ergebnis.Content = "";
@@ -155,7 +155,7 @@ namespace WPF_Sprint2
             tbx_Teilkreisdurchmesser_Zahnrad1.Clear();
             tbx_Teilkreisdurchmesser_Zahnrad1.Background = Brushes.White;
             tbx_Breite_Zahnrad1.Clear();
-            tbx_Breite_Zahnrad1.Backgrund = Brushes.White;
+            tbx_Breite_Zahnrad1.Background = Brushes.White;
             tbx_Modul_Zahnrad2.Clear();
             tbx_Modul_Zahnrad2.Background = Brushes.White;
             tbx_Zaehnezahl_Zahnrad2.Clear();
@@ -412,57 +412,113 @@ namespace WPF_Sprint2
 
         private void tbx_Zaehnezahl_Zahnrad1_LostFocus(object sender, RoutedEventArgs e)
         {
-            if (Convert.ToInt32(tbx_Zaehnezahl_Zahnrad1.Text) <= 0)
+            TextBox tb = (TextBox)sender;
+            Double res;
+
+            if (Double.TryParse(tb.Text, out res))
+            {
+                tb.Background = Brushes.LightGreen;
+            }
+            else
             {
                 MessageBox.Show("Fehler!\nBitte geben Sie einen gültigen Wert (größer als 0) ein.");
+                tb.Background = Brushes.OrangeRed;
             }
         }
 
         private void tbx_Teilkreisdurchmesser_Zahnrad1_LostFocus(object sender, RoutedEventArgs e)
         {
-            if (Convert.ToDouble(tbx_Teilkreisdurchmesser_Zahnrad1.Text) <= 0)
+            TextBox tb = (TextBox)sender;
+            Double res;
+
+            if (Double.TryParse(tb.Text, out res))
+            {
+                tb.Background = Brushes.LightGreen;
+            }
+            else
             {
                 MessageBox.Show("Fehler!\nBitte geben Sie einen gültigen Wert (größer als 0) ein.");
+                tb.Background = Brushes.OrangeRed;
             }
         }
 
         private void tbx_Breite_Zahnrad1_LostFocus(object sender, RoutedEventArgs e)
         {
-            if (Convert.ToDouble(tbx_Breite_Zahnrad1.Text) <= 0)
+            TextBox tb = (TextBox)sender;
+            Double res;
+
+            if (Double.TryParse(tb.Text, out res))
+            {
+                tb.Background = Brushes.LightGreen;
+            }
+            else
             {
                 MessageBox.Show("Fehler!\nBitte geben Sie einen gültigen Wert (größer als 0) ein.");
+                tb.Background = Brushes.OrangeRed;
             }
         }
 
         private void tbx_Modul_Zahnrad2_LostFocus(object sender, RoutedEventArgs e)
         {
-            if (Convert.ToDouble(tbx_Modul_Zahnrad2.Text) <= 0)
+            TextBox tb = (TextBox)sender;
+            Double res;
+
+            if (Double.TryParse(tb.Text, out res))
+            {
+                tb.Background = Brushes.LightGreen;
+            }
+            else
             {
                 MessageBox.Show("Fehler!\nBitte geben Sie einen gültigen Wert (größer als 0) ein.");
+                tb.Background = Brushes.OrangeRed;
             }
         }
 
         private void tbx_Zaehnezahl_Zahnrad2_LostFocus(object sender, RoutedEventArgs e)
         {
-            if (Convert.ToInt32(tbx_Zaehnezahl_Zahnrad2.Text) <= 0)
+            TextBox tb = (TextBox)sender;
+            Double res;
+
+            if (Double.TryParse(tb.Text, out res))
+            {
+                tb.Background = Brushes.LightGreen;
+            }
+            else
             {
                 MessageBox.Show("Fehler!\nBitte geben Sie einen gültigen Wert (größer als 0) ein.");
+                tb.Background = Brushes.OrangeRed;
             }
         }
 
         private void tbx_Teilkreisdurchmesser_Zahnrad2_LostFocus(object sender, RoutedEventArgs e)
         {
-            if (Convert.ToDouble(tbx_Teilkreisdurchmesser_Zahnrad2.Text) <= 0)
+            TextBox tb = (TextBox)sender;
+            Double res;
+
+            if (Double.TryParse(tb.Text, out res))
+            {
+                tb.Background = Brushes.LightGreen;
+            }
+            else
             {
                 MessageBox.Show("Fehler!\nBitte geben Sie einen gültigen Wert (größer als 0) ein.");
+                tb.Background = Brushes.OrangeRed;
             }
         }
 
         private void tbx_Breite_Zahnrad2_LostFocus(object sender, RoutedEventArgs e)
         {
-            if (Convert.ToDouble(tbx_Breite_Zahnrad2.Text) <= 0)
+            TextBox tb = (TextBox)sender;
+            Double res;
+
+            if (Double.TryParse(tb.Text, out res))
+            {
+                tb.Background = Brushes.LightGreen;
+            }
+            else
             {
                 MessageBox.Show("Fehler!\nBitte geben Sie einen gültigen Wert (größer als 0) ein.");
+                tb.Background = Brushes.OrangeRed;
             }
         }
     }
