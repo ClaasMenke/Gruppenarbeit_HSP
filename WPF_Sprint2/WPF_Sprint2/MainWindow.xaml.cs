@@ -403,7 +403,7 @@ namespace WPF_Sprint2
             TextBox tb = (TextBox)sender;
             Double res;
 
-            if (Double.TryParse(tb.Text, out res))
+            if (Double.TryParse(tb.Text, out res) && res > 0)
             {
                 tb.Background = Brushes.LightGreen;
             }
@@ -419,7 +419,7 @@ namespace WPF_Sprint2
             TextBox tb = (TextBox)sender;
             Double res;
 
-            if (Double.TryParse(tb.Text, out res))
+            if (Double.TryParse(tb.Text, out res) && res > 0)
             {
                 tb.Background = Brushes.LightGreen;
             }
@@ -435,7 +435,7 @@ namespace WPF_Sprint2
             TextBox tb = (TextBox)sender;
             Double res;
 
-            if (Double.TryParse(tb.Text, out res))
+            if (Double.TryParse(tb.Text, out res) && res > 0)
             {
                 tb.Background = Brushes.LightGreen;
             }
@@ -451,7 +451,7 @@ namespace WPF_Sprint2
             TextBox tb = (TextBox)sender;
             Double res;
 
-            if (Double.TryParse(tb.Text, out res))
+            if (Double.TryParse(tb.Text, out res) && res > 0)
             {
                 tb.Background = Brushes.LightGreen;
             }
@@ -467,7 +467,7 @@ namespace WPF_Sprint2
             TextBox tb = (TextBox)sender;
             Double res;
 
-            if (Double.TryParse(tb.Text, out res))
+            if (Double.TryParse(tb.Text, out res) && res > 0)
             {
                 tb.Background = Brushes.LightGreen;
             }
@@ -483,7 +483,7 @@ namespace WPF_Sprint2
             TextBox tb = (TextBox)sender;
             Double res;
 
-            if (Double.TryParse(tb.Text, out res))
+            if (Double.TryParse(tb.Text, out res) && res > 0)
             {
                 tb.Background = Brushes.LightGreen;
             }
@@ -499,7 +499,7 @@ namespace WPF_Sprint2
             TextBox tb = (TextBox)sender;
             Double res;
 
-            if (Double.TryParse(tb.Text, out res))
+            if (Double.TryParse(tb.Text, out res) && res > 0)
             {
                 tb.Background = Brushes.LightGreen;
             }
@@ -515,7 +515,7 @@ namespace WPF_Sprint2
             TextBox tb = (TextBox)sender;
             Double res;
 
-            if (Double.TryParse(tb.Text, out res))
+            if (Double.TryParse(tb.Text, out res) && res > 0)
             {
                 tb.Background = Brushes.LightGreen;
             }
