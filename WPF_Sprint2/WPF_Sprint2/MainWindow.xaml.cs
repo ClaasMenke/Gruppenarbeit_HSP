@@ -36,7 +36,9 @@ namespace WPF_Sprint2
             tbx_Zaehnezahl_Zahnrad1.Clear();
             tbx_Zaehnezahl_Zahnrad1.Background = Brushes.White;
             tbx_Teilkreisdurchmesser_Zahnrad1.Clear();
+            tbx_Teilkreisdurchmesser_Zahnrad1.Background = Brushes.White;
             tbx_Breite_Zahnrad1.Clear();
+            tbx_Breite_Zahnrad1.Background = Brushes.White;
 
             lab_Teilung_Zahnrad1Ergebnis.Content = "";
             lab_Kopfspiel_Zahnrad1Ergebnis.Content = "";
@@ -63,9 +65,13 @@ namespace WPF_Sprint2
             modus = "außen2";
 
             tbx_Modul_Zahnrad1.Clear();
+            tbx_Modul_Zahnrad1.Background = Brushes.White;
             tbx_Zaehnezahl_Zahnrad1.Clear();
+            tbx_Zaehnezahl_Zahnrad1.Background = Brushes.White;
             tbx_Teilkreisdurchmesser_Zahnrad1.Clear();
+            tbx_Teilkreisdurchmesser_Zahnrad1.Background = Brushes.White;
             tbx_Breite_Zahnrad1.Clear();
+            tbx_Breite_Zahnrad1.Background = Brushes.White;
 
             tbx_Modul_Zahnrad2.Clear();
             tbx_Zaehnezahl_Zahnrad2.Clear();
@@ -110,9 +116,13 @@ namespace WPF_Sprint2
             modus = "innen1";
 
             tbx_Modul_Zahnrad1.Clear();
+            tbx_Modul_Zahnrad1.Background = Brushes.White;
             tbx_Zaehnezahl_Zahnrad1.Clear();
+            tbx_Zaehnezahl_Zahnrad1.Background = Brushes.White;
             tbx_Teilkreisdurchmesser_Zahnrad1.Clear();
+            tbx_Teilkreisdurchmesser_Zahnrad1.Background = Brushes.White;
             tbx_Breite_Zahnrad1.Clear();
+            tbx_Breite_Zahnrad1.Backgrund = Brushes.White;
 
             lab_Teilung_Zahnrad1Ergebnis.Content = "";
             lab_Kopfspiel_Zahnrad1Ergebnis.Content = "";
@@ -139,13 +149,21 @@ namespace WPF_Sprint2
             modus = "innen2";
 
             tbx_Modul_Zahnrad1.Clear();
+            tbx_Modul_Zahnrad1.Background = Brushes.White;
             tbx_Zaehnezahl_Zahnrad1.Clear();
+            tbx_Zaehnezahl_Zahnrad1.Background = Brushes.White;
             tbx_Teilkreisdurchmesser_Zahnrad1.Clear();
+            tbx_Teilkreisdurchmesser_Zahnrad1.Background = Brushes.White;
             tbx_Breite_Zahnrad1.Clear();
+            tbx_Breite_Zahnrad1.Backgrund = Brushes.White;
             tbx_Modul_Zahnrad2.Clear();
+            tbx_Modul_Zahnrad2.Background = Brushes.White;
             tbx_Zaehnezahl_Zahnrad2.Clear();
+            tbx_Zaehnezahl_Zahnrad2.Background = Brushes.White;
             tbx_Teilkreisdurchmesser_Zahnrad2.Clear();
+            tbx_Teilkreisdurchmesser_Zahnrad2.Background = Brushes.White;
             tbx_Breite_Zahnrad2.Clear();
+            tbx_Breite_Zahnrad2.Background = Brushes.White;
 
             lab_Teilung_Zahnrad1Ergebnis.Content = "";
             lab_Kopfspiel_Zahnrad1Ergebnis.Content = "";
