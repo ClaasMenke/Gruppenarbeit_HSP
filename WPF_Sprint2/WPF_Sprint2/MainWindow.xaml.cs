@@ -420,12 +420,16 @@ namespace WPF_Sprint2
         {
             preis = 2.7;
             dichte = 8.96 * Math.Pow(10, -6);
+            Wk_zahnrad_messig.Background = Brushes.LightBlue;
+            Wk_zhanrad_stahl.Background = Brushes.White;
         }
 
         private void Wk_zhanrad_stahl_Selected(object sender, RoutedEventArgs e)
         {
             preis = 1.1;
             dichte = 7.85 * Math.Pow(10, -6);
+            Wk_zhanrad_stahl.Background = Brushes.LightBlue;
+            Wk_zahnrad_messig.Background = Brushes.White;
         }
     }
 }

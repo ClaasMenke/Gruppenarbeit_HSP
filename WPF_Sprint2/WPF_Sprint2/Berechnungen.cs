@@ -108,6 +108,7 @@ namespace WPF_Sprint2
         {
             double geld = preis * masse;
             return Math.Round(geld, 2);
+            
         }
 
     }
