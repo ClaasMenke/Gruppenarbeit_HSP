@@ -99,5 +99,16 @@ namespace WPF_Sprint2
             double ai = (d2 - d1) / 2;
             return Math.Round(ai, 2);
         }
+        public double Masse(double dichte, double V)
+        {
+            double masse = dichte * V;
+            return Math.Round(masse, 2);
+        }
+        public double Geld(double preis, double masse)
+        {
+            double geld = preis * masse;
+            return Math.Round(geld, 2);
+        }
+
     }
 }

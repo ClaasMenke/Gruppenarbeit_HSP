@@ -22,7 +22,8 @@ namespace WPF_Sprint2
     {
         Berechnungen brg = new Berechnungen();
         string modus = null;
-
+        double preis = 0;
+        double dichte = 0;
         //Methode zum leeren der TextBoxen und Ergebnislabel & Sichtbarkeit des TabControl
         private void ClearLabelUndTextbox()
         {
@@ -395,6 +396,18 @@ namespace WPF_Sprint2
                 MessageBox.Show("Fehler!\nBitte geben Sie einen gültigen Wert (größer als 0) ein.");
                 tb.Background = Brushes.OrangeRed;
             }
+
+        }
+        private void Wk_zahnrad_messig_Selected(object sender, RoutedEventArgs e)
+        {
+            preis = 2.7;
+            dichte = 8.96 * Math.Pow(10, -6);
+        }
+
+        private void Wk_zhanrad_stahl_Selected(object sender, RoutedEventArgs e)
+        {
+            preis = 1.1;
+            dichte = 7.85 * Math.Pow(10, -6);
         }
     }
 }

@@ -9,6 +9,10 @@
     <Grid Margin="0,0,0,0">
         <!--Treeview: Auswahl welche Art Zahnrad berechnet werden soll-->
         <TreeView Name="trv_Auswahl" Margin="10,10,622,75">
+            <TreeViewItem Header="werkstoff"  FontSize="16"  >
+                <TreeViewItem x:Name="Wk_zahnrad_messig" Header="messig" HorizontalAlignment="Left" Selected="Wk_zahnrad_messig_Selected"  />
+                <TreeViewItem x:Name="Wk_zhanrad_stahl" Header="stahl" HorizontalAlignment="Left" Selected="Wk_zhanrad_stahl_Selected"  />
+            </TreeViewItem>
             <TreeViewItem Header="Außenverzahnte Stirnräder" x:Name="tvi_außen" FontSize="16">
                 <TreeViewItem Header="Zahnrad einzeln" x:Name="tvi_außen1" Selected="tvi_außen1_Selected"/>
                 <TreeViewItem Header="Mit außenliegendem Gegenrad" x:Name="tvi_außen2" Selected="tvi_außen2_Selected"/>
@@ -70,6 +74,9 @@
                         <Label x:Name="lab_Zahnfußhoehe_Zahnrad1" Content="Zahnfußhöhe:" HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top" Height="25" Grid.ColumnSpan="2"/>
                         <Label x:Name="lab_Zahnhoehe_Zahnrad1" Content="Zahnhöhe:" HorizontalAlignment="Left" Margin="10,250,0,0" VerticalAlignment="Top" Height="25" Grid.ColumnSpan="2"/>
                         <Label x:Name="lab_Volumen_Zahnrad1" Content="Volumen:" HorizontalAlignment="Left" Margin="10,280,0,0" Height="25" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+
+                        <Label Content="Masse" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18,282,0,0" Grid.ColumnSpan="2" Width="41"/>
+                        <Label Content="Preis" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,306,0,0" Grid.ColumnSpan="2" Width="47"/>
                         <!--Ergebnisse Zahnrad1-->
                         <Label x:Name="lab_Teilung_Zahnrad1Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,40,300,0" VerticalAlignment="Top" Height="25" Grid.Column="1"/>
                         <Label x:Name="lab_Kopfspiel_Zahnrad1Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,70,300,0" VerticalAlignment="Top" Height="25" Grid.Column="1"/>
@@ -80,6 +87,9 @@
                         <Label x:Name="lab_Zahnfußhoehe_Zahnrad1Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,220,300,0" VerticalAlignment="Top" Height="25" Grid.Column="1"/>
                         <Label x:Name="lab_Zahnhoehe_Zahnrad1Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,250,300,0" VerticalAlignment="Top" Height="25" Grid.Column="1"/>
                         <Label x:Name="lab_Volumen_Zahnrad1Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,280,300,0" Height="25" VerticalAlignment="Top" Grid.Column="1"/>
+
+                        <Label x:Name="lab_Masse_ergebnis" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="178,276,0,0" />
+                        <Label x:Name="lab_preis_ergebnis" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="172,306,0,0"/>
                     </Grid>
                     <!--Grid Ausgabe Zahnrad2-->
                     <Grid x:Name="grd_AusgabeZahnrad2" HorizontalAlignment="Left" Margin="0,0,0,10" Width="550" Height="335" VerticalAlignment="Bottom">
@@ -93,6 +103,10 @@
                         <Label x:Name="lab_Zahnfußhoehe_Zahnrad2" Content="Zahnfußhöhe:" HorizontalAlignment="Left" Margin="300,220,0,0" VerticalAlignment="Top" Height="25"/>
                         <Label x:Name="lab_Zahnhoehe_Zahnrad2" Content="Zahnhöhe:" HorizontalAlignment="Left" Margin="300,250,0,0" VerticalAlignment="Top" Height="25"/>
                         <Label x:Name="lab_Volumen_Zahnrad2" Content="Volumen:" HorizontalAlignment="Left" Margin="300,280,0,0" Height="25" VerticalAlignment="Top"/>
+
+                        <Label Content="Masse" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="300,286,0,0"/>
+                        <Label Content="Preis" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="307,308,0,0"/>
+                        
                         <Label x:Name="lab_Achsabstand" Content="Achsabstand:" HorizontalAlignment="Left" Margin="300,310,0,0" VerticalAlignment="Top" Height="25"/>
                         <!--Ergebnisse Zahnrad2-->
                         <Label x:Name="lab_Teilung_Zahnrad2Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,40,10,0" VerticalAlignment="Top" Height="25"/>
@@ -104,6 +118,10 @@
                         <Label x:Name="lab_Zahnfußhoehe_Zahnrad2Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,220,10,0" VerticalAlignment="Top" Height="25"/>
                         <Label x:Name="lab_Zahnhoehe_Zahnrad2Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,250,10,0" VerticalAlignment="Top" Height="25"/>
                         <Label x:Name="lab_Volumen_Zahnrad2Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,280,10,0" Height="25" VerticalAlignment="Top"/>
+
+                        <Label x:Name="lab_masse_ergebnis2" Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="399,285,0,0"/>
+                        <Label x:Name="label_preis2_ergebnise" Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="402,311,0,-1"/>
+
                         <Label x:Name="lab_AchsabstandErgebnis" Content="" HorizontalAlignment="Right" Margin="0,310,10,0" VerticalAlignment="Bottom" Height="25"/>
                     </Grid>
                 </Grid>
