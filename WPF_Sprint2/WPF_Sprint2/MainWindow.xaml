@@ -51,31 +51,35 @@
                     </Grid>
                 </Grid>
             </TabItem>
-            <!--TabItem für die Ausgabe bei außenverzahnten Stirnrädern-->
+            <!--TabItem für die Ausgabe der Ergebnisse-->
             <TabItem x:Name="tbi_Ausgabe" Header="Ausgabe">
                 <Grid x:Name="grd_TabControlAusgabe" Background="#FFE5E5E5">
                     <!--Grid Ausgabe Zahnrad1-->
                     <Grid x:Name="grd_AusgabeZahnrad1" HorizontalAlignment="Left" Margin="0,0,0,10" Width="550" Height="335" VerticalAlignment="Bottom">
-                        <Label x:Name="lab_AusgabeZahnrad1" Content="" Margin="0,10,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="25"/>
-                        <Label x:Name="lab_Teilung_Zahnrad1" Content="Teilung:" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" Height="25"/>
-                        <Label x:Name="lab_Kopfspiel_Zahnrad1" Content="Kopfspiel:" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Height="25"/>
-                        <Label x:Name="lab_Kopfkreisdurchmesser_Zahnrad1" Content="Kopfkreisdurchmesser:" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" Height="25"/>
-                        <Label x:Name="lab_Fußkreisdurchmesser_Zahnrad1" Content="Fußkreisdurchmesser:" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top" Height="25"/>
-                        <Label x:Name="lab_Grundkreisdurchmesser_Zahnrad1" Content="Grundkreisdurchmesser:" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top" Height="25"/>
-                        <Label x:Name="lab_Zahnkopfhoehe_Zahnrad1" Content="Zahnkopfhöhe:" HorizontalAlignment="Left" Margin="10,190,0,0" VerticalAlignment="Top" Height="25"/>
-                        <Label x:Name="lab_Zahnfußhoehe_Zahnrad1" Content="Zahnfußhöhe:" HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top" Height="25"/>
-                        <Label x:Name="lab_Zahnhoehe_Zahnrad1" Content="Zahnhöhe:" HorizontalAlignment="Left" Margin="10,250,0,0" VerticalAlignment="Top" Height="25"/>
-                        <Label x:Name="lab_Volumen_Zahnrad1" Content="Volumen:" HorizontalAlignment="Left" Margin="10,280,0,0" Height="25" VerticalAlignment="Top"/>
-                        <!--Ergebnisse-->
-                        <Label x:Name="lab_Teilung_Zahnrad1Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,40,300,0" VerticalAlignment="Top" Height="25"/>
-                        <Label x:Name="lab_Kopfspiel_Zahnrad1Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,70,300,0" VerticalAlignment="Top" Height="25"/>
-                        <Label x:Name="lab_Kopfkreisdurchmesser_Zahnrad1Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,100,300,0" VerticalAlignment="Top" Height="25"/>
-                        <Label x:Name="lab_Fußkreisdurchmesser_Zahnrad1Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,130,300,0" VerticalAlignment="Top" Height="25"/>
-                        <Label x:Name="lab_Grundkreisdurchmesser_Zahnrad1Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,160,300,0" VerticalAlignment="Top" Height="25"/>
-                        <Label x:Name="lab_Zahnkopfhoehe_Zahnrad1Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,190,300,0" VerticalAlignment="Top" Height="25"/>
-                        <Label x:Name="lab_Zahnfußhoehe_Zahnrad1Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,220,300,0" VerticalAlignment="Top" Height="25"/>
-                        <Label x:Name="lab_Zahnhoehe_Zahnrad1Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,250,300,0" VerticalAlignment="Top" Height="25"/>
-                        <Label x:Name="lab_Volumen_Zahnrad1Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,280,300,0" Height="25" VerticalAlignment="Top"/>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="21*"/>
+                            <ColumnDefinition Width="529*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label x:Name="lab_AusgabeZahnrad1" Content="" Margin="0,10,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="25" Grid.ColumnSpan="2"/>
+                        <Label x:Name="lab_Teilung_Zahnrad1" Content="Teilung:" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" Height="25" Grid.ColumnSpan="2"/>
+                        <Label x:Name="lab_Kopfspiel_Zahnrad1" Content="Kopfspiel:" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Height="25" Grid.ColumnSpan="2"/>
+                        <Label x:Name="lab_Kopfkreisdurchmesser_Zahnrad1" Content="Kopfkreisdurchmesser:" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" Height="25" Grid.ColumnSpan="2"/>
+                        <Label x:Name="lab_Fußkreisdurchmesser_Zahnrad1" Content="Fußkreisdurchmesser:" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top" Height="25" Grid.ColumnSpan="2"/>
+                        <Label x:Name="lab_Grundkreisdurchmesser_Zahnrad1" Content="Grundkreisdurchmesser:" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top" Height="25" Grid.ColumnSpan="2"/>
+                        <Label x:Name="lab_Zahnkopfhoehe_Zahnrad1" Content="Zahnkopfhöhe:" HorizontalAlignment="Left" Margin="10,190,0,0" VerticalAlignment="Top" Height="25" Grid.ColumnSpan="2"/>
+                        <Label x:Name="lab_Zahnfußhoehe_Zahnrad1" Content="Zahnfußhöhe:" HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top" Height="25" Grid.ColumnSpan="2"/>
+                        <Label x:Name="lab_Zahnhoehe_Zahnrad1" Content="Zahnhöhe:" HorizontalAlignment="Left" Margin="10,250,0,0" VerticalAlignment="Top" Height="25" Grid.ColumnSpan="2"/>
+                        <Label x:Name="lab_Volumen_Zahnrad1" Content="Volumen:" HorizontalAlignment="Left" Margin="10,280,0,0" Height="25" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                        <!--Ergebnisse Zahnrad1-->
+                        <Label x:Name="lab_Teilung_Zahnrad1Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,40,300,0" VerticalAlignment="Top" Height="25" Grid.Column="1"/>
+                        <Label x:Name="lab_Kopfspiel_Zahnrad1Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,70,300,0" VerticalAlignment="Top" Height="25" Grid.Column="1"/>
+                        <Label x:Name="lab_Kopfkreisdurchmesser_Zahnrad1Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,100,300,0" VerticalAlignment="Top" Height="25" Grid.Column="1"/>
+                        <Label x:Name="lab_Fußkreisdurchmesser_Zahnrad1Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,130,300,0" VerticalAlignment="Top" Height="25" Grid.Column="1"/>
+                        <Label x:Name="lab_Grundkreisdurchmesser_Zahnrad1Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,160,300,0" VerticalAlignment="Top" Height="25" Grid.Column="1"/>
+                        <Label x:Name="lab_Zahnkopfhoehe_Zahnrad1Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,190,300,0" VerticalAlignment="Top" Height="25" Grid.Column="1"/>
+                        <Label x:Name="lab_Zahnfußhoehe_Zahnrad1Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,220,300,0" VerticalAlignment="Top" Height="25" Grid.Column="1"/>
+                        <Label x:Name="lab_Zahnhoehe_Zahnrad1Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,250,300,0" VerticalAlignment="Top" Height="25" Grid.Column="1"/>
+                        <Label x:Name="lab_Volumen_Zahnrad1Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,280,300,0" Height="25" VerticalAlignment="Top" Grid.Column="1"/>
                     </Grid>
                     <!--Grid Ausgabe Zahnrad2-->
                     <Grid x:Name="grd_AusgabeZahnrad2" HorizontalAlignment="Left" Margin="0,0,0,10" Width="550" Height="335" VerticalAlignment="Bottom">
@@ -90,7 +94,7 @@
                         <Label x:Name="lab_Zahnhoehe_Zahnrad2" Content="Zahnhöhe:" HorizontalAlignment="Left" Margin="300,250,0,0" VerticalAlignment="Top" Height="25"/>
                         <Label x:Name="lab_Volumen_Zahnrad2" Content="Volumen:" HorizontalAlignment="Left" Margin="300,280,0,0" Height="25" VerticalAlignment="Top"/>
                         <Label x:Name="lab_Achsabstand" Content="Achsabstand:" HorizontalAlignment="Left" Margin="300,310,0,0" VerticalAlignment="Top" Height="25"/>
-                        <!--Ergebnisse-->
+                        <!--Ergebnisse Zahnrad2-->
                         <Label x:Name="lab_Teilung_Zahnrad2Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,40,10,0" VerticalAlignment="Top" Height="25"/>
                         <Label x:Name="lab_Kopfspiel_Zahnrad2Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,70,10,0" VerticalAlignment="Top" Height="25"/>
                         <Label x:Name="lab_Kopfkreisdurchmesser_Zahnrad2Ergebnis" Content="" HorizontalAlignment="Right" Margin="0,100,10,0" VerticalAlignment="Top" Height="25"/>
@@ -105,8 +109,11 @@
                 </Grid>
             </TabItem>
         </TabControl>
+        <!--Exit Button-->
         <Button x:Name="btn_Exit" Content="Exit" HorizontalAlignment="Right" Margin="0,0,10,27.5" VerticalAlignment="Bottom" Width="110" FontWeight="Bold" Click="btn_Exit_Click" Cursor="Hand"/>
+        <!--Berechne Button-->
         <Button x:Name="btn_Berechne" Content="Berechne" HorizontalAlignment="Right" Margin="0,0,125,27.5" VerticalAlignment="Bottom" Width="110" FontWeight="Bold" Click="btn_Berechne_Click_1" Cursor="Hand"/>
-        <Image x:Name="img_LogoJadehs" HorizontalAlignment="Right" Height="77" Margin="0,0,10,0" VerticalAlignment="Top" Width="145" Source="jadehs-logo.png"/> 
+        <!--Logo JadeHS-->
+        <Image x:Name="img_LogoJadehs" HorizontalAlignment="Right" Height="77" Margin="0,0,10,0" VerticalAlignment="Top" Width="145" Source="jadehs-logo.png"/>
     </Grid>
 </Window>
