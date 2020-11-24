@@ -22,48 +22,9 @@ namespace WPF_Sprint2
     {
         Berechnungen brg = new Berechnungen();
         string modus = null;
-        public MainWindow()
+
+        private void ClearLabelUndTextbox()
         {
-            InitializeComponent();
-            tbc_allgemein.Visibility = Visibility.Hidden;
-        }
-        private void tvi_außen1_Selected(object sender, RoutedEventArgs e)
-        {
-            modus = "außen1";
-
-            tbx_Modul_Zahnrad1.Clear();
-            tbx_Modul_Zahnrad1.Background = Brushes.White;
-            tbx_Zaehnezahl_Zahnrad1.Clear();
-            tbx_Zaehnezahl_Zahnrad1.Background = Brushes.White;
-            tbx_Teilkreisdurchmesser_Zahnrad1.Clear();
-            tbx_Teilkreisdurchmesser_Zahnrad1.Background = Brushes.White;
-            tbx_Breite_Zahnrad1.Clear();
-            tbx_Breite_Zahnrad1.Background = Brushes.White;
-
-            lab_Teilung_Zahnrad1Ergebnis.Content = "";
-            lab_Kopfspiel_Zahnrad1Ergebnis.Content = "";
-            lab_Kopfkreisdurchmesser_Zahnrad1Ergebnis.Content = "";
-            lab_Fußkreisdurchmesser_Zahnrad1Ergebnis.Content = "";
-            lab_Grundkreisdurchmesser_Zahnrad1Ergebnis.Content = "";
-            lab_Zahnkopfhoehe_Zahnrad1Ergebnis.Content = "";
-            lab_Zahnfußhoehe_Zahnrad1Ergebnis.Content = "";
-            lab_Zahnhoehe_Zahnrad1Ergebnis.Content = "";
-            lab_Volumen_Zahnrad1Ergebnis.Content = "";
-
-            tbc_allgemein.Visibility = Visibility.Visible;
-            tbi_Eingabe.Focus();
-
-            grd_EingabeZahnrad2.Visibility = Visibility.Hidden;
-            grd_AusgabeZahnrad2.Visibility = Visibility.Hidden;
-
-            lab_EingabeZahnrad1.Content = "Für ein einzelnes außenverzahntes Stirnrad:";
-            lab_AusgabeZahnrad1.Content = "Einzelnes außenverzahntes Stirnrad:";
-        }
-
-        private void tvi_außen2_Selected(object sender, RoutedEventArgs e)
-        {
-            modus = "außen2";
-
             tbx_Modul_Zahnrad1.Clear();
             tbx_Modul_Zahnrad1.Background = Brushes.White;
             tbx_Zaehnezahl_Zahnrad1.Clear();
@@ -105,6 +66,31 @@ namespace WPF_Sprint2
 
             tbc_allgemein.Visibility = Visibility.Visible;
             tbi_Eingabe.Focus();
+        }
+
+        public MainWindow()
+        {
+            InitializeComponent();
+            tbc_allgemein.Visibility = Visibility.Hidden;
+        }
+        private void tvi_außen1_Selected(object sender, RoutedEventArgs e)
+        {
+            modus = "außen1";
+
+            ClearLabelUndTextbox();
+
+            grd_EingabeZahnrad2.Visibility = Visibility.Hidden;
+            grd_AusgabeZahnrad2.Visibility = Visibility.Hidden;
+
+            lab_EingabeZahnrad1.Content = "Für ein einzelnes außenverzahntes Stirnrad:";
+            lab_AusgabeZahnrad1.Content = "Einzelnes außenverzahntes Stirnrad:";
+        }
+
+        private void tvi_außen2_Selected(object sender, RoutedEventArgs e)
+        {
+            modus = "außen2";
+
+            ClearLabelUndTextbox();
 
             grd_EingabeZahnrad2.Visibility = Visibility.Visible;
             grd_AusgabeZahnrad2.Visibility = Visibility.Visible;
@@ -119,27 +105,7 @@ namespace WPF_Sprint2
         {
             modus = "innen1";
 
-            tbx_Modul_Zahnrad1.Clear();
-            tbx_Modul_Zahnrad1.Background = Brushes.White;
-            tbx_Zaehnezahl_Zahnrad1.Clear();
-            tbx_Zaehnezahl_Zahnrad1.Background = Brushes.White;
-            tbx_Teilkreisdurchmesser_Zahnrad1.Clear();
-            tbx_Teilkreisdurchmesser_Zahnrad1.Background = Brushes.White;
-            tbx_Breite_Zahnrad1.Clear();
-            tbx_Breite_Zahnrad1.Background = Brushes.White;
-
-            lab_Teilung_Zahnrad1Ergebnis.Content = "";
-            lab_Kopfspiel_Zahnrad1Ergebnis.Content = "";
-            lab_Kopfkreisdurchmesser_Zahnrad1Ergebnis.Content = "";
-            lab_Fußkreisdurchmesser_Zahnrad1Ergebnis.Content = "";
-            lab_Grundkreisdurchmesser_Zahnrad1Ergebnis.Content = "";
-            lab_Zahnkopfhoehe_Zahnrad1Ergebnis.Content = "";
-            lab_Zahnfußhoehe_Zahnrad1Ergebnis.Content = "";
-            lab_Zahnhoehe_Zahnrad1Ergebnis.Content = "";
-            lab_Volumen_Zahnrad1Ergebnis.Content = "";
-
-            tbc_allgemein.Visibility = Visibility.Visible;
-            tbi_Eingabe.Focus();
+            ClearLabelUndTextbox();
 
             grd_EingabeZahnrad2.Visibility = Visibility.Hidden;
             grd_AusgabeZahnrad2.Visibility = Visibility.Hidden;
@@ -152,46 +118,7 @@ namespace WPF_Sprint2
         {
             modus = "innen2";
 
-            tbx_Modul_Zahnrad1.Clear();
-            tbx_Modul_Zahnrad1.Background = Brushes.White;
-            tbx_Zaehnezahl_Zahnrad1.Clear();
-            tbx_Zaehnezahl_Zahnrad1.Background = Brushes.White;
-            tbx_Teilkreisdurchmesser_Zahnrad1.Clear();
-            tbx_Teilkreisdurchmesser_Zahnrad1.Background = Brushes.White;
-            tbx_Breite_Zahnrad1.Clear();
-            tbx_Breite_Zahnrad1.Background = Brushes.White;
-            tbx_Modul_Zahnrad2.Clear();
-            tbx_Modul_Zahnrad2.Background = Brushes.White;
-            tbx_Zaehnezahl_Zahnrad2.Clear();
-            tbx_Zaehnezahl_Zahnrad2.Background = Brushes.White;
-            tbx_Teilkreisdurchmesser_Zahnrad2.Clear();
-            tbx_Teilkreisdurchmesser_Zahnrad2.Background = Brushes.White;
-            tbx_Breite_Zahnrad2.Clear();
-            tbx_Breite_Zahnrad2.Background = Brushes.White;
-
-            lab_Teilung_Zahnrad1Ergebnis.Content = "";
-            lab_Kopfspiel_Zahnrad1Ergebnis.Content = "";
-            lab_Kopfkreisdurchmesser_Zahnrad1Ergebnis.Content = "";
-            lab_Fußkreisdurchmesser_Zahnrad1Ergebnis.Content = "";
-            lab_Grundkreisdurchmesser_Zahnrad1Ergebnis.Content = "";
-            lab_Zahnkopfhoehe_Zahnrad1Ergebnis.Content = "";
-            lab_Zahnfußhoehe_Zahnrad1Ergebnis.Content = "";
-            lab_Zahnhoehe_Zahnrad1Ergebnis.Content = "";
-            lab_Volumen_Zahnrad1Ergebnis.Content = "";
-
-            lab_Teilung_Zahnrad2Ergebnis.Content = "";
-            lab_Kopfspiel_Zahnrad2Ergebnis.Content = "";
-            lab_Kopfkreisdurchmesser_Zahnrad2Ergebnis.Content = "";
-            lab_Fußkreisdurchmesser_Zahnrad2Ergebnis.Content = "";
-            lab_Grundkreisdurchmesser_Zahnrad2Ergebnis.Content = "";
-            lab_Zahnkopfhoehe_Zahnrad2Ergebnis.Content = "";
-            lab_Zahnfußhoehe_Zahnrad2Ergebnis.Content = "";
-            lab_Zahnhoehe_Zahnrad2Ergebnis.Content = "";
-            lab_Volumen_Zahnrad2Ergebnis.Content = "";
-            lab_AchsabstandErgebnis.Content = "";
-
-            tbc_allgemein.Visibility = Visibility.Visible;
-            tbi_Eingabe.Focus();
+            ClearLabelUndTextbox();
 
             grd_EingabeZahnrad2.Visibility = Visibility.Visible;
             grd_AusgabeZahnrad2.Visibility = Visibility.Visible;
@@ -403,7 +330,7 @@ namespace WPF_Sprint2
             TextBox tb = (TextBox)sender;
             Double res;
 
-            if (Double.TryParse(tb.Text, out res))
+            if (Double.TryParse(tb.Text, out res) && res > 0)
             {
                 tb.Background = Brushes.LightGreen;
             }
@@ -419,7 +346,7 @@ namespace WPF_Sprint2
             TextBox tb = (TextBox)sender;
             Double res;
 
-            if (Double.TryParse(tb.Text, out res))
+            if (Double.TryParse(tb.Text, out res) && res > 0)
             {
                 tb.Background = Brushes.LightGreen;
             }
@@ -435,7 +362,7 @@ namespace WPF_Sprint2
             TextBox tb = (TextBox)sender;
             Double res;
 
-            if (Double.TryParse(tb.Text, out res))
+            if (Double.TryParse(tb.Text, out res) && res > 0)
             {
                 tb.Background = Brushes.LightGreen;
             }
@@ -451,7 +378,7 @@ namespace WPF_Sprint2
             TextBox tb = (TextBox)sender;
             Double res;
 
-            if (Double.TryParse(tb.Text, out res))
+            if (Double.TryParse(tb.Text, out res) && res > 0)
             {
                 tb.Background = Brushes.LightGreen;
             }
@@ -467,7 +394,7 @@ namespace WPF_Sprint2
             TextBox tb = (TextBox)sender;
             Double res;
 
-            if (Double.TryParse(tb.Text, out res))
+            if (Double.TryParse(tb.Text, out res) && res > 0)
             {
                 tb.Background = Brushes.LightGreen;
             }
@@ -483,7 +410,7 @@ namespace WPF_Sprint2
             TextBox tb = (TextBox)sender;
             Double res;
 
-            if (Double.TryParse(tb.Text, out res))
+            if (Double.TryParse(tb.Text, out res) && res > 0)
             {
                 tb.Background = Brushes.LightGreen;
             }
@@ -499,7 +426,7 @@ namespace WPF_Sprint2
             TextBox tb = (TextBox)sender;
             Double res;
 
-            if (Double.TryParse(tb.Text, out res))
+            if (Double.TryParse(tb.Text, out res) && res > 0)
             {
                 tb.Background = Brushes.LightGreen;
             }
@@ -515,7 +442,7 @@ namespace WPF_Sprint2
             TextBox tb = (TextBox)sender;
             Double res;
 
-            if (Double.TryParse(tb.Text, out res))
+            if (Double.TryParse(tb.Text, out res) && res > 0)
             {
                 tb.Background = Brushes.LightGreen;
             }
