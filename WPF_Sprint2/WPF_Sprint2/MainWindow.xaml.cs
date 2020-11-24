@@ -101,6 +101,12 @@ namespace WPF_Sprint2
             lab_Zahnhoehe_Zahnrad1Ergebnis.Content = h1 + " mm";
             double v1 = brg.Volumen(da1, b1);
             lab_Volumen_Zahnrad1Ergebnis.Content = v1 + " mm^3";
+
+            double MASSE = brg.Masse(dichte, v1);
+            lab_Masse_ergebnis.Content = MASSE + "kg";             //ergebnis der Masse
+            double geld = brg.Geld(preis, MASSE);
+            lab_preis_ergebnis.Content = geld + "Euro";            //ergebnis der Preis
+
         }
 
         //Methode für ein einzelnes Innenverzahntes Zahnrad
@@ -134,6 +140,12 @@ namespace WPF_Sprint2
             lab_Zahnhoehe_Zahnrad1Ergebnis.Content = h1 + " mm";
             double v1 = brg.Volumen(da1, b1);
             lab_Volumen_Zahnrad1Ergebnis.Content = v1 + " mm^3";
+
+
+            double MASSE = brg.Masse(dichte, v1);
+            lab_Masse_ergebnis.Content = MASSE + "kg";             //ergebnis der Masse
+            double geld = brg.Geld(preis, MASSE);
+            lab_preis_ergebnis.Content = geld + "Euro";            //ergebnis der Preis
         }
 
         //Metode für das jeweilige Gegenrad
@@ -164,6 +176,12 @@ namespace WPF_Sprint2
             lab_Zahnhoehe_Zahnrad2Ergebnis.Content = h12 + " mm";
             double v12 = brg.Volumen(da12, b12);
             lab_Volumen_Zahnrad2Ergebnis.Content = v12 + " mm^3";
+
+
+            double MASSE2 = brg.Masse(dichte, v12);
+            lab_masse_ergebnis2.Content = MASSE2 + "kg";             //ergebnis der Masse
+            double geld2 = brg.Geld(preis, MASSE2);
+            label_preis2_ergebnise.Content = geld2 + "Euro";            //ergebnis der Preis
         }
 
         public MainWindow()
