@@ -205,6 +205,8 @@ namespace WPF_Sprint2
 
             tvi_außen1.Background = Brushes.LightBlue;
             tvi_außen2.Background = Brushes.White;
+            tvi_innen1.Background = Brushes.White;
+            tvi_innen2.Background = Brushes.White;
         }
 
         private void tvi_außen2_Selected(object sender, RoutedEventArgs e)
@@ -223,6 +225,8 @@ namespace WPF_Sprint2
 
             tvi_außen2.Background = Brushes.LightBlue;
             tvi_außen1.Background = Brushes.White;
+            tvi_innen1.Background = Brushes.White;
+            tvi_innen2.Background = Brushes.White;
         }
 
         private void tvi_innen1_Selected(object sender, RoutedEventArgs e)
@@ -240,6 +244,8 @@ namespace WPF_Sprint2
 
             tvi_innen1.Background = Brushes.LightBlue;
             tvi_innen2.Background = Brushes.White;
+            tvi_außen1.Background = Brushes.White;
+            tvi_außen2.Background = Brushes.White;
         }
 
         private void tvi_innen2_Selected(object sender, RoutedEventArgs e)
@@ -258,6 +264,9 @@ namespace WPF_Sprint2
 
             tvi_innen2.Background = Brushes.LightBlue;
             tvi_innen1.Background = Brushes.White;
+            tvi_außen1.Background = Brushes.White;
+            tvi_außen2.Background = Brushes.White;
+
         }
 
         //Exit Button
