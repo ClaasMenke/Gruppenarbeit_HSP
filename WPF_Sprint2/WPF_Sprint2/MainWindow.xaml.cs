@@ -202,6 +202,9 @@ namespace WPF_Sprint2
 
             lab_EingabeZahnrad1.Content = "Für ein einzelnes außenverzahntes Stirnrad:";
             lab_AusgabeZahnrad1.Content = "Einzelnes außenverzahntes Stirnrad:";
+
+            tvi_außen1.Background = Brushes.LightBlue;
+            tvi_außen2.Background = Brushes.White;
         }
 
         private void tvi_außen2_Selected(object sender, RoutedEventArgs e)
@@ -217,6 +220,9 @@ namespace WPF_Sprint2
             lab_EingabeZahnrad2.Content = "Für das zweite außenverzahnte Stirnrad:";
             lab_AusgabeZahnrad1.Content = "Erstes außenverzahntes Stirnrad:";
             lab_AusgabeZahnrad2.Content = "Zweites außenverzahntes Stirnrad:";
+
+            tvi_außen2.Background = Brushes.LightBlue;
+            tvi_außen1.Background = Brushes.White;
         }
 
         private void tvi_innen1_Selected(object sender, RoutedEventArgs e)
@@ -230,6 +236,10 @@ namespace WPF_Sprint2
 
             lab_EingabeZahnrad1.Content = "Für ein einzelnes innenverzahntes Stirnrad:";
             lab_AusgabeZahnrad1.Content = "Einzelnes innenverzahntes Stirnrad:";
+
+
+            tvi_innen1.Background = Brushes.LightBlue;
+            tvi_innen2.Background = Brushes.White;
         }
 
         private void tvi_innen2_Selected(object sender, RoutedEventArgs e)
@@ -245,6 +255,9 @@ namespace WPF_Sprint2
             lab_EingabeZahnrad2.Content = "Für das zweite, außenverzahnte Stirnrad:";
             lab_AusgabeZahnrad1.Content = "Erstes, innenverzahntes Stirnrad:";
             lab_AusgabeZahnrad2.Content = "Zweites, außenverzahntes Stirnrad:";
+
+            tvi_innen2.Background = Brushes.LightBlue;
+            tvi_innen1.Background = Brushes.White;
         }
 
         //Exit Button
