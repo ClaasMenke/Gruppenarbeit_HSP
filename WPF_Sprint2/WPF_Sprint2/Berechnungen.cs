@@ -82,7 +82,7 @@ namespace WPF_Sprint2
         //Volumen
         public double Volumen(double da, double b)  // da = zuvor berechneter Kopfkreisdurchmesser
         {                                           // b = Breite Zahnrad
-            double v = Math.Pow(da / 2, 2) * b;     // Math.pow = da/2 wird potenziert mit 2 als Exponenten
+            double v = Math.PI * Math.Pow(da / 2, 2) * b;     // Math.pow = da/2 wird potenziert mit 2 als Exponenten
             return Math.Round(v, 2);
         }
 
@@ -101,9 +101,9 @@ namespace WPF_Sprint2
         }
 
         //Masse
-        public double Masse(double dichte, double V)
+        public double Masse(double dichte, double v)
         {
-            double masse = dichte * V;
+            double masse = dichte * v;
             return Math.Round(masse, 2);
         }
 
@@ -114,6 +114,5 @@ namespace WPF_Sprint2
             return Math.Round(geld, 2);
             
         }
-
     }
 }

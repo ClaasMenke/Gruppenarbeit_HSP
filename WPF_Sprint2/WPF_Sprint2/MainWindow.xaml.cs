@@ -454,7 +454,6 @@ namespace WPF_Sprint2
                 MessageBox.Show("Fehler!\nBitte geben Sie einen gültigen Wert (größer als 0) ein.");
                 tb.Background = Brushes.OrangeRed;
             }
-
         }
     }
 }
