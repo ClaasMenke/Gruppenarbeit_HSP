@@ -68,6 +68,7 @@ namespace WPF_Sprint2
 
             tbc_allgemein.Visibility = Visibility.Visible;
             tbi_Eingabe.Focus();
+            btn_Berechne.Visibility = Visibility.Visible;
         }
 
         //Methode für ein einzelne Außenverzahntes Zahnrad
@@ -103,9 +104,9 @@ namespace WPF_Sprint2
             lab_Volumen_Zahnrad1Ergebnis.Content = v1 + " mm^3";
 
             double MASSE = brg.Masse(dichte, v1);
-            lab_Masse_ergebnis.Content = MASSE + "kg";             //ergebnis der Masse
+            lab_Masse_Zahnrad1Ergebnis.Content = MASSE + "kg";             //ergebnis der Masse
             double geld = brg.Geld(preis, MASSE);
-            lab_preis_ergebnis.Content = geld + "Euro";            //ergebnis der Preis
+            lab_Preis_Zahnrad1Ergebnis.Content = geld + "Euro";            //ergebnis der Preis
 
         }
 
@@ -143,9 +144,9 @@ namespace WPF_Sprint2
 
 
             double MASSE = brg.Masse(dichte, v1);
-            lab_Masse_ergebnis.Content = MASSE + "kg";             //ergebnis der Masse
+            lab_Masse_Zahnrad1Ergebnis.Content = MASSE + "kg";             //ergebnis der Masse
             double geld = brg.Geld(preis, MASSE);
-            lab_preis_ergebnis.Content = geld + "Euro";            //ergebnis der Preis
+            lab_Preis_Zahnrad1Ergebnis.Content = geld + "Euro";            //ergebnis der Preis
         }
 
         //Metode für das jeweilige Gegenrad
@@ -179,18 +180,35 @@ namespace WPF_Sprint2
 
 
             double MASSE2 = brg.Masse(dichte, v12);
-            lab_masse_ergebnis2.Content = MASSE2 + "kg";             //ergebnis der Masse
+            lab_Masse_Zahnrad2Ergebnis.Content = MASSE2 + "kg";             //ergebnis der Masse
             double geld2 = brg.Geld(preis, MASSE2);
-            label_preis2_ergebnise.Content = geld2 + "Euro";            //ergebnis der Preis
+            lab_Preis_Zahnrad2Ergebnis.Content = geld2 + "Euro";            //ergebnis der Preis
         }
 
         public MainWindow()
         {
             InitializeComponent();
             tbc_allgemein.Visibility = Visibility.Hidden;
+            btn_Berechne.Visibility = Visibility.Hidden;
         }
 
         //TreeView Auswahl
+        private void tvi_WerkstoffauswahlStahl_Selected(object sender, RoutedEventArgs e)
+        {
+            preis = 1.1;
+            dichte = 7.85 * Math.Pow(10, -6);
+            tvi_WerkstoffauswahlStahl.Background = Brushes.LightBlue;
+            tvi_WerkstoffauswahlMessing.Background = Brushes.White;
+        }
+
+        private void tvi_WerkstoffauswahlMessing_Selected(object sender, RoutedEventArgs e)
+        {
+            preis = 2.7;
+            dichte = 8.96 * Math.Pow(10, -6);
+            tvi_WerkstoffauswahlMessing.Background = Brushes.LightBlue;
+            tvi_WerkstoffauswahlStahl.Background = Brushes.White;
+        }
+        
         private void tvi_außen1_Selected(object sender, RoutedEventArgs e)
         {
             modus = "außen1";
@@ -437,21 +455,6 @@ namespace WPF_Sprint2
                 tb.Background = Brushes.OrangeRed;
             }
 
-        }
-        private void Wk_zahnrad_messig_Selected(object sender, RoutedEventArgs e)
-        {
-            preis = 2.7;
-            dichte = 8.96 * Math.Pow(10, -6);
-            Wk_zahnrad_messig.Background = Brushes.LightBlue;
-            Wk_zhanrad_stahl.Background = Brushes.White;
-        }
-
-        private void Wk_zhanrad_stahl_Selected(object sender, RoutedEventArgs e)
-        {
-            preis = 1.1;
-            dichte = 7.85 * Math.Pow(10, -6);
-            Wk_zhanrad_stahl.Background = Brushes.LightBlue;
-            Wk_zahnrad_messig.Background = Brushes.White;
         }
     }
 }
