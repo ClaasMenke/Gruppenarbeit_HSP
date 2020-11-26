@@ -71,6 +71,20 @@ namespace WPF_Sprint2
             btn_Berechne.Visibility = Visibility.Visible;
         }
 
+        private void KeineEingabe()
+        {
+            MessageBox.Show("Fehler!\nBitte geben Sie die benötigten Werte ein.");
+            tbi_Eingabe.Focus();
+            tbx_Modul_Zahnrad1.Background = Brushes.OrangeRed;
+            tbx_Modul_Zahnrad2.Background = Brushes.OrangeRed;
+            tbx_Zaehnezahl_Zahnrad1.Background = Brushes.OrangeRed;
+            tbx_Zaehnezahl_Zahnrad2.Background = Brushes.OrangeRed;
+            tbx_Teilkreisdurchmesser_Zahnrad1.Background = Brushes.OrangeRed;
+            tbx_Teilkreisdurchmesser_Zahnrad2.Background = Brushes.OrangeRed;
+            tbx_Breite_Zahnrad1.Background = Brushes.OrangeRed;
+            tbx_Breite_Zahnrad2.Background = Brushes.OrangeRed;
+        }
+
         //Methode für ein einzelne Außenverzahntes Zahnrad
         private void AußenverzahnungEinzel()
         {
@@ -298,32 +312,60 @@ namespace WPF_Sprint2
         {
             if (modus == "außen1")
             {
-                AußenverzahnungEinzel();
+                try
+                {
+                    AußenverzahnungEinzel();
+                }
+                catch
+                {
+                    KeineEingabe();
+                }
             }
 
             else if (modus == "außen2")
             {
-                AußenverzahnungEinzel();
-                Gegenrad();
+                try
+                {
+                    AußenverzahnungEinzel();
+                    Gegenrad();
 
-                //Ergebnis Achsabstand außenliegend
-                double aa = brg.Achsabstand_a(Convert.ToDouble(tbx_Teilkreisdurchmesser_Zahnrad2.Text), Convert.ToDouble(tbx_Teilkreisdurchmesser_Zahnrad1.Text));
-                lab_AchsabstandErgebnis.Content = aa + " mm";
+                    //Ergebnis Achsabstand außenliegend
+                    double aa = brg.Achsabstand_a(Convert.ToDouble(tbx_Teilkreisdurchmesser_Zahnrad2.Text), Convert.ToDouble(tbx_Teilkreisdurchmesser_Zahnrad1.Text));
+                    lab_AchsabstandErgebnis.Content = aa + " mm";
+                }
+                catch
+                {
+                    KeineEingabe();
+                }
             }
 
             else if (modus == "innen1")
             {
-                InnenverzahnungEinzel();
+                try
+                {
+                    InnenverzahnungEinzel();
+                }
+                catch
+                {
+                    KeineEingabe();
+                }
             }
 
             else if (modus == "innen2")
             {
-                InnenverzahnungEinzel();
-                Gegenrad();
+                try
+                {
+                    InnenverzahnungEinzel();
+                    Gegenrad();
 
-                //Ergebnis Achsabstand außenliegend
-                double aa = brg.Achsabstand_i(Convert.ToDouble(tbx_Teilkreisdurchmesser_Zahnrad2.Text), Convert.ToDouble(tbx_Teilkreisdurchmesser_Zahnrad1.Text));
-                lab_AchsabstandErgebnis.Content = aa + " mm";
+                    //Ergebnis Achsabstand außenliegend
+                    double aa = brg.Achsabstand_i(Convert.ToDouble(tbx_Teilkreisdurchmesser_Zahnrad2.Text), Convert.ToDouble(tbx_Teilkreisdurchmesser_Zahnrad1.Text));
+                    lab_AchsabstandErgebnis.Content = aa + " mm";
+                }
+                catch
+                {
+                    KeineEingabe();
+                }
             }
         }
 
