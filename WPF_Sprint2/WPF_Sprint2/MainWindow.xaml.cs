@@ -54,6 +54,8 @@ namespace WPF_Sprint2
             lab_Zahnfußhoehe_Zahnrad1Ergebnis.Content = "";
             lab_Zahnhoehe_Zahnrad1Ergebnis.Content = "";
             lab_Volumen_Zahnrad1Ergebnis.Content = "";
+            lab_Masse_Zahnrad1Ergebnis.Content = "";
+            lab_Preis_Zahnrad1Ergebnis.Content = "";
 
             lab_Teilung_Zahnrad2Ergebnis.Content = "";
             lab_Kopfspiel_Zahnrad2Ergebnis.Content = "";
@@ -64,6 +66,8 @@ namespace WPF_Sprint2
             lab_Zahnfußhoehe_Zahnrad2Ergebnis.Content = "";
             lab_Zahnhoehe_Zahnrad2Ergebnis.Content = "";
             lab_Volumen_Zahnrad2Ergebnis.Content = "";
+            lab_Masse_Zahnrad2Ergebnis.Content = "";
+            lab_Preis_Zahnrad2Ergebnis.Content = "";
             lab_AchsabstandErgebnis.Content = "";
 
             tbc_allgemein.Visibility = Visibility.Visible;
