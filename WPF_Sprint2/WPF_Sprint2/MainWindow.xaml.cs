@@ -31,17 +31,14 @@ namespace WPF_Sprint2
             tbx_Modul_Zahnrad1.Background = Brushes.White;
             tbx_Zaehnezahl_Zahnrad1.Clear();
             tbx_Zaehnezahl_Zahnrad1.Background = Brushes.White;
-            tbx_Teilkreisdurchmesser_Zahnrad1.Clear();
-            tbx_Teilkreisdurchmesser_Zahnrad1.Background = Brushes.White;
+            lab_Teilkreisdurchmesser_Zahnrad1Ergebnis.Content = "wird berechnet...";
             tbx_Breite_Zahnrad1.Clear();
             tbx_Breite_Zahnrad1.Background = Brushes.White;
 
-            tbx_Modul_Zahnrad2.Clear();
-            tbx_Modul_Zahnrad2.Background = Brushes.White;
+            lab_Modul_Zahnrad2Ergebnis.Content = "ist gleich Modul ZR1";
             tbx_Zaehnezahl_Zahnrad2.Clear();
             tbx_Zaehnezahl_Zahnrad2.Background = Brushes.White;
-            tbx_Teilkreisdurchmesser_Zahnrad2.Clear();
-            tbx_Teilkreisdurchmesser_Zahnrad2.Background = Brushes.White;
+            lab_Teilkreisdurchmesser_Zahnrad2Ergebnis.Content = "wird berechnet...";
             tbx_Breite_Zahnrad2.Clear();
             tbx_Breite_Zahnrad2.Background = Brushes.White;
 
@@ -80,11 +77,8 @@ namespace WPF_Sprint2
             MessageBox.Show("Fehler!\nBitte geben Sie die benötigten Werte ein.");
             tbi_Eingabe.Focus();
             tbx_Modul_Zahnrad1.Background = Brushes.OrangeRed;
-            tbx_Modul_Zahnrad2.Background = Brushes.OrangeRed;
             tbx_Zaehnezahl_Zahnrad1.Background = Brushes.OrangeRed;
             tbx_Zaehnezahl_Zahnrad2.Background = Brushes.OrangeRed;
-            tbx_Teilkreisdurchmesser_Zahnrad1.Background = Brushes.OrangeRed;
-            tbx_Teilkreisdurchmesser_Zahnrad2.Background = Brushes.OrangeRed;
             tbx_Breite_Zahnrad1.Background = Brushes.OrangeRed;
             tbx_Breite_Zahnrad2.Background = Brushes.OrangeRed;
         }
@@ -97,7 +91,8 @@ namespace WPF_Sprint2
 
             double m1 = Convert.ToDouble(tbx_Modul_Zahnrad1.Text);
             int z1 = Convert.ToInt32(tbx_Zaehnezahl_Zahnrad1.Text);
-            double d1 = Convert.ToDouble(tbx_Teilkreisdurchmesser_Zahnrad1.Text);
+            double d1 = brg.Teilkreisdurchmesser(m1, z1);
+            lab_Teilkreisdurchmesser_Zahnrad1Ergebnis.Content = d1 + " mm";
             double b1 = Convert.ToDouble(tbx_Breite_Zahnrad1.Text);
 
 
@@ -136,7 +131,8 @@ namespace WPF_Sprint2
 
             double m1 = Convert.ToDouble(tbx_Modul_Zahnrad1.Text);
             int z1 = Convert.ToInt32(tbx_Zaehnezahl_Zahnrad1.Text);
-            double d1 = Convert.ToDouble(tbx_Teilkreisdurchmesser_Zahnrad1.Text);
+            double d1 = brg.Teilkreisdurchmesser(m1, z1);
+            lab_Teilkreisdurchmesser_Zahnrad1Ergebnis.Content = d1 + " mm";
             double b1 = Convert.ToDouble(tbx_Breite_Zahnrad1.Text);
 
 
@@ -171,9 +167,11 @@ namespace WPF_Sprint2
         private void Gegenrad()
         {
             //EingangsParameter zweites Zahnrad
-            double m12 = Convert.ToDouble(tbx_Modul_Zahnrad2.Text);
+            double m12 = Convert.ToDouble(tbx_Modul_Zahnrad1.Text);
+            lab_Modul_Zahnrad2Ergebnis.Content = m12 + " mm";
             int z12 = Convert.ToInt32(tbx_Zaehnezahl_Zahnrad2.Text);
-            double d12 = Convert.ToDouble(tbx_Teilkreisdurchmesser_Zahnrad2.Text);
+            double d12 = brg.Teilkreisdurchmesser(m12, z12);
+            lab_Teilkreisdurchmesser_Zahnrad2Ergebnis.Content = d12 + " mm";
             double b12 = Convert.ToDouble(tbx_Breite_Zahnrad2.Text);
 
             //Ergebnisse Zahrad2
@@ -334,7 +332,7 @@ namespace WPF_Sprint2
                     Gegenrad();
 
                     //Ergebnis Achsabstand außenliegend
-                    double aa = brg.Achsabstand_a(Convert.ToDouble(tbx_Teilkreisdurchmesser_Zahnrad2.Text), Convert.ToDouble(tbx_Teilkreisdurchmesser_Zahnrad1.Text));
+                    double aa = brg.Achsabstand_a(Convert.ToDouble(tbx_Modul_Zahnrad1.Text), Convert.ToDouble(tbx_Zaehnezahl_Zahnrad2.Text), Convert.ToDouble(tbx_Zaehnezahl_Zahnrad1.Text));
                     lab_AchsabstandErgebnis.Content = aa + " mm";
                 }
                 catch
@@ -363,7 +361,7 @@ namespace WPF_Sprint2
                     Gegenrad();
 
                     //Ergebnis Achsabstand außenliegend
-                    double aa = brg.Achsabstand_i(Convert.ToDouble(tbx_Teilkreisdurchmesser_Zahnrad2.Text), Convert.ToDouble(tbx_Teilkreisdurchmesser_Zahnrad1.Text));
+                    double aa = brg.Achsabstand_i(Convert.ToDouble(tbx_Modul_Zahnrad1.Text), Convert.ToDouble(tbx_Zaehnezahl_Zahnrad2.Text), Convert.ToDouble(tbx_Zaehnezahl_Zahnrad1.Text));
                     lab_AchsabstandErgebnis.Content = aa + " mm";
                 }
                 catch

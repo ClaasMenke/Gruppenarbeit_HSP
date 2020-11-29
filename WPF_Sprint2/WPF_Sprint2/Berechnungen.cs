@@ -8,6 +8,13 @@ namespace WPF_Sprint2
 {
     class Berechnungen
     {
+        //Teilkreisdurchmesser
+        public double Teilkreisdurchmesser(double m, double z)
+        {
+            double d = m * z;
+            return d;
+        }
+
         //Teilung
         public double Teilung(double m)     // public double Teilung = die erstellung einer Variablen, Datentyp schließt Kommazahlen mit ein
         {                                   // m = Modul
@@ -87,16 +94,16 @@ namespace WPF_Sprint2
         }
 
         //Achsabstand mit außenliegendem Gegenrad
-        public double Achsabstand_a(double d1, double d2)   // d1 = Durchmesser Zahnrad 1/ d2 = für Zr 2
+        public double Achsabstand_a(double m, double z1, double z2)   // d1 = Durchmesser Zahnrad 1/ d2 = für Zr 2
         {
-            double aa = (d2 + d1) / 2;
+            double aa = (m * (z1 + z2)) / 2;
             return Math.Round(aa, 2);
         }
 
         //Achsabstand mit innenliegendem Gegenrad
-        public double Achsabstand_i(double d1, double d2)
+        public double Achsabstand_i(double m, double z1, double z2)
         {
-            double ai = (d2 - d1) / 2;
+            double ai = (m * (z2 - z1)) / 2;
             return Math.Round(ai, 2);
         }
 

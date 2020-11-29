@@ -37,7 +37,7 @@
                         <Label x:Name="lab_Breite_Zahnrad1" Content="Breite:" HorizontalAlignment="Left" Margin="10,0,0,30" VerticalAlignment="Bottom"/>
                         <TextBox x:Name="tbx_Modul_Zahnrad1" HorizontalAlignment="Right" Height="23" Margin="0,0,290,240" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Width="120" LostFocus="tbx_Modul_Zahnrad1_LostFocus"/>
                         <TextBox x:Name="tbx_Zaehnezahl_Zahnrad1" HorizontalAlignment="Right" Height="23" Margin="0,0,290,170" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Width="120" LostFocus="tbx_Zaehnezahl_Zahnrad1_LostFocus"/>
-                        <TextBox x:Name="tbx_Teilkreisdurchmesser_Zahnrad1" HorizontalAlignment="Right" Height="23" Margin="0,0,290,100" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Width="120" LostFocus="tbx_Teilkreisdurchmesser_Zahnrad1_LostFocus"/>
+                        <Label x:Name="lab_Teilkreisdurchmesser_Zahnrad1Ergebnis" Content="wird berechnet..." HorizontalAlignment="Left" Margin="140,0,0,100" VerticalAlignment="Bottom" FontStyle="Italic"/>
                         <TextBox x:Name="tbx_Breite_Zahnrad1" HorizontalAlignment="Right" Height="23" Margin="0,0,290,30" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Width="120" LostFocus="tbx_Breite_Zahnrad1_LostFocus"/>
                         <Label x:Name="lab_EingabeZahnrad1" Content="" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
                     </Grid>
@@ -47,9 +47,9 @@
                         <Label x:Name="lab_Zaehnezahl_Zahnrad2" Content="Zähnezahl:" HorizontalAlignment="Left" Margin="300,0,0,170" VerticalAlignment="Bottom"/>
                         <Label x:Name="lab_Teilkreisdurchmesser_Zahnrad2" Content="Teilkreisdurchmesser:" HorizontalAlignment="Left" Margin="300,0,0,100" VerticalAlignment="Bottom"/>
                         <Label x:Name="lab_Breite_Zahnrad2" Content="Breite:" HorizontalAlignment="Left" Margin="300,0,0,30" VerticalAlignment="Bottom"/>
-                        <TextBox x:Name="tbx_Modul_Zahnrad2" HorizontalAlignment="Right" Height="23" Margin="0,0,10,240" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Width="120" LostFocus="tbx_Modul_Zahnrad2_LostFocus"/>
+                        <Label x:Name="lab_Modul_Zahnrad2Ergebnis" Content="ist gleich Modul ZR1" HorizontalAlignment="Left" Margin="420,0,0,240" VerticalAlignment="Bottom" FontStyle="Italic"/>
                         <TextBox x:Name="tbx_Zaehnezahl_Zahnrad2" HorizontalAlignment="Right" Height="23" Margin="0,0,10,170" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Width="120" LostFocus="tbx_Zaehnezahl_Zahnrad2_LostFocus"/>
-                        <TextBox x:Name="tbx_Teilkreisdurchmesser_Zahnrad2" HorizontalAlignment="Right" Height="23" Margin="0,0,10,100" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Width="120" LostFocus="tbx_Teilkreisdurchmesser_Zahnrad2_LostFocus"/>
+                        <Label x:Name="lab_Teilkreisdurchmesser_Zahnrad2Ergebnis" Content="wird berechnet..." HorizontalAlignment="Left" Margin="420,0,0,100" VerticalAlignment="Bottom" FontStyle="Italic"/>
                         <TextBox x:Name="tbx_Breite_Zahnrad2" HorizontalAlignment="Right" Height="23" Margin="0,0,10,30" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Width="120" LostFocus="tbx_Breite_Zahnrad2_LostFocus"/>
                         <Label x:Name="lab_EingabeZahnrad2" Content="" VerticalAlignment="Top" Margin="300,0,0,0" FontWeight="Bold"/>
                     </Grid>
