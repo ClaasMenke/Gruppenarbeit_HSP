@@ -21,6 +21,7 @@ namespace WPF_Sprint2
     public partial class MainWindow : Window
     {
         Berechnungen brg = new Berechnungen();
+        Data dat = new Data();
         string modus = null;
         double preis = 0;
         double dichte = 0;
@@ -90,30 +91,35 @@ namespace WPF_Sprint2
             tbi_Ausgabe.Focus();
 
             double m1 = Convert.ToDouble(tbx_Modul_Zahnrad1.Text);
+            dat.setModulZahnrad1(m1);
             int z1 = Convert.ToInt32(tbx_Zaehnezahl_Zahnrad1.Text);
-            double d1 = brg.Teilkreisdurchmesser(m1, z1);
-            lab_Teilkreisdurchmesser_Zahnrad1Ergebnis.Content = d1 + " mm";
+            dat.setZaehnezahlZahnrad1(z1);
             double b1 = Convert.ToDouble(tbx_Breite_Zahnrad1.Text);
+            dat.setBreiteZahnrad1(b1);
 
+            //Ergebnis Teilkreisdurchmesser
+            double d1 = brg.Teilkreisdurchmesser(dat.getModulZahnrad1(), dat.getZaehnezahlZahnrad1());
+            dat.setTeilkreisdurchmesserZahnrad1(d1);
+            lab_Teilkreisdurchmesser_Zahnrad1Ergebnis.Content = d1 + " mm";
 
             //Ergebnisse Zahnrad einzeln
-            double p1 = brg.Teilung(m1);
+            double p1 = brg.Teilung(dat.getModulZahnrad1());
             lab_Teilung_Zahnrad1Ergebnis.Content = p1 + " mm";
-            double c1 = brg.Kopfspiel(m1);
+            double c1 = brg.Kopfspiel(dat.getModulZahnrad1());
             lab_Kopfspiel_Zahnrad1Ergebnis.Content = c1 + " mm";
-            double da1 = brg.Kopfkreisdurchmesser_a(m1, z1);
+            double da1 = brg.Kopfkreisdurchmesser_a(dat.getModulZahnrad1(), dat.getZaehnezahlZahnrad1());
             lab_Kopfkreisdurchmesser_Zahnrad1Ergebnis.Content = da1 + " mm";
-            double df1 = brg.Fußkreisdurchmesser_a(d1, m1, c1);
+            double df1 = brg.Fußkreisdurchmesser_a(dat.getTeilkreisdurchmesserZahnrad1(), dat.getModulZahnrad1(), c1);
             lab_Fußkreisdurchmesser_Zahnrad1Ergebnis.Content = df1 + " mm";
-            double dg1 = brg.Grundkreisdurchmesser(d1);
+            double dg1 = brg.Grundkreisdurchmesser(dat.getTeilkreisdurchmesserZahnrad1());
             lab_Grundkreisdurchmesser_Zahnrad1Ergebnis.Content = dg1 + " mm";
-            double ha1 = brg.Zahnkopfhöhe(m1);
+            double ha1 = brg.Zahnkopfhöhe(dat.getModulZahnrad1());
             lab_Zahnkopfhoehe_Zahnrad1Ergebnis.Content = ha1 + " mm";
-            double hf1 = brg.Zahnfußhöhe(m1, c1);
+            double hf1 = brg.Zahnfußhöhe(dat.getModulZahnrad1(), c1);
             lab_Zahnfußhoehe_Zahnrad1Ergebnis.Content = hf1 + " mm";
-            double h1 = brg.Zahnhöhe(m1, c1);
+            double h1 = brg.Zahnhöhe(dat.getModulZahnrad1(), c1);
             lab_Zahnhoehe_Zahnrad1Ergebnis.Content = h1 + " mm";
-            double v1 = brg.Volumen(da1, b1);
+            double v1 = brg.Volumen(da1, dat.getBreiteZahnrad1());
             lab_Volumen_Zahnrad1Ergebnis.Content = v1 + " mm^3";
 
             double MASSE = brg.Masse(dichte, v1);
@@ -130,10 +136,13 @@ namespace WPF_Sprint2
             tbi_Ausgabe.Focus();
 
             double m1 = Convert.ToDouble(tbx_Modul_Zahnrad1.Text);
+            dat.setModulZahnrad1(m1);
             int z1 = Convert.ToInt32(tbx_Zaehnezahl_Zahnrad1.Text);
+            dat.setZaehnezahlZahnrad1(z1);
             double d1 = brg.Teilkreisdurchmesser(m1, z1);
             lab_Teilkreisdurchmesser_Zahnrad1Ergebnis.Content = d1 + " mm";
             double b1 = Convert.ToDouble(tbx_Breite_Zahnrad1.Text);
+            dat.setBreiteZahnrad1(b1);
 
 
             //Ergebnisse Zahnrad einzeln
@@ -168,11 +177,14 @@ namespace WPF_Sprint2
         {
             //EingangsParameter zweites Zahnrad
             double m12 = Convert.ToDouble(tbx_Modul_Zahnrad1.Text);
+            dat.setModulZahnrad2(m12);
             lab_Modul_Zahnrad2Ergebnis.Content = m12 + " mm";
             int z12 = Convert.ToInt32(tbx_Zaehnezahl_Zahnrad2.Text);
+            dat.setZaehnezahlZahnrad2(z12);
             double d12 = brg.Teilkreisdurchmesser(m12, z12);
             lab_Teilkreisdurchmesser_Zahnrad2Ergebnis.Content = d12 + " mm";
             double b12 = Convert.ToDouble(tbx_Breite_Zahnrad2.Text);
+            dat.setBreiteZahnrad2(b12);
 
             //Ergebnisse Zahrad2
             double p12 = brg.Teilung(m12);
@@ -370,7 +382,7 @@ namespace WPF_Sprint2
                 }
             }
         }
-
+        #region LostFocusMethoden
         //LostFocus Methoden (verlassen der Textbox oder ungültiger Wert)
         private void tbx_Modul_Zahnrad1_LostFocus(object sender, RoutedEventArgs e)
         {
@@ -499,5 +511,6 @@ namespace WPF_Sprint2
                 tb.Background = Brushes.OrangeRed;
             }
         }
+        #endregion
     }
 }

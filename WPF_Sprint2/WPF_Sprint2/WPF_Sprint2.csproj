@@ -66,6 +66,7 @@
     <Compile Include="Berechnungen.cs" />
     <Compile Include="CatiaConnection.cs" />
     <Compile Include="CatiaControl.cs" />
+    <Compile Include="Data.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
