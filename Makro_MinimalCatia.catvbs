@@ -1,0 +1,581 @@
+Language="VBSCRIPT"
+
+Sub CATMain()
+
+Set documents1 = CATIA.Documents
+
+Set partDocument1 = documents1.Add("Part")
+
+Set part1 = partDocument1.Part
+
+Set bodies1 = part1.Bodies
+
+Set body1 = bodies1.Item("Hauptkörper")
+
+Set sketches1 = body1.Sketches
+
+Set originElements1 = part1.OriginElements
+
+Set reference1 = originElements1.PlaneYZ
+
+Set sketch1 = sketches1.Add(reference1)
+
+Dim arrayOfVariantOfDouble1(8)
+arrayOfVariantOfDouble1(0) = 0.000000
+arrayOfVariantOfDouble1(1) = 0.000000
+arrayOfVariantOfDouble1(2) = 0.000000
+arrayOfVariantOfDouble1(3) = 0.000000
+arrayOfVariantOfDouble1(4) = 1.000000
+arrayOfVariantOfDouble1(5) = 0.000000
+arrayOfVariantOfDouble1(6) = 0.000000
+arrayOfVariantOfDouble1(7) = 0.000000
+arrayOfVariantOfDouble1(8) = 1.000000
+sketch1.SetAbsoluteAxisData arrayOfVariantOfDouble1
+
+part1.InWorkObject = sketch1
+
+Set factory2D1 = sketch1.OpenEdition()
+
+Set geometricElements1 = sketch1.GeometricElements
+
+Set axis2D1 = geometricElements1.Item("Absolute Achse")
+
+Set line2D1 = axis2D1.GetItem("H-Richtung")
+
+line2D1.ReportName = 24
+
+Set line2D2 = axis2D1.GetItem("V-Richtung")
+
+line2D2.ReportName = 25
+
+Set circle2D1 = factory2D1.CreateClosedCircle(0.000000, 0.000000, 41.125000)
+
+Set point2D1 = axis2D1.GetItem("Ursprung")
+
+circle2D1.CenterPoint = point2D1
+
+circle2D1.ReportName = 26
+
+circle2D1.Construction = True
+
+Set circle2D2 = factory2D1.CreateClosedCircle(0.000000, 0.000000, 43.750000)
+
+circle2D2.CenterPoint = point2D1
+
+circle2D2.ReportName = 27
+
+circle2D2.Construction = True
+
+Set point2D2 = factory2D1.CreatePoint(-7.193296, 114.334161)
+
+point2D2.ReportName = 28
+
+Set line2D3 = factory2D1.CreateLine(-0.000000, 0.000000, -7.193296, 114.334161)
+
+line2D3.ReportName = 29
+
+line2D3.Construction = True
+
+line2D3.StartPoint = point2D1
+
+line2D3.EndPoint = point2D2
+
+Set point2D3 = factory2D1.CreatePoint(28.646295, 97.331762)
+
+point2D3.ReportName = 30
+
+Set line2D4 = factory2D1.CreateLine(0.000000, 0.000000, 28.646295, 97.331762)
+
+line2D4.ReportName = 31
+
+line2D4.Construction = True
+
+line2D4.StartPoint = point2D1
+
+line2D4.EndPoint = point2D3
+
+Set point2D4 = factory2D1.CreatePoint(0.000000, 121.543648)
+
+point2D4.ReportName = 32
+
+Set line2D5 = factory2D1.CreateLine(0.000000, -0.000000, 0.000000, 121.543648)
+
+line2D5.ReportName = 33
+
+line2D5.StartPoint = point2D1
+
+line2D5.EndPoint = point2D4
+
+Set point2D5 = factory2D1.CreatePoint(11.611292, 39.451787)
+
+point2D5.ReportName = 34
+
+Set point2D6 = factory2D1.CreatePoint(-11.611292, -39.451787)
+
+point2D6.ReportName = 35
+
+Set point2D7 = factory2D1.CreatePoint(-2.747085, 43.663669)
+
+point2D7.ReportName = 36
+
+Set point2D8 = factory2D1.CreatePoint(2.747085, -43.663669)
+
+point2D8.ReportName = 37
+
+Set point2D9 = factory2D1.CreatePoint(0.000000, 47.250000)
+
+point2D9.ReportName = 38
+
+Set point2D10 = factory2D1.CreatePoint(-1.168219, 47.235556)
+
+point2D10.ReportName = 39
+
+Set circle2D3 = factory2D1.CreateCircle(0.000000, 0.000000, 47.250000, 1.570796, 1.595523)
+
+circle2D3.CenterPoint = point2D1
+
+circle2D3.ReportName = 11
+
+circle2D3.StartPoint = point2D9
+
+circle2D3.EndPoint = point2D10
+
+Set point2D11 = factory2D1.CreatePoint(-4.528354, 39.113740)
+
+point2D11.ReportName = 40
+
+Set point2D12 = factory2D1.CreatePoint(4.528354, 39.113740)
+
+point2D12.ReportName = 41
+
+Set circle2D4 = factory2D1.CreateCircle(0.000000, 0.000000, 39.375000, 1.686057, 7.738721)
+
+circle2D4.CenterPoint = point2D1
+
+circle2D4.ReportName = 12
+
+circle2D4.StartPoint = point2D11
+
+circle2D4.EndPoint = point2D12
+
+Set point2D13 = factory2D1.CreatePoint(-3.322992, 40.384590)
+
+point2D13.ReportName = 42
+
+Set circle2D5 = factory2D1.CreateCircle(11.611292, 39.451787, 14.963387, 2.594522, 3.079213)
+
+circle2D5.CenterPoint = point2D5
+
+circle2D5.ReportName = 2
+
+circle2D5.StartPoint = point2D10
+
+circle2D5.EndPoint = point2D13
+
+Set point2D14 = factory2D1.CreatePoint(-3.350483, 39.232192)
+
+point2D14.ReportName = 43
+
+Set point2D15 = factory2D1.CreatePoint(-4.685337, 40.469683)
+
+point2D15.ReportName = 44
+
+Set circle2D6 = factory2D1.CreateCircle(-4.685337, 40.469683, 1.365000, 4.827650, 6.220806)
+
+circle2D6.CenterPoint = point2D15
+
+circle2D6.ReportName = 13
+
+circle2D6.EndPoint = point2D13
+
+circle2D6.StartPoint = point2D11
+
+Set point2D16 = factory2D1.CreatePoint(4.528354, 39.113740)
+
+point2D16.ReportName = 14
+
+Set point2D17 = factory2D1.CreatePoint(3.322992, 40.384590)
+
+point2D17.ReportName = 15
+
+Set point2D18 = factory2D1.CreatePoint(4.685337, 40.469683)
+
+point2D18.ReportName = 16
+
+Set circle2D7 = factory2D1.CreateCircle(4.685337, 40.469683, 1.365000, 3.203972, 4.597128)
+
+circle2D7.CenterPoint = point2D18
+
+circle2D7.ReportName = 17
+
+Set point2D19 = factory2D1.CreatePoint(1.168219, 47.235556)
+
+point2D19.ReportName = 18
+
+Set point2D20 = factory2D1.CreatePoint(-11.611292, 39.451787)
+
+point2D20.ReportName = 19
+
+Set circle2D8 = factory2D1.CreateCircle(-11.611292, 39.451787, 14.963387, 0.062379, 0.547071)
+
+circle2D8.CenterPoint = point2D20
+
+circle2D8.ReportName = 20
+
+Set point2D21 = factory2D1.CreatePoint(-0.000000, 47.250000)
+
+point2D21.ReportName = 21
+
+Set point2D22 = factory2D1.CreatePoint(0.000000, 0.000000)
+
+point2D22.ReportName = 22
+
+Set circle2D9 = factory2D1.CreateCircle(0.000000, 0.000000, 47.250000, 1.546070, 1.570796)
+
+circle2D9.CenterPoint = point2D22
+
+circle2D9.ReportName = 23
+
+Set constraints1 = sketch1.Constraints
+
+Set reference2 = part1.CreateReferenceFromObject(circle2D2)
+
+Set constraint1 = constraints1.AddMonoEltCst(catCstTypeRadius, reference2)
+
+constraint1.Mode = catCstModeDrivingDimension
+
+Set reference3 = part1.CreateReferenceFromObject(circle2D1)
+
+Set constraint2 = constraints1.AddMonoEltCst(catCstTypeRadius, reference3)
+
+constraint2.Mode = catCstModeDrivingDimension
+
+Set reference4 = part1.CreateReferenceFromObject(line2D3)
+
+Set reference5 = part1.CreateReferenceFromObject(line2D4)
+
+Set constraint3 = constraints1.AddBiEltCst(catCstTypeAngle, reference4, reference5)
+
+constraint3.Mode = catCstModeDrivingDimension
+
+constraint3.AngleSector = catCstAngleSector3
+
+Set angle1 = constraint3.Dimension
+
+angle1.Value = 20.000000
+
+Set reference6 = part1.CreateReferenceFromObject(line2D5)
+
+Set reference7 = part1.CreateReferenceFromObject(line2D2)
+
+Set constraint4 = constraints1.AddBiEltCst(catCstTypeOn, reference6, reference7)
+
+constraint4.Mode = catCstModeDrivingDimension
+
+Set reference8 = part1.CreateReferenceFromObject(line2D3)
+
+Set reference9 = part1.CreateReferenceFromObject(line2D5)
+
+Set constraint5 = constraints1.AddBiEltCst(catCstTypeAngle, reference8, reference9)
+
+constraint5.Mode = catCstModeDrivingDimension
+
+constraint5.AngleSector = catCstAngleSector3
+
+Set reference10 = part1.CreateReferenceFromObject(line2D4)
+
+Set reference11 = part1.CreateReferenceFromObject(point2D5)
+
+Set constraint6 = constraints1.AddBiEltCst(catCstTypeOn, reference10, reference11)
+
+constraint6.Mode = catCstModeDrivingDimension
+
+Set reference12 = part1.CreateReferenceFromObject(circle2D1)
+
+Set reference13 = part1.CreateReferenceFromObject(point2D5)
+
+Set constraint7 = constraints1.AddBiEltCst(catCstTypeOn, reference12, reference13)
+
+constraint7.Mode = catCstModeDrivingDimension
+
+Set reference14 = part1.CreateReferenceFromObject(line2D4)
+
+Set reference15 = part1.CreateReferenceFromObject(point2D6)
+
+Set constraint8 = constraints1.AddBiEltCst(catCstTypeOn, reference14, reference15)
+
+constraint8.Mode = catCstModeDrivingDimension
+
+Set reference16 = part1.CreateReferenceFromObject(circle2D1)
+
+Set reference17 = part1.CreateReferenceFromObject(point2D6)
+
+Set constraint9 = constraints1.AddBiEltCst(catCstTypeOn, reference16, reference17)
+
+constraint9.Mode = catCstModeDrivingDimension
+
+Set reference18 = part1.CreateReferenceFromObject(line2D3)
+
+Set reference19 = part1.CreateReferenceFromObject(point2D7)
+
+Set constraint10 = constraints1.AddBiEltCst(catCstTypeOn, reference18, reference19)
+
+constraint10.Mode = catCstModeDrivingDimension
+
+Set reference20 = part1.CreateReferenceFromObject(circle2D2)
+
+Set reference21 = part1.CreateReferenceFromObject(point2D7)
+
+Set constraint11 = constraints1.AddBiEltCst(catCstTypeOn, reference20, reference21)
+
+constraint11.Mode = catCstModeDrivingDimension
+
+Set reference22 = part1.CreateReferenceFromObject(line2D3)
+
+Set reference23 = part1.CreateReferenceFromObject(point2D8)
+
+Set constraint12 = constraints1.AddBiEltCst(catCstTypeOn, reference22, reference23)
+
+constraint12.Mode = catCstModeDrivingDimension
+
+Set reference24 = part1.CreateReferenceFromObject(circle2D2)
+
+Set reference25 = part1.CreateReferenceFromObject(point2D8)
+
+Set constraint13 = constraints1.AddBiEltCst(catCstTypeOn, reference24, reference25)
+
+constraint13.Mode = catCstModeDrivingDimension
+
+Set reference26 = part1.CreateReferenceFromObject(circle2D3)
+
+Set constraint14 = constraints1.AddMonoEltCst(catCstTypeRadius, reference26)
+
+constraint14.Mode = catCstModeDrivingDimension
+
+Set reference27 = part1.CreateReferenceFromObject(circle2D4)
+
+Set constraint15 = constraints1.AddMonoEltCst(catCstTypeRadius, reference27)
+
+constraint15.Mode = catCstModeDrivingDimension
+
+Set reference28 = part1.CreateReferenceFromObject(circle2D4)
+
+Set reference29 = part1.CreateReferenceFromObject(point2D14)
+
+Set constraint16 = constraints1.AddBiEltCst(catCstTypeOn, reference28, reference29)
+
+constraint16.Mode = catCstModeDrivingDimension
+
+Set reference30 = part1.CreateReferenceFromObject(line2D5)
+
+Set reference31 = part1.CreateReferenceFromObject(point2D9)
+
+Set constraint17 = constraints1.AddBiEltCst(catCstTypeOn, reference30, reference31)
+
+constraint17.Mode = catCstModeDrivingDimension
+
+Set reference32 = part1.CreateReferenceFromObject(circle2D5)
+
+Set reference33 = part1.CreateReferenceFromObject(point2D14)
+
+Set constraint18 = constraints1.AddBiEltCst(catCstTypeOn, reference32, reference33)
+
+constraint18.Mode = catCstModeDrivingDimension
+
+Set reference34 = part1.CreateReferenceFromObject(circle2D6)
+
+Set reference35 = part1.CreateReferenceFromObject(circle2D5)
+
+Set constraint19 = constraints1.AddBiEltCst(catCstTypeTangency, reference34, reference35)
+
+constraint19.Mode = catCstModeDrivingDimension
+
+Set reference36 = part1.CreateReferenceFromObject(circle2D6)
+
+Set reference37 = part1.CreateReferenceFromObject(circle2D4)
+
+Set constraint20 = constraints1.AddBiEltCst(catCstTypeTangency, reference36, reference37)
+
+constraint20.Mode = catCstModeDrivingDimension
+
+Set reference38 = part1.CreateReferenceFromObject(circle2D6)
+
+Set constraint21 = constraints1.AddMonoEltCst(catCstTypeRadius, reference38)
+
+constraint21.Mode = catCstModeDrivingDimension
+
+Set reference39 = part1.CreateReferenceFromObject(point2D11)
+
+Set reference40 = part1.CreateReferenceFromObject(point2D16)
+
+Set reference41 = part1.CreateReferenceFromObject(line2D5)
+
+Set constraint22 = constraints1.AddTriEltCst(catCstTypeSymmetry, reference39, reference40, reference41)
+
+constraint22.Mode = catCstModeDrivingDimension
+
+Set reference42 = part1.CreateReferenceFromObject(point2D13)
+
+Set reference43 = part1.CreateReferenceFromObject(point2D17)
+
+Set reference44 = part1.CreateReferenceFromObject(line2D5)
+
+Set constraint23 = constraints1.AddTriEltCst(catCstTypeSymmetry, reference42, reference43, reference44)
+
+constraint23.Mode = catCstModeDrivingDimension
+
+Set reference45 = part1.CreateReferenceFromObject(circle2D6)
+
+Set reference46 = part1.CreateReferenceFromObject(circle2D7)
+
+Set reference47 = part1.CreateReferenceFromObject(line2D5)
+
+Set constraint24 = constraints1.AddTriEltCst(catCstTypeSymmetry, reference45, reference46, reference47)
+
+constraint24.Mode = catCstModeDrivingDimension
+
+Set reference48 = part1.CreateReferenceFromObject(point2D10)
+
+Set reference49 = part1.CreateReferenceFromObject(point2D19)
+
+Set reference50 = part1.CreateReferenceFromObject(line2D5)
+
+Set constraint25 = constraints1.AddTriEltCst(catCstTypeSymmetry, reference48, reference49, reference50)
+
+constraint25.Mode = catCstModeDrivingDimension
+
+Set reference51 = part1.CreateReferenceFromObject(circle2D5)
+
+Set reference52 = part1.CreateReferenceFromObject(circle2D8)
+
+Set reference53 = part1.CreateReferenceFromObject(line2D5)
+
+Set constraint26 = constraints1.AddTriEltCst(catCstTypeSymmetry, reference51, reference52, reference53)
+
+constraint26.Mode = catCstModeDrivingDimension
+
+Set reference54 = part1.CreateReferenceFromObject(point2D9)
+
+Set reference55 = part1.CreateReferenceFromObject(point2D21)
+
+Set reference56 = part1.CreateReferenceFromObject(line2D5)
+
+Set constraint27 = constraints1.AddTriEltCst(catCstTypeSymmetry, reference54, reference55, reference56)
+
+constraint27.Mode = catCstModeDrivingDimension
+
+Set reference57 = part1.CreateReferenceFromObject(circle2D3)
+
+Set reference58 = part1.CreateReferenceFromObject(circle2D9)
+
+Set reference59 = part1.CreateReferenceFromObject(line2D5)
+
+Set constraint28 = constraints1.AddTriEltCst(catCstTypeSymmetry, reference57, reference58, reference59)
+
+constraint28.Mode = catCstModeDrivingDimension
+
+Set reference60 = part1.CreateReferenceFromObject(point2D7)
+
+Set reference61 = part1.CreateReferenceFromObject(circle2D5)
+
+Set constraint29 = constraints1.AddBiEltCst(catCstTypeOn, reference60, reference61)
+
+constraint29.Mode = catCstModeDrivingDimension
+
+Set reference62 = part1.CreateReferenceFromObject(point2D16)
+
+Set reference63 = part1.CreateReferenceFromObject(point2D12)
+
+Set constraint30 = constraints1.AddBiEltCst(catCstTypeOn, reference62, reference63)
+
+constraint30.Mode = catCstModeDrivingDimension
+
+sketch1.CenterLine = line2D5
+
+sketch1.CloseEdition 
+
+part1.InWorkObject = sketch1
+
+part1.Update 
+
+Set shapeFactory1 = part1.ShapeFactory
+
+Set pad1 = shapeFactory1.AddNewPad(sketch1, 20.000000)
+
+part1.Update 
+
+Set selection1 = partDocument1.Selection
+
+Set visPropertySet1 = selection1.VisProperties
+
+selection1.Add sketch1
+
+Set visPropertySet1 = visPropertySet1.Parent
+
+Dim bSTR1
+bSTR1 = visPropertySet1.Name
+
+Dim bSTR2
+bSTR2 = visPropertySet1.Name
+
+visPropertySet1.SetShow 0
+
+selection1.Clear 
+
+Set reference64 = part1.CreateReferenceFromName("")
+
+Set reference65 = part1.CreateReferenceFromName("")
+
+Set circPattern1 = shapeFactory1.AddNewCircPattern(Nothing, 1, 2, 20.000000, 45.000000, 1, 1, reference64, reference65, True, 0.000000, True)
+
+circPattern1.CircularPatternParameters = catInstancesandAngularSpacing
+
+circPattern1.CircularPatternParameters = catInstancesandAngularSpacing
+
+Set angularRepartition1 = circPattern1.AngularRepartition
+
+Set intParam1 = angularRepartition1.InstancesCount
+
+intParam1.Value = 25
+
+Set angularRepartition2 = circPattern1.AngularRepartition
+
+Set angle2 = angularRepartition2.AngularSpacing
+
+angle2.Value = 15.000000
+
+intParam1.Value = 25
+
+circPattern1.CircularPatternParameters = catCompleteCrown
+
+Set relations1 = part1.Relations
+
+Set formula1 = relations1.CreateFormula("Formel.14", "", intParam1, "N")
+
+formula1.Rename "Formel.14"
+
+Set reference66 = geometricElements1.Item("Absolute Achse")
+
+circPattern1.SetRotationAxis reference66
+
+part1.Update 
+
+Set selection2 = partDocument1.Selection
+
+Set visPropertySet2 = selection2.VisProperties
+
+selection2.Add sketch1
+
+Set visPropertySet2 = visPropertySet2.Parent
+
+Dim bSTR3
+bSTR3 = visPropertySet2.Name
+
+Dim bSTR4
+bSTR4 = visPropertySet2.Name
+
+visPropertySet2.SetShow 1
+
+selection2.Clear 
+
+End Sub
