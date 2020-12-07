@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 namespace WPF_Sprint2
 {
     class Berechnungen
-    {
+    { 
+
         //Teilkreisdurchmesser
-        public double Teilkreisdurchmesser(double m, double z)
+        public double Teilkreisdurchmesser(double m, int z)
         {
             double d = m * z;
             return d;
@@ -30,7 +31,7 @@ namespace WPF_Sprint2
         }
 
         //Kopfkreisdurchmesser außenverzahnt
-        public double Kopfkreisdurchmesser_a(double m, double z)    // z = Zähnezahl
+        public double Kopfkreisdurchmesser_a(double m, int z)    // z = Zähnezahl
         {
             double da = m * (z + 2);
             return Math.Round(da, 2);
@@ -44,7 +45,7 @@ namespace WPF_Sprint2
         }
 
         //Kopfkreisdurchmesser innenverzahnt
-        public double Kopfkreisdurchmesser_i(double m, double z)
+        public double Kopfkreisdurchmesser_i(double m, int z)
         {
             double da = m * (z - 2);
             return Math.Round(da, 2);
@@ -94,14 +95,14 @@ namespace WPF_Sprint2
         }
 
         //Achsabstand mit außenliegendem Gegenrad
-        public double Achsabstand_a(double m, double z1, double z2)   // d1 = Durchmesser Zahnrad 1/ d2 = für Zr 2
+        public double Achsabstand_a(double m, int z1, int z2)   // d1 = Durchmesser Zahnrad 1/ d2 = für Zr 2
         {
             double aa = (m * (z1 + z2)) / 2;
             return Math.Round(aa, 2);
         }
 
         //Achsabstand mit innenliegendem Gegenrad
-        public double Achsabstand_i(double m, double z1, double z2)
+        public double Achsabstand_i(double m, int z1, int z2)
         {
             double ai = (m * (z2 - z1)) / 2;
             return Math.Round(ai, 2);
@@ -120,6 +121,104 @@ namespace WPF_Sprint2
             double geld = preis * masse;
             return Math.Round(geld, 2);
             
+        }
+
+        Data dat = new Data();
+
+        //Teilkreisradius
+        public double TeilkreisRadius(double m, double z)
+        {
+            double dr = m * z / 2;
+            dat.setTeilkreisRadiusZahnrad1(dr);
+            return dr;
+        }
+
+        //Hilfskreisradius
+        public double HilfskreisRadius(double dr)
+        {
+            double hr = 0.94 * dr;
+            dat.setHilfskreisradius(hr);
+            return hr;
+        }
+
+        //Fußkreisradius
+        public double FußkreisRadius(double dr, double m)
+        {
+            double dfr = dr - 1.25 * m;
+            dat.setFußkreisRadiusZahnrad1(dfr);
+            return dfr;
+        }
+
+        //Kopfkreisradius
+        public double KopfkreisRadius(double dr, double m)
+        {
+            double dar = dr + m;
+            dat.setKopfkreisRadiusZahnrad1(dar);
+            return dar;
+        }
+
+        //Verrundungsradius
+        public double VerrundungsRadius(double m)
+        {
+            double vr = 0.35 * m;
+            dat.setVerrundungsRadiusZahnrad1(vr);
+            return vr;
+        }
+
+        //Alpha
+        public double Alpha()
+        {
+            double alpha = 20;
+            dat.setAlphaZahnrad1(alpha);
+            return alpha;
+        }
+
+        //Beta
+        public double Beta(int z)
+        {
+            double beta = 90 / z;
+            dat.setBetaZahnrad1(beta);
+            return beta;
+        }
+
+        //Betarad
+        public double BetaRad(double beta)
+        {
+            double beta_r = Math.PI * beta / 180;
+            dat.setBetaRadZahnrad1(beta_r);
+            return beta_r;
+        }
+
+        //Gamma
+        public double Gamma(double alpha,double beta)
+        {
+            double gamma = 90 - (alpha - beta);
+            dat.setGammaZahnrad1(gamma);
+            return gamma;
+        }
+
+        //Gammarad
+        public double GammaRad(double gamma)
+        {
+            double gamma_r = Math.PI * gamma / 180;
+            dat.setGammaRadZahnrad1(gamma_r);
+            return gamma_r;
+        }
+
+        //Totalangle
+        public double TotalAngle(int z)
+        {
+            double ta = 360 / z;
+            dat.setTotalAngleZahnrad1(ta);
+            return ta;
+        }
+
+        //Totalanglerad
+        public double TotalAngleRad(double ta)
+        {
+            double ta_r = Math.PI * ta / 180;
+            dat.setTotalAngleRadZahnrad1(ta_r);
+            return ta_r;
         }
     }
 }
