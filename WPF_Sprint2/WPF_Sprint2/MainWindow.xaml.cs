@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +29,16 @@ namespace WPF_Sprint2
         //Methode zum leeren der TextBoxen und Ergebnislabel & Sichtbarkeit des TabControl
         private void ClearLabelUndTextbox()
         {
+            dat.setModulZahnrad1(0);
+            dat.setZaehnezahlZahnrad1(0);
+            dat.setBreiteZahnrad1(0);
+            dat.setTeilkreisdurchmesserZahnrad1(0);
+
+            dat.setModulZahnrad2(0);
+            dat.setZaehnezahlZahnrad2(0);
+            dat.setBreiteZahnrad2(0);
+            dat.setTeilkreisdurchmesserZahnrad2(0);
+
             tbx_Modul_Zahnrad1.Clear();
             tbx_Modul_Zahnrad1.Background = Brushes.White;
             tbx_Zaehnezahl_Zahnrad1.Clear();
@@ -71,6 +82,8 @@ namespace WPF_Sprint2
             tbc_allgemein.Visibility = Visibility.Visible;
             tbi_Eingabe.Focus();
             btn_Berechne.Visibility = Visibility.Visible;
+            btn_Catia.Visibility = Visibility.Hidden;
+            btn_CATIAStart.Visibility = Visibility.Visible;
         }
 
         private void KeineEingabe()
@@ -84,25 +97,8 @@ namespace WPF_Sprint2
             tbx_Breite_Zahnrad2.Background = Brushes.OrangeRed;
         }
 
-        private void Hilfsparameter()
-        {
-            brg.TeilkreisRadius(dat.getModulZahnrad1(), dat.getZaehnezahlZahnrad1());
-            brg.HilfskreisRadius(dat.getTeilkreisRadiusZahnrad1());
-            brg.FußkreisRadius(dat.getTeilkreisRadiusZahnrad1(), dat.getModulZahnrad1());
-            brg.KopfkreisRadius(dat.getTeilkreisRadiusZahnrad1(), dat.getModulZahnrad1());
-            brg.VerrundungsRadius(dat.getModulZahnrad1());
-
-            brg.Alpha();
-            brg.Beta(dat.getZaehnezahlZahnrad1());
-            brg.BetaRad(dat.getBetaZahnrad1());
-            brg.Gamma(dat.getAlphaZahnrad1(), dat.getBetaZahnrad1());
-            brg.GammaRad(dat.getGammaZahnrad1());
-            brg.TotalAngle(dat.getZaehnezahlZahnrad1());
-            brg.TotalAngleRad(dat.getTotalAngleZahnrad1());
-        }
-
         //Methode für ein einzelne Außenverzahntes Zahnrad
-        private void AußenverzahnungEinzel()
+        public void AußenverzahnungEinzel()
         {
             //EingangsParameter Zahnrad einzeln
             tbi_Ausgabe.Focus();
@@ -121,22 +117,39 @@ namespace WPF_Sprint2
 
             //Ergebnisse Zahnrad einzeln
             double p1 = brg.Teilung(dat.getModulZahnrad1());
+            dat.setTeilungZahnrad1(p1);
             lab_Teilung_Zahnrad1Ergebnis.Content = p1 + " mm";
+
             double c1 = brg.Kopfspiel(dat.getModulZahnrad1());
+            dat.setKopfspielZahnrad1(c1);
             lab_Kopfspiel_Zahnrad1Ergebnis.Content = c1 + " mm";
+            
             double da1 = brg.Kopfkreisdurchmesser_a(dat.getModulZahnrad1(), dat.getZaehnezahlZahnrad1());
+            dat.setKopfkreisdurchmesser_aZahnrad1(da1);
             lab_Kopfkreisdurchmesser_Zahnrad1Ergebnis.Content = da1 + " mm";
+            
             double df1 = brg.Fußkreisdurchmesser_a(dat.getTeilkreisdurchmesserZahnrad1(), dat.getModulZahnrad1(), c1);
+            dat.setFußkreisdurchmesser_aZahnrad1(df1);
             lab_Fußkreisdurchmesser_Zahnrad1Ergebnis.Content = df1 + " mm";
+            
             double dg1 = brg.Grundkreisdurchmesser(dat.getTeilkreisdurchmesserZahnrad1());
+            dat.setGrundkreisdurchmesserZahnrad1(dg1);
             lab_Grundkreisdurchmesser_Zahnrad1Ergebnis.Content = dg1 + " mm";
+            
             double ha1 = brg.Zahnkopfhöhe(dat.getModulZahnrad1());
+            dat.setZahnkopfhoeheZahnrad1(ha1);
             lab_Zahnkopfhoehe_Zahnrad1Ergebnis.Content = ha1 + " mm";
+            
             double hf1 = brg.Zahnfußhöhe(dat.getModulZahnrad1(), c1);
+            dat.setZahnfußhoeheZahnrad1(hf1);
             lab_Zahnfußhoehe_Zahnrad1Ergebnis.Content = hf1 + " mm";
+
             double h1 = brg.Zahnhöhe(dat.getModulZahnrad1(), c1);
+            dat.setZahnhoeheZahnrad1(h1);
             lab_Zahnhoehe_Zahnrad1Ergebnis.Content = h1 + " mm";
+
             double v1 = brg.Volumen(da1, dat.getBreiteZahnrad1());
+            dat.setVolumenZahnrad1(v1);
             lab_Volumen_Zahnrad1Ergebnis.Content = v1 + " mm^3";
 
             double MASSE = brg.Masse(dichte, v1);
@@ -147,7 +160,7 @@ namespace WPF_Sprint2
         }
 
         //Methode für ein einzelnes Innenverzahntes Zahnrad
-        private void InnenverzahnungEinzel()
+        public void InnenverzahnungEinzel()
         {
             //EingangsParameter Zahnrad einzeln
             tbi_Ausgabe.Focus();
@@ -166,22 +179,39 @@ namespace WPF_Sprint2
 
             //Ergebnisse Zahnrad einzeln
             double p1 = brg.Teilung(dat.getModulZahnrad1());
+            dat.setTeilungZahnrad1(p1);
             lab_Teilung_Zahnrad1Ergebnis.Content = p1 + " mm";
+
             double c1 = brg.Kopfspiel(dat.getModulZahnrad1());
+            dat.setKopfspielZahnrad1(c1);
             lab_Kopfspiel_Zahnrad1Ergebnis.Content = c1 + " mm";
+
             double da1 = brg.Kopfkreisdurchmesser_i(dat.getModulZahnrad1(), dat.getZaehnezahlZahnrad1());
+            dat.setKopfkreisdurchmesser_iZahnrad1(da1);
             lab_Kopfkreisdurchmesser_Zahnrad1Ergebnis.Content = da1 + " mm";
+
             double df1 = brg.Fußkreisdurchmesser_i(dat.getTeilkreisdurchmesserZahnrad1(), dat.getModulZahnrad1(), c1);
+            dat.setFußkreisdurchmesser_iZahnrad1(df1);
             lab_Fußkreisdurchmesser_Zahnrad1Ergebnis.Content = df1 + " mm";
+
             double dg1 = brg.Grundkreisdurchmesser(dat.getTeilkreisdurchmesserZahnrad1());
+            dat.setGrundkreisdurchmesserZahnrad1(dg1);
             lab_Grundkreisdurchmesser_Zahnrad1Ergebnis.Content = dg1 + " mm";
+
             double ha1 = brg.Zahnkopfhöhe(dat.getModulZahnrad1());
+            dat.setZahnkopfhoeheZahnrad1(ha1);
             lab_Zahnkopfhoehe_Zahnrad1Ergebnis.Content = ha1 + " mm";
+
             double hf1 = brg.Zahnfußhöhe(dat.getModulZahnrad1(), c1);
+            dat.setZahnfußhoeheZahnrad1(hf1);
             lab_Zahnfußhoehe_Zahnrad1Ergebnis.Content = hf1 + " mm";
+
             double h1 = brg.Zahnhöhe(dat.getModulZahnrad1(), c1);
+            dat.setZahnhoeheZahnrad1(h1);
             lab_Zahnhoehe_Zahnrad1Ergebnis.Content = h1 + " mm";
+
             double v1 = brg.Volumen(da1, dat.getBreiteZahnrad1());
+            dat.setVolumenZahnrad1(v1);
             lab_Volumen_Zahnrad1Ergebnis.Content = v1 + " mm^3";
 
 
@@ -192,7 +222,7 @@ namespace WPF_Sprint2
         }
 
         //Metode für das jeweilige Gegenrad
-        private void Gegenrad()
+        public void Gegenrad()
         {
             //EingangsParameter zweites Zahnrad
             double m12 = Convert.ToDouble(tbx_Modul_Zahnrad1.Text);
@@ -209,22 +239,39 @@ namespace WPF_Sprint2
 
             //Ergebnisse Zahrad2
             double p12 = brg.Teilung(dat.getModulZahnrad2());
+            dat.setTeilungZahnrad2(p12);
             lab_Teilung_Zahnrad2Ergebnis.Content = p12 + " mm";
+
             double c12 = brg.Kopfspiel(dat.getModulZahnrad2());
+            dat.setKopfspielZahnrad2(c12);
             lab_Kopfspiel_Zahnrad2Ergebnis.Content = c12 + " mm";
+
             double da12 = brg.Kopfkreisdurchmesser_a(dat.getModulZahnrad2(), dat.getZaehnezahlZahnrad2());
+            dat.setKopfkreisdurchmesser_aZahnrad2(da12);
             lab_Kopfkreisdurchmesser_Zahnrad2Ergebnis.Content = da12 + " mm";
+
             double df12 = brg.Fußkreisdurchmesser_a(dat.getTeilkreisdurchmesserZahnrad2(), dat.getModulZahnrad2(), c12);
+            dat.setFußkreisdurchmesser_aZahnrad2(df12);
             lab_Fußkreisdurchmesser_Zahnrad2Ergebnis.Content = df12 + " mm";
+
             double dg12 = brg.Grundkreisdurchmesser(dat.getTeilkreisdurchmesserZahnrad2());
+            dat.setGrundkreisdurchmesserZahnrad2(dg12);
             lab_Grundkreisdurchmesser_Zahnrad2Ergebnis.Content = dg12 + " mm";
+
             double ha12 = brg.Zahnkopfhöhe(dat.getModulZahnrad2());
+            dat.setZahnkopfhoeheZahnrad2(ha12);
             lab_Zahnkopfhoehe_Zahnrad2Ergebnis.Content = ha12 + " mm";
+
             double hf12 = brg.Zahnfußhöhe(dat.getModulZahnrad2(), c12);
+            dat.setZahnfußhoeheZahnrad2(hf12);
             lab_Zahnfußhoehe_Zahnrad2Ergebnis.Content = hf12 + " mm";
+
             double h12 = brg.Zahnhöhe(dat.getModulZahnrad2(), c12);
+            dat.setZahnhoeheZahnrad2(h12);
             lab_Zahnhoehe_Zahnrad2Ergebnis.Content = h12 + " mm";
+
             double v12 = brg.Volumen(da12, dat.getBreiteZahnrad2());
+            dat.setVolumenZahnrad2(v12);
             lab_Volumen_Zahnrad2Ergebnis.Content = v12 + " mm^3";
 
 
@@ -239,6 +286,8 @@ namespace WPF_Sprint2
             InitializeComponent();
             tbc_allgemein.Visibility = Visibility.Hidden;
             btn_Berechne.Visibility = Visibility.Hidden;
+            btn_Catia.Visibility = Visibility.Hidden;
+            btn_CATIAStart.Visibility = Visibility.Hidden;
         }
 
         //TreeView Auswahl
@@ -345,14 +394,15 @@ namespace WPF_Sprint2
         // Berechne Button
         private void btn_Berechne_Click_1(object sender, RoutedEventArgs e)
         {
+            btn_Catia.Visibility = Visibility.Visible;
+
             if (modus == "außen1")
             {
                 try
                 {
                     AußenverzahnungEinzel();
-                    Hilfsparameter();
                 }
-                catch
+                catch(Exception)
                 {
                     KeineEingabe();
                 }
@@ -368,9 +418,10 @@ namespace WPF_Sprint2
 
                     //Ergebnis Achsabstand außenliegend
                     double aa = brg.Achsabstand_a(Convert.ToDouble(tbx_Modul_Zahnrad1.Text), Convert.ToInt32(tbx_Zaehnezahl_Zahnrad2.Text), Convert.ToInt32(tbx_Zaehnezahl_Zahnrad1.Text));
+                    dat.setAchsabstand_a(aa);
                     lab_AchsabstandErgebnis.Content = aa + " mm";
                 }
-                catch
+                catch(Exception)
                 {
                     KeineEingabe();
                 }
@@ -382,7 +433,7 @@ namespace WPF_Sprint2
                 {
                     InnenverzahnungEinzel();
                 }
-                catch
+                catch(Exception)
                 {
                     KeineEingabe();
                 }
@@ -397,9 +448,10 @@ namespace WPF_Sprint2
 
                     //Ergebnis Achsabstand außenliegend
                     double aa = brg.Achsabstand_i(Convert.ToDouble(tbx_Modul_Zahnrad1.Text), Convert.ToInt32(tbx_Zaehnezahl_Zahnrad2.Text), Convert.ToInt32(tbx_Zaehnezahl_Zahnrad1.Text));
+                    dat.setAchsabstand_i(aa);
                     lab_AchsabstandErgebnis.Content = aa + " mm";
                 }
-                catch
+                catch(Exception)
                 {
                     KeineEingabe();
                 }
@@ -494,6 +546,8 @@ namespace WPF_Sprint2
 
             if (modus == "außen1")
             {
+                try
+                {
                     if (cc.CatiaLaeuft())
                     {
                         cc.ErzeugePart();
@@ -503,10 +557,20 @@ namespace WPF_Sprint2
                         cc.AußenverzahnungEinzel(dat);
 
                         cc.ErzeugeKreismuster(dat);
-
                     }
+                }
+                catch(Exception)
+                {
+                    MessageBox.Show("Fehler!\nEs konnte kein Objekt erzeugt werden.\nBitte überprüfen Sie die Eingangsparameter und ob Catia gestartet ist.");
+                }
             }
+        }
 
+        private void btn_CATIAStart_Click(object sender, RoutedEventArgs e)
+        {
+            Process StarteCatia = new Process();
+            StarteCatia.StartInfo.FileName = "CNext.exe";
+            StarteCatia.Start();
         }
     }
 }

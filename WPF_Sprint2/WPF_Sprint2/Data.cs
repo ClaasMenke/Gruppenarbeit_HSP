@@ -45,22 +45,9 @@ namespace WPF_Sprint2
         double zahnhoeheZ2;
         double volumenZ2;
 
-
-        //Hilfsparameter Zahnrad1
-        double teilkreisradiusZ1;
-        double hilfskreisradiusZ1;
-        double fußkreisradiusZ1;
-        double kopfkreisradiusZ1;
-        double verrundungsradiusZ1;
-        double alphaZ1;
-        double betaZ1;
-        double beta_rZ1;
-        double gammaZ1;
-        double gamma_rZ1;
-        double totalangleZ1;
-        double totalangle_rZ1;
-
-
+        //Achsabstand
+        double achsabstand_a;
+        double achsabstand_i;
 
         #region Zahnrad1
         //Eingangsparameter Zahnrad1
@@ -350,127 +337,24 @@ namespace WPF_Sprint2
         }
         #endregion
 
-        #region HilfsparameterZ1
-        //Hilfsparameter Evolventenverzahnung
-        //Teilkreisradius Zahnrad1
-        public double getTeilkreisRadiusZahnrad1()
+        //Achsabstand außen
+        public double getAchsabstand_a()
         {
-            return teilkreisradiusZ1;
+            return achsabstand_a;
         }
-        public void setTeilkreisRadiusZahnrad1(double teilkreisradiusZ1)
+        public void setAchsabstand_a(double achsabstand_a)
         {
-            this.teilkreisradiusZ1 = teilkreisradiusZ1;
+            this.achsabstand_a = achsabstand_a;
         }
 
-        //Hilfskreisradius Zahnrad1
-        public double getHilfskreisRadiusZahnrad1()
+        //Achsabstand innen
+        public double getAchsabstand_i()
         {
-            return hilfskreisradiusZ1;
+            return achsabstand_i;
         }
-        public void setHilfskreisradius(double hilfskreisradiusZ1)
+        public void setAchsabstand_i(double achsabstand_i)
         {
-            this.hilfskreisradiusZ1 = hilfskreisradiusZ1;
+            this.achsabstand_i = achsabstand_i;
         }
-
-        //Fußkreisradius Zahnrad1
-        public double getFußkreisRadiusZahnrad1()
-        {
-            return fußkreisradiusZ1;
-        }
-        public void setFußkreisRadiusZahnrad1(double fußkreisradiusZ1)
-        {
-            this.fußkreisradiusZ1 = fußkreisradiusZ1; 
-        }
-
-        //Kopfkreisradius Zahnrad1
-        public double getKopfkreisRadiusZahnrad1()
-        {
-            return kopfkreisradiusZ1;
-        }
-        public void setKopfkreisRadiusZahnrad1(double kopfkreisradiusZ1)
-        {
-            this.kopfkreisradiusZ1 = kopfkreisradiusZ1;
-        }
-
-        //Verrundungsradius Zahnrad1
-        public double getVerrundungsRadiusZahnrad1()
-        {
-            return verrundungsradiusZ1;
-        }
-        public void setVerrundungsRadiusZahnrad1(double verrundungsradiusZ1)
-        {
-            this.verrundungsradiusZ1 = verrundungsradiusZ1;
-        }
-
-        //Alpha Zahnrad1
-        public double getAlphaZahnrad1()
-        {
-            return alphaZ1;
-        }
-        public void setAlphaZahnrad1(double alphaZ1)
-        {
-            this.alphaZ1 = alphaZ1;
-        }
-
-        //Beta Zahnrad1
-        public double getBetaZahnrad1()
-        {
-            return betaZ1;
-        }
-        public void setBetaZahnrad1(double betaZ1)
-        {
-            this.betaZ1 = betaZ1;
-        }
-
-        //BetaRad Zahnrad1
-        public double getBetaRadZahnrad1()
-        {
-            return beta_rZ1;
-        }
-        public void setBetaRadZahnrad1(double beta_rZ1)
-        {
-            this.beta_rZ1 = beta_rZ1;
-        }
-
-        //Gamma Zahnrad1
-        public double getGammaZahnrad1()
-        {
-            return gammaZ1;
-        }
-        public void setGammaZahnrad1(double gammaZ1)
-        {
-            this.gammaZ1 = gammaZ1;
-        }
-
-        //GammaRad Zahnrad1
-        public double getGammaRadZahnrad1()
-        {
-            return gamma_rZ1;
-        }
-        public void setGammaRadZahnrad1(double gamma_rZ1)
-        {
-            this.gamma_rZ1 = gamma_rZ1;
-        }
-
-        //TotalAngle Zahnrad1
-        public double getTotalAngleZahnrad1()
-        {
-            return totalangleZ1;
-        }
-        public void setTotalAngleZahnrad1(double totalangleZ1)
-        {
-            this.totalangleZ1 = totalangleZ1;
-        }
-
-        //TotalAngleRad Zahnrad1
-        public double getTotalAngleRadZahnrad1()
-        {
-            return totalangle_rZ1;
-        }
-        public void setTotalAngleRadZahnrad1(double totalangle_rZ1)
-        {
-            this.totalangle_rZ1 = totalangle_rZ1;
-        }
-        #endregion
     }
 }

@@ -127,6 +127,7 @@
         <Button x:Name="btn_Berechne" Content="Berechne" HorizontalAlignment="Right" Margin="0,0,125,27.5" VerticalAlignment="Bottom" Width="110" FontWeight="Bold" Click="btn_Berechne_Click_1" Cursor="Hand"/>
         <!--Logo JadeHS-->
         <Image x:Name="img_LogoJadehs" HorizontalAlignment="Right" Height="77" Margin="0,0,10,0" VerticalAlignment="Top" Width="145" Source="jadehs-logo.png"/>
-        <Button x:Name="btn_Catia" Content="An CAD übertragen" HorizontalAlignment="Left" Margin="538,448,0,0" VerticalAlignment="Top" Width="120" Click="btn_Catia_Click"/>
+        <Button x:Name="btn_Catia" Content="An CATIA V5 übertragen" HorizontalAlignment="Right" Margin="0,0,250,27.5" VerticalAlignment="Bottom" Width="150" Click="btn_Catia_Click" FontWeight="Bold" Cursor="Hand"/>
+        <Button x:Name="btn_CATIAStart" Content="CATIA V5 starten" HorizontalAlignment="Right" Margin="0,0,405,27.5" VerticalAlignment="Bottom" Width="105" FontWeight="Bold" Click="btn_CATIAStart_Click" Cursor="Hand"/>
     </Grid>
 </Window>
