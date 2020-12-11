@@ -23,6 +23,7 @@ namespace WPF_Sprint2
     {
         Berechnungen brg = new Berechnungen();
         Data dat = new Data();
+
         string modus = null;
         double preis = 0;
         double dichte = 0;
