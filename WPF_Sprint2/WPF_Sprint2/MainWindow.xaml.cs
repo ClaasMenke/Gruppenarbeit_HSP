@@ -26,6 +26,7 @@ namespace WPF_Sprint2
         string modus = null;
         double preis = 0;
         double dichte = 0;
+
         //Methode zum leeren der TextBoxen und Ergebnislabel & Sichtbarkeit des TabControl
         private void ClearLabelUndTextbox()
         {
