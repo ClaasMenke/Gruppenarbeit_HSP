@@ -49,6 +49,9 @@ namespace WPF_Sprint2
         double achsabstand_a;
         double achsabstand_i;
 
+        //Bohrungsdurchmesser
+        double bohrungZ1;
+
         #region Zahnrad1
         //Eingangsparameter Zahnrad1
         //Modul Zahnrad1
@@ -200,6 +203,16 @@ namespace WPF_Sprint2
         public void setVolumenZahnrad1(double volumenZ1)
         {
             this.volumenZ1 = volumenZ1;
+        }
+
+        //Bohrung
+        public double getBohrungsdurchmesserZahnrad1()
+        {
+            return bohrungZ1;
+        }
+        public void setBohrungsdurchmesserZahnrad1(double bohrungZ1)
+        {
+            this.bohrungZ1 = bohrungZ1;
         }
         #endregion
 
@@ -355,6 +368,6 @@ namespace WPF_Sprint2
         public void setAchsabstand_i(double achsabstand_i)
         {
             this.achsabstand_i = achsabstand_i;
-        }
+        }     
     }
 }

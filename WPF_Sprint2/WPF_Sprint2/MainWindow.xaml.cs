@@ -41,8 +41,6 @@ namespace WPF_Sprint2
             dat.setBreiteZahnrad2(0);
             dat.setTeilkreisdurchmesserZahnrad2(0);
 
-            tbx_Modul_Zahnrad1.Clear();
-            tbx_Modul_Zahnrad1.Background = Brushes.White;
             tbx_Zaehnezahl_Zahnrad1.Clear();
             tbx_Zaehnezahl_Zahnrad1.Background = Brushes.White;
             lab_Teilkreisdurchmesser_Zahnrad1Ergebnis.Content = "wird berechnet...";
@@ -81,22 +79,26 @@ namespace WPF_Sprint2
             lab_Preis_Zahnrad2Ergebnis.Content = "";
             lab_AchsabstandErgebnis.Content = "";
 
+            cbx_Bohrung.IsChecked = false;
+            cbx_WelleNabeVerbindung.IsChecked = false;
             tbc_allgemein.Visibility = Visibility.Visible;
             tbi_Eingabe.Focus();
             btn_Berechne.Visibility = Visibility.Visible;
             btn_Catia.Visibility = Visibility.Hidden;
-            btn_CATIAStart.Visibility = Visibility.Visible;
+            btn_CATIAStart.Visibility = Visibility.Hidden;
+
+            cmb_ModulZahnrad1.SelectedIndex = 23;
         }
 
         private void KeineEingabe()
         {
-            MessageBox.Show("Fehler!\nBitte geben Sie die benötigten Werte ein.");
+            MessageBox.Show("Bitte geben Sie die benötigten Werte ein.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
             tbi_Eingabe.Focus();
-            tbx_Modul_Zahnrad1.Background = Brushes.OrangeRed;
             tbx_Zaehnezahl_Zahnrad1.Background = Brushes.OrangeRed;
             tbx_Zaehnezahl_Zahnrad2.Background = Brushes.OrangeRed;
             tbx_Breite_Zahnrad1.Background = Brushes.OrangeRed;
             tbx_Breite_Zahnrad2.Background = Brushes.OrangeRed;
+            
         }
 
         //Methode für ein einzelne Außenverzahntes Zahnrad
@@ -105,7 +107,7 @@ namespace WPF_Sprint2
             //EingangsParameter Zahnrad einzeln
             tbi_Ausgabe.Focus();
 
-            double m1 = Convert.ToDouble(tbx_Modul_Zahnrad1.Text);
+            double m1 = Convert.ToDouble(cmb_ModulZahnrad1.Text);
             dat.setModulZahnrad1(m1);
             int z1 = Convert.ToInt32(tbx_Zaehnezahl_Zahnrad1.Text);
             dat.setZaehnezahlZahnrad1(z1);
@@ -158,7 +160,6 @@ namespace WPF_Sprint2
             lab_Masse_Zahnrad1Ergebnis.Content = MASSE + "kg";             //ergebnis der Masse
             double geld = brg.Geld(preis, MASSE);
             lab_Preis_Zahnrad1Ergebnis.Content = geld + "Euro";            //ergebnis der Preis
-
         }
 
         //Methode für ein einzelnes Innenverzahntes Zahnrad
@@ -167,7 +168,7 @@ namespace WPF_Sprint2
             //EingangsParameter Zahnrad einzeln
             tbi_Ausgabe.Focus();
 
-            double m1 = Convert.ToDouble(tbx_Modul_Zahnrad1.Text);
+            double m1 = Convert.ToDouble(cmb_ModulZahnrad1.Text);
             dat.setModulZahnrad1(m1);
             int z1 = Convert.ToInt32(tbx_Zaehnezahl_Zahnrad1.Text);
             dat.setZaehnezahlZahnrad1(z1);
@@ -227,7 +228,7 @@ namespace WPF_Sprint2
         public void Gegenrad()
         {
             //EingangsParameter zweites Zahnrad
-            double m12 = Convert.ToDouble(tbx_Modul_Zahnrad1.Text);
+            double m12 = Convert.ToDouble(cmb_ModulZahnrad1.Text);
             dat.setModulZahnrad2(m12);
             lab_Modul_Zahnrad2Ergebnis.Content = m12 + " mm";
             int z12 = Convert.ToInt32(tbx_Zaehnezahl_Zahnrad2.Text);
@@ -325,6 +326,9 @@ namespace WPF_Sprint2
             tvi_außen2.Background = Brushes.White;
             tvi_innen1.Background = Brushes.White;
             tvi_innen2.Background = Brushes.White;
+
+            cbx_Bohrung.Visibility = Visibility.Visible;
+            cbx_WelleNabeVerbindung.Visibility = Visibility.Visible;
         }
 
         private void tvi_außen2_Selected(object sender, RoutedEventArgs e)
@@ -345,6 +349,9 @@ namespace WPF_Sprint2
             tvi_außen1.Background = Brushes.White;
             tvi_innen1.Background = Brushes.White;
             tvi_innen2.Background = Brushes.White;
+
+            cbx_Bohrung.Visibility = Visibility.Hidden;
+            cbx_WelleNabeVerbindung.Visibility = Visibility.Hidden;
         }
 
         private void tvi_innen1_Selected(object sender, RoutedEventArgs e)
@@ -364,6 +371,9 @@ namespace WPF_Sprint2
             tvi_innen2.Background = Brushes.White;
             tvi_außen1.Background = Brushes.White;
             tvi_außen2.Background = Brushes.White;
+
+            cbx_Bohrung.Visibility = Visibility.Hidden;
+            cbx_WelleNabeVerbindung.Visibility = Visibility.Hidden;
         }
 
         private void tvi_innen2_Selected(object sender, RoutedEventArgs e)
@@ -385,6 +395,8 @@ namespace WPF_Sprint2
             tvi_außen1.Background = Brushes.White;
             tvi_außen2.Background = Brushes.White;
 
+            cbx_Bohrung.Visibility = Visibility.Hidden;
+            cbx_WelleNabeVerbindung.Visibility = Visibility.Hidden;
         }
 
         //Exit Button
@@ -396,13 +408,16 @@ namespace WPF_Sprint2
         // Berechne Button
         private void btn_Berechne_Click_1(object sender, RoutedEventArgs e)
         {
-            btn_Catia.Visibility = Visibility.Visible;
+            
 
             if (modus == "außen1")
             {
                 try
                 {
                     AußenverzahnungEinzel();
+                    btn_Catia.Visibility = Visibility.Visible;
+                    btn_CATIAStart.Visibility = Visibility.Visible;
+
                 }
                 catch(Exception)
                 {
@@ -419,7 +434,7 @@ namespace WPF_Sprint2
 
 
                     //Ergebnis Achsabstand außenliegend
-                    double aa = brg.Achsabstand_a(Convert.ToDouble(tbx_Modul_Zahnrad1.Text), Convert.ToInt32(tbx_Zaehnezahl_Zahnrad2.Text), Convert.ToInt32(tbx_Zaehnezahl_Zahnrad1.Text));
+                    double aa = brg.Achsabstand_a(Convert.ToDouble(cmb_ModulZahnrad1.Text), Convert.ToInt32(tbx_Zaehnezahl_Zahnrad2.Text), Convert.ToInt32(tbx_Zaehnezahl_Zahnrad1.Text));
                     dat.setAchsabstand_a(aa);
                     lab_AchsabstandErgebnis.Content = aa + " mm";
                 }
@@ -449,7 +464,7 @@ namespace WPF_Sprint2
                     Gegenrad();
 
                     //Ergebnis Achsabstand außenliegend
-                    double aa = brg.Achsabstand_i(Convert.ToDouble(tbx_Modul_Zahnrad1.Text), Convert.ToInt32(tbx_Zaehnezahl_Zahnrad2.Text), Convert.ToInt32(tbx_Zaehnezahl_Zahnrad1.Text));
+                    double aa = brg.Achsabstand_i(Convert.ToDouble(cmb_ModulZahnrad1.Text), Convert.ToInt32(tbx_Zaehnezahl_Zahnrad2.Text), Convert.ToInt32(tbx_Zaehnezahl_Zahnrad1.Text));
                     dat.setAchsabstand_i(aa);
                     lab_AchsabstandErgebnis.Content = aa + " mm";
                 }
@@ -461,34 +476,18 @@ namespace WPF_Sprint2
         }
         #region LostFocusMethoden
         //LostFocus Methoden (verlassen der Textbox oder ungültiger Wert)
-        private void tbx_Modul_Zahnrad1_LostFocus(object sender, RoutedEventArgs e)
-        {
-            TextBox tb = (TextBox)sender;
-            Double res;
-
-            if (Double.TryParse(tb.Text, out res) && res > 0)
-            {
-                tb.Background = Brushes.LightGreen;
-            }
-            else
-            {
-                MessageBox.Show("Fehler!\nBitte geben Sie einen gültigen Wert (größer als 0) ein.");
-                tb.Background = Brushes.OrangeRed;
-            }
-        }
-
         private void tbx_Zaehnezahl_Zahnrad1_LostFocus(object sender, RoutedEventArgs e)
         {
             TextBox tb = (TextBox)sender;
             Double res;
 
-            if (Double.TryParse(tb.Text, out res) && res > 0)
+            if (Double.TryParse(tb.Text, out res) && res > 8)
             {
                 tb.Background = Brushes.LightGreen;
             }
             else
             {
-                MessageBox.Show("Fehler!\nBitte geben Sie einen gültigen Wert (größer als 0) ein.");
+                MessageBox.Show("Bitte geben Sie einen gültigen Wert (größer als 8) für die Zähnezahl ein.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
                 tb.Background = Brushes.OrangeRed;
             }
         }
@@ -504,7 +503,7 @@ namespace WPF_Sprint2
             }
             else
             {
-                MessageBox.Show("Fehler!\nBitte geben Sie einen gültigen Wert (größer als 0) ein.");
+                MessageBox.Show("Bitte geben Sie einen gültigen Wert (größer als 0) für die Breite ein.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
                 tb.Background = Brushes.OrangeRed;
             }
         }
@@ -514,13 +513,13 @@ namespace WPF_Sprint2
             TextBox tb = (TextBox)sender;
             Double res;
 
-            if (Double.TryParse(tb.Text, out res) && res > 0)
+            if (Double.TryParse(tb.Text, out res) && res > 8)
             {
                 tb.Background = Brushes.LightGreen;
             }
             else
             {
-                MessageBox.Show("Fehler!\nBitte geben Sie einen gültigen Wert (größer als 0) ein.");
+                MessageBox.Show("Bitte geben Sie einen gültigen Wert (größer als 8) für die Zähnezahl ein.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
                 tb.Background = Brushes.OrangeRed;
             }
         }
@@ -536,7 +535,7 @@ namespace WPF_Sprint2
             }
             else
             {
-                MessageBox.Show("Fehler!\nBitte geben Sie einen gültigen Wert (größer als 0) ein.");
+                MessageBox.Show("Bitte geben Sie einen gültigen Wert (größer als 0) für die Breite ein.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
                 tb.Background = Brushes.OrangeRed;
             }
         }
@@ -546,33 +545,62 @@ namespace WPF_Sprint2
         {
             CatiaConnection cc = new CatiaConnection();
 
-            if (modus == "außen1")
+            if (modus == "außen1" && cbx_Bohrung.IsChecked == false && cc.CatiaLaeuft())
             {
                 try
                 {
-                    if (cc.CatiaLaeuft())
-                    {
-                        cc.ErzeugePart();
-
-                        cc.ErstelleLeereSkizze();
-
-                        cc.AußenverzahnungEinzel(dat);
-
-                        cc.ErzeugeKreismuster(dat);
-                    }
+                    cc.ErzeugePart();
+                    cc.ErstelleLeereSkizze();
+                    cc.AußenverzahnungEinzel(dat);
+                    cc.ErzeugeKreismusterAußenverzahnung(dat);
+                    
                 }
                 catch(Exception)
                 {
-                    MessageBox.Show("Fehler!\nEs konnte kein Objekt erzeugt werden.\nBitte überprüfen Sie die Eingangsparameter und ob Catia gestartet ist.");
+                    MessageBox.Show("Es konnte kein Objekt erzeugt werden.\nBitte überprüfen Sie die Eingangsparameter.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
+            }
+            else if (modus=="außen1" && cbx_Bohrung.IsChecked == true && cc.CatiaLaeuft())
+            {
+                try
+                {
+                    cc.ErzeugePart();
+                    cc.ErzeugeZahnradMitBohrung(dat);
+                }
+                catch(Exception)
+                {
+                    MessageBox.Show("Es konnte kein Objekt erzeugt werden.\nBitte überprüfen Sie die Eingangsparameter.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Bitte überprüfen Sie ob CATIA V5 gestartet wurde.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
         private void btn_CATIAStart_Click(object sender, RoutedEventArgs e)
         {
-            Process StarteCatia = new Process();
-            StarteCatia.StartInfo.FileName = "CNext.exe";
-            StarteCatia.Start();
+            CatiaConnection cc = new CatiaConnection();
+            if (cc.CatiaLaeuft())
+            {
+                MessageBox.Show("CATIA V5 wurde bereits gestartet.", "Fehler", MessageBoxButton.OK,MessageBoxImage.Information);
+            }
+            else
+            {
+                Process StarteCatia = new Process();
+                StarteCatia.StartInfo.FileName = "CNext.exe";
+                StarteCatia.Start();
+            }
+        }
+
+        private void cbx_Bohrung_Checked(object sender, RoutedEventArgs e)
+        {
+            cbx_WelleNabeVerbindung.IsChecked = false;
+        }
+
+        private void cbx_WelleNabeVerbindung_Checked(object sender, RoutedEventArgs e)
+        {
+            cbx_Bohrung.IsChecked = false;
         }
     }
 }

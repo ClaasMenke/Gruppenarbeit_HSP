@@ -31,26 +31,63 @@
                     <Label x:Name="lab_Eingabe" Content="Bitte geben Sie folgende Parameter [in mm] an." HorizontalAlignment="Left" Margin="0,-7,0,0" VerticalAlignment="Top" Width="280" FontWeight="Bold"/>
                     <!--Grid für die EingabeParameter für Zahnrad1-->
                     <Grid x:Name="grd_EingabeZahnrad1" HorizontalAlignment="Left" Height="315" Margin="0,0,0,10" VerticalAlignment="Bottom" Width="550">
-                        <Label x:Name="lab_Modul_Zahnrad1" Content="Modul:" HorizontalAlignment="Left" Margin="10,0,0,240" VerticalAlignment="Bottom"/>
-                        <Label x:Name="lab_Zaehnezahl_Zahnrad1" Content="Zähnezahl:" HorizontalAlignment="Left" Margin="10,0,0,170" VerticalAlignment="Bottom"/>
-                        <Label x:Name="lab_Teilkreisdurchmesser_Zahnrad1" Content="Teilkreisdurchmesser:" HorizontalAlignment="Left" Margin="10,0,0,100" VerticalAlignment="Bottom"/>
-                        <Label x:Name="lab_Breite_Zahnrad1" Content="Breite:" HorizontalAlignment="Left" Margin="10,0,0,30" VerticalAlignment="Bottom"/>
-                        <TextBox x:Name="tbx_Modul_Zahnrad1" HorizontalAlignment="Right" Height="23" Margin="0,0,290,240" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Width="120" LostFocus="tbx_Modul_Zahnrad1_LostFocus"/>
-                        <TextBox x:Name="tbx_Zaehnezahl_Zahnrad1" HorizontalAlignment="Right" Height="23" Margin="0,0,290,170" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Width="120" LostFocus="tbx_Zaehnezahl_Zahnrad1_LostFocus"/>
-                        <Label x:Name="lab_Teilkreisdurchmesser_Zahnrad1Ergebnis" Content="wird berechnet..." HorizontalAlignment="Left" Margin="140,0,0,100" VerticalAlignment="Bottom" FontStyle="Italic"/>
-                        <TextBox x:Name="tbx_Breite_Zahnrad1" HorizontalAlignment="Right" Height="23" Margin="0,0,290,30" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Width="120" LostFocus="tbx_Breite_Zahnrad1_LostFocus"/>
+                        <Label x:Name="lab_Modul_Zahnrad1" Content="Modul:" HorizontalAlignment="Left" Margin="10,0,0,250" VerticalAlignment="Bottom"/>
+                        <Label x:Name="lab_Zaehnezahl_Zahnrad1" Content="Zähnezahl:" HorizontalAlignment="Left" Margin="10,0,0,200" VerticalAlignment="Bottom"/>
+                        <Label x:Name="lab_Teilkreisdurchmesser_Zahnrad1" Content="Teilkreisdurchmesser:" HorizontalAlignment="Left" Margin="10,0,0,150" VerticalAlignment="Bottom"/>
+                        <Label x:Name="lab_Breite_Zahnrad1" Content="Breite:" HorizontalAlignment="Left" Margin="10,0,0,100" VerticalAlignment="Bottom"/>
+                        <TextBox x:Name="tbx_Zaehnezahl_Zahnrad1" HorizontalAlignment="Right" Height="23" Margin="0,0,290,200" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Width="120" LostFocus="tbx_Zaehnezahl_Zahnrad1_LostFocus"/>
+                        <Label x:Name="lab_Teilkreisdurchmesser_Zahnrad1Ergebnis" Content="wird berechnet..." HorizontalAlignment="Left" Margin="140,0,0,150" VerticalAlignment="Bottom" FontStyle="Italic"/>
+                        <TextBox x:Name="tbx_Breite_Zahnrad1" HorizontalAlignment="Right" Height="23" Margin="0,0,290,100" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Width="120" LostFocus="tbx_Breite_Zahnrad1_LostFocus"/>
                         <Label x:Name="lab_EingabeZahnrad1" Content="" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                        <ComboBox x:Name="cmb_ModulZahnrad1" HorizontalAlignment="Right" Margin="0,0,290,250" VerticalAlignment="Bottom" Width="120" SelectedIndex="23">
+                            <ComboBoxItem x:Name="cbi_0_05" Content="0,05" HorizontalAlignment="Left" Width="118"/>
+                            <ComboBoxItem x:Name="cbi_0_06" Content="0,06" HorizontalAlignment="Left" Width="118"/>
+                            <ComboBoxItem x:Name="cbi_0_08" Content="0,08" HorizontalAlignment="Left" Width="118"/>
+                            <ComboBoxItem x:Name="cbi_0_1" Content="0,1" HorizontalAlignment="Left" Width="118"/>
+                            <ComboBoxItem x:Name="cbi_0_12" Content="0,12" HorizontalAlignment="Left" Width="118"/>
+                            <ComboBoxItem x:Name="cbi_0_16" Content="0,16" HorizontalAlignment="Left" Width="118"/>
+                            <ComboBoxItem x:Name="cbi_0_2" Content="0,2" HorizontalAlignment="Left" Width="118"/>
+                            <ComboBoxItem x:Name="cbi_0_25" Content="0,25" HorizontalAlignment="Left" Width="118"/>
+                            <ComboBoxItem x:Name="cbi_0_3" Content="0,3" HorizontalAlignment="Left" Width="118"/>
+                            <ComboBoxItem x:Name="cbi_0_4" Content="0,4" HorizontalAlignment="Left" Width="118"/>
+                            <ComboBoxItem x:Name="cbi_0_5" Content="0,5" HorizontalAlignment="Left" Width="118"/>
+                            <ComboBoxItem x:Name="cbi_0_6" Content="0,6" HorizontalAlignment="Left" Width="118"/>
+                            <ComboBoxItem x:Name="cbi_0_7" Content="0,7" HorizontalAlignment="Left" Width="118"/>
+                            <ComboBoxItem x:Name="cbi_0_8" Content="0,8" HorizontalAlignment="Left" Width="118"/>
+                            <ComboBoxItem x:Name="cbi_0_9" Content="0,9" HorizontalAlignment="Left" Width="118"/>
+                            <ComboBoxItem x:Name="cbi_1" Content="1" HorizontalAlignment="Left" Width="118"/>
+                            <ComboBoxItem x:Name="cbi_1_25" Content="1,25" HorizontalAlignment="Left" Width="118"/>
+                            <ComboBoxItem x:Name="cbi_1_5" Content="1,5" HorizontalAlignment="Left" Width="118"/>
+                            <ComboBoxItem x:Name="cbi_2" Content="2" HorizontalAlignment="Left" Width="118"/>
+                            <ComboBoxItem x:Name="cbi_2_5" Content="2,5" HorizontalAlignment="Left" Width="118"/>
+                            <ComboBoxItem x:Name="cbi_3" Content="3" HorizontalAlignment="Left" Width="118"/>
+                            <ComboBoxItem x:Name="cbi_4" Content="4" HorizontalAlignment="Left" Width="118"/>
+                            <ComboBoxItem x:Name="cbi_5" Content="5" HorizontalAlignment="Left" Width="118"/>
+                            <ComboBoxItem x:Name="cbi_6" Content="6" HorizontalAlignment="Left" Width="118"/>
+                            <ComboBoxItem x:Name="cbi_8" Content="8" HorizontalAlignment="Left" Width="118"/>
+                            <ComboBoxItem x:Name="cbi_10" Content="10" HorizontalAlignment="Left" Width="118"/>
+                            <ComboBoxItem x:Name="cbi_12" Content="12" HorizontalAlignment="Left" Width="118"/>
+                            <ComboBoxItem x:Name="cbi_16" Content="16" HorizontalAlignment="Left" Width="118"/>
+                            <ComboBoxItem x:Name="cbi_20" Content="20" HorizontalAlignment="Left" Width="118"/>
+                            <ComboBoxItem x:Name="cbi_25" Content="25" HorizontalAlignment="Left" Width="118"/>
+                            <ComboBoxItem x:Name="cbi_32" Content="32" HorizontalAlignment="Left" Width="118"/>
+                            <ComboBoxItem x:Name="cbi_40" Content="40" HorizontalAlignment="Left" Width="118"/>
+                            <ComboBoxItem x:Name="cbi_50" Content="50" HorizontalAlignment="Left" Width="118"/>
+                            <ComboBoxItem x:Name="cbi_60" Content="60" HorizontalAlignment="Left" Width="118"/>
+                        </ComboBox>
+                        <CheckBox x:Name="cbx_Bohrung" Content="Bohrung" HorizontalAlignment="Left" Margin="10,0,0,50" VerticalAlignment="Bottom" Checked="cbx_Bohrung_Checked"/>
+                        <CheckBox x:Name="cbx_WelleNabeVerbindung" Content="Welle-Nabe-Verbindung" HorizontalAlignment="Left" Margin="10,0,0,25" VerticalAlignment="Bottom" Checked="cbx_WelleNabeVerbindung_Checked"/>
                     </Grid>
                     <!--Grid für die EingabeParameter für Zahnrad2-->
                     <Grid x:Name="grd_EingabeZahnrad2" HorizontalAlignment="Left" Margin="0,0,0,10" Width="550" Height="315" VerticalAlignment="Bottom">
-                        <Label x:Name="lab_Modul_Zahnrad2" Content="Modul:" HorizontalAlignment="Left" Margin="300,0,0,240" VerticalAlignment="Bottom"/>
-                        <Label x:Name="lab_Zaehnezahl_Zahnrad2" Content="Zähnezahl:" HorizontalAlignment="Left" Margin="300,0,0,170" VerticalAlignment="Bottom"/>
-                        <Label x:Name="lab_Teilkreisdurchmesser_Zahnrad2" Content="Teilkreisdurchmesser:" HorizontalAlignment="Left" Margin="300,0,0,100" VerticalAlignment="Bottom"/>
-                        <Label x:Name="lab_Breite_Zahnrad2" Content="Breite:" HorizontalAlignment="Left" Margin="300,0,0,30" VerticalAlignment="Bottom"/>
-                        <Label x:Name="lab_Modul_Zahnrad2Ergebnis" Content="ist gleich Modul ZR1" HorizontalAlignment="Left" Margin="420,0,0,240" VerticalAlignment="Bottom" FontStyle="Italic"/>
-                        <TextBox x:Name="tbx_Zaehnezahl_Zahnrad2" HorizontalAlignment="Right" Height="23" Margin="0,0,10,170" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Width="120" LostFocus="tbx_Zaehnezahl_Zahnrad2_LostFocus"/>
-                        <Label x:Name="lab_Teilkreisdurchmesser_Zahnrad2Ergebnis" Content="wird berechnet..." HorizontalAlignment="Left" Margin="420,0,0,100" VerticalAlignment="Bottom" FontStyle="Italic"/>
-                        <TextBox x:Name="tbx_Breite_Zahnrad2" HorizontalAlignment="Right" Height="23" Margin="0,0,10,30" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Width="120" LostFocus="tbx_Breite_Zahnrad2_LostFocus"/>
+                        <Label x:Name="lab_Modul_Zahnrad2" Content="Modul:" HorizontalAlignment="Left" Margin="300,0,0,250" VerticalAlignment="Bottom"/>
+                        <Label x:Name="lab_Zaehnezahl_Zahnrad2" Content="Zähnezahl:" HorizontalAlignment="Left" Margin="300,0,0,200" VerticalAlignment="Bottom"/>
+                        <Label x:Name="lab_Teilkreisdurchmesser_Zahnrad2" Content="Teilkreisdurchmesser:" HorizontalAlignment="Left" Margin="300,0,0,150" VerticalAlignment="Bottom"/>
+                        <Label x:Name="lab_Breite_Zahnrad2" Content="Breite:" HorizontalAlignment="Left" Margin="300,0,0,100" VerticalAlignment="Bottom"/>
+                        <Label x:Name="lab_Modul_Zahnrad2Ergebnis" Content="ist gleich Modul ZR1" HorizontalAlignment="Left" Margin="420,0,0,250" VerticalAlignment="Bottom" FontStyle="Italic"/>
+                        <TextBox x:Name="tbx_Zaehnezahl_Zahnrad2" HorizontalAlignment="Right" Height="23" Margin="0,0,10,200" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Width="120" LostFocus="tbx_Zaehnezahl_Zahnrad2_LostFocus"/>
+                        <Label x:Name="lab_Teilkreisdurchmesser_Zahnrad2Ergebnis" Content="wird berechnet..." HorizontalAlignment="Left" Margin="420,0,0,150" VerticalAlignment="Bottom" FontStyle="Italic"/>
+                        <TextBox x:Name="tbx_Breite_Zahnrad2" HorizontalAlignment="Right" Height="23" Margin="0,0,10,100" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Width="120" LostFocus="tbx_Breite_Zahnrad2_LostFocus"/>
                         <Label x:Name="lab_EingabeZahnrad2" Content="" VerticalAlignment="Top" Margin="300,0,0,0" FontWeight="Bold"/>
                     </Grid>
                 </Grid>
