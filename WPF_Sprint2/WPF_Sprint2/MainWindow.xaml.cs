@@ -431,6 +431,8 @@ namespace WPF_Sprint2
                 {
                     AußenverzahnungEinzel();
                     Gegenrad();
+                    //btn_Catia.Visibility = Visibility.Visible;
+                    //btn_CATIAStart.Visibility = Visibility.Visible;
 
 
                     //Ergebnis Achsabstand außenliegend
@@ -449,6 +451,8 @@ namespace WPF_Sprint2
                 try
                 {
                     InnenverzahnungEinzel();
+                    btn_Catia.Visibility = Visibility.Visible;
+                    btn_CATIAStart.Visibility = Visibility.Visible;
                 }
                 catch(Exception)
                 {
@@ -545,33 +549,64 @@ namespace WPF_Sprint2
         {
             CatiaConnection cc = new CatiaConnection();
 
-            if (modus == "außen1" && cbx_Bohrung.IsChecked == false && cc.CatiaLaeuft())
+            if (modus == "außen1" && cbx_Bohrung.IsChecked == false && cbx_WelleNabeVerbindung.IsChecked == false && cc.CatiaLaeuft())
             {
                 try
                 {
                     cc.ErzeugePart();
                     cc.ErstelleLeereSkizze();
-                    cc.AußenverzahnungEinzel(dat);
+                    cc.ErstelleProfilAußenverzahnung(dat);
                     cc.ErzeugeKreismusterAußenverzahnung(dat);
                     
                 }
                 catch(Exception)
                 {
                     MessageBox.Show("Es konnte kein Objekt erzeugt werden.\nBitte überprüfen Sie die Eingangsparameter.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                    tbx_Zaehnezahl_Zahnrad1.Background = Brushes.OrangeRed;
+                    tbi_Eingabe.Focus();
                 }
             }
-            else if (modus=="außen1" && cbx_Bohrung.IsChecked == true && cc.CatiaLaeuft())
+            else if (modus == "außen1" && cbx_Bohrung.IsChecked == true && cbx_WelleNabeVerbindung.IsChecked == false && cc.CatiaLaeuft())
             {
                 try
                 {
                     cc.ErzeugePart();
-                    cc.ErzeugeZahnradMitBohrung(dat);
+                    cc.ErstelleLeereSkizze();
+                    cc.ErstelleProfilAußenverzahnung(dat);
+                    cc.ErzeugeKreismusterMitBohrung(dat);
                 }
                 catch(Exception)
                 {
                     MessageBox.Show("Es konnte kein Objekt erzeugt werden.\nBitte überprüfen Sie die Eingangsparameter.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                    tbx_Zaehnezahl_Zahnrad1.Background = Brushes.OrangeRed;
+                    tbi_Eingabe.Focus();
                 }
             }
+            else if (modus == "innen1" && cbx_Bohrung.IsChecked == false && cbx_WelleNabeVerbindung.IsChecked == false && cc.CatiaLaeuft())
+            {
+                //try
+                //{
+                    cc.ErzeugePart();
+                    cc.ErstelleProfilInnen(dat);
+                    //cc.ErzeugeKreismusterInnen(dat);
+                    
+                    //cc.ErstelleProfilInnen(dat);
+                    //cc.ErzeugeKreismusterInnen(dat);
+                /*}
+                catch(Exception)
+                {
+                    MessageBox.Show("Es konnte kein Objekt erzeugt werden.\nBitte überprüfen Sie die Eingangsparameter.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                    tbx_Zaehnezahl_Zahnrad1.Background = Brushes.OrangeRed;
+                    tbi_Eingabe.Focus();
+                }*/
+            }
+            /*else if (modus == "außen2" && cbx_Bohrung.IsChecked == false && cbx_WelleNabeVerbindung.IsChecked == false && cc.CatiaLaeuft())
+            {
+                cc.ErzeugePart();
+                cc.ErstelleLeereSkizze();
+                cc.AußenverzahnungGegenrad(dat);
+                cc.ErzeugeKreismusterGegenrad(dat);
+            }*/
             else
             {
                 MessageBox.Show("Bitte überprüfen Sie ob CATIA V5 gestartet wurde.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
