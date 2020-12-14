@@ -10,7 +10,7 @@ namespace WPF_Sprint2
     {
         //Eingangsparameter Zahnrad1
         double modulZ1;
-        int zaehnezahlZ1;
+        double zaehnezahlZ1;
         double breiteZ1;
         double teilkreisdurchmesserZ1;
 
@@ -30,7 +30,7 @@ namespace WPF_Sprint2
 
         //Eingangsparameter Zahnrad2
         double modulZ2;
-        int zaehnezahlZ2;
+        double zaehnezahlZ2;
         double breiteZ2;
         double teilkreisdurchmesserZ2;
 
@@ -63,11 +63,11 @@ namespace WPF_Sprint2
         }
 
         //Zähnezahl Zahnrad1
-        public int getZaehnezahlZahnrad1()
+        public double getZaehnezahlZahnrad1()
         {
             return zaehnezahlZ1;
         }
-        public void setZaehnezahlZahnrad1(int zaehnezahlZ1)
+        public void setZaehnezahlZahnrad1(double zaehnezahlZ1)
         {
             this.zaehnezahlZ1 = zaehnezahlZ1;
         }
@@ -217,11 +217,11 @@ namespace WPF_Sprint2
         }
         
         //Zaehnezahl Zahnrad2
-        public int getZaehnezahlZahnrad2()
+        public double getZaehnezahlZahnrad2()
         {
             return zaehnezahlZ2;
         }
-        public void setZaehnezahlZahnrad2(int zaehnezahlZ2)
+        public void setZaehnezahlZahnrad2(double zaehnezahlZ2)
         {
             this.zaehnezahlZ2 = zaehnezahlZ2;
         }

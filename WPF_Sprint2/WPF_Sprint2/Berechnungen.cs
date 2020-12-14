@@ -10,7 +10,7 @@ namespace WPF_Sprint2
     { 
 
         //Teilkreisdurchmesser
-        public double Teilkreisdurchmesser(double m, int z)
+        public double Teilkreisdurchmesser(double m, double z)
         {
             double d = m * z;
             return d;
@@ -31,7 +31,7 @@ namespace WPF_Sprint2
         }
 
         //Kopfkreisdurchmesser außenverzahnt
-        public double Kopfkreisdurchmesser_a(double m, int z)    // z = Zähnezahl
+        public double Kopfkreisdurchmesser_a(double m, double z)    // z = Zähnezahl
         {
             double da = m * (z + 2);
             return Math.Round(da, 2);
@@ -45,7 +45,7 @@ namespace WPF_Sprint2
         }
 
         //Kopfkreisdurchmesser innenverzahnt
-        public double Kopfkreisdurchmesser_i(double m, int z)
+        public double Kopfkreisdurchmesser_i(double m, double z)
         {
             double da = m * (z - 2);
             return Math.Round(da, 2);
@@ -83,7 +83,7 @@ namespace WPF_Sprint2
         //Zahnhöhe
         public double Zahnhöhe(double m, double c)
         {
-            double h = 2 + m + c;
+            double h = 2 * m + c;
             return Math.Round(h, 2);
         }
 
@@ -95,14 +95,14 @@ namespace WPF_Sprint2
         }
 
         //Achsabstand mit außenliegendem Gegenrad
-        public double Achsabstand_a(double m, int z1, int z2)   // d1 = Durchmesser Zahnrad 1/ d2 = für Zr 2
+        public double Achsabstand_a(double m, double z1, double z2)   // d1 = Durchmesser Zahnrad 1/ d2 = für Zr 2
         {
             double aa = (m * (z1 + z2)) / 2;
             return Math.Round(aa, 2);
         }
 
         //Achsabstand mit innenliegendem Gegenrad
-        public double Achsabstand_i(double m, int z1, int z2)
+        public double Achsabstand_i(double m, double z1, double z2)
         {
             double ai = (m * (z2 - z1)) / 2;
             return Math.Round(ai, 2);

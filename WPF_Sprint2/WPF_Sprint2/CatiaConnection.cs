@@ -82,7 +82,7 @@ namespace WPF_Sprint2
         public void ErstelleProfilAußenverzahnung(Data dat)
         { 
             //HilfsRadien
-            double d_r = (dat.getModulZahnrad1() * dat.getZaehnezahlZahnrad1()) / 2;
+            double d_r = dat.getTeilkreisdurchmesserZahnrad1() / 2;
             double hk_r = d_r * 0.94;
             double df_r = d_r - (1.25 * dat.getModulZahnrad1());
             double da_r = d_r + dat.getModulZahnrad1();
@@ -296,6 +296,9 @@ namespace WPF_Sprint2
             hsp_catiaPart.Part.Update();
         }
 
+
+
+        //InnenVerzahnung
         public void ErstelleProfilInnen(Data dat)
         {
             //geometrisches set auswählen und umbenennen

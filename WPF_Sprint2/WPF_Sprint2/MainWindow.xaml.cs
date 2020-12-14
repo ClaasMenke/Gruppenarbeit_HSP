@@ -109,7 +109,7 @@ namespace WPF_Sprint2
 
             double m1 = Convert.ToDouble(cmb_ModulZahnrad1.Text);
             dat.setModulZahnrad1(m1);
-            int z1 = Convert.ToInt32(tbx_Zaehnezahl_Zahnrad1.Text);
+            double z1 = Convert.ToInt32(tbx_Zaehnezahl_Zahnrad1.Text);
             dat.setZaehnezahlZahnrad1(z1);
             double b1 = Convert.ToDouble(tbx_Breite_Zahnrad1.Text);
             dat.setBreiteZahnrad1(b1);
@@ -170,7 +170,7 @@ namespace WPF_Sprint2
 
             double m1 = Convert.ToDouble(cmb_ModulZahnrad1.Text);
             dat.setModulZahnrad1(m1);
-            int z1 = Convert.ToInt32(tbx_Zaehnezahl_Zahnrad1.Text);
+            double z1 = Convert.ToInt32(tbx_Zaehnezahl_Zahnrad1.Text);
             dat.setZaehnezahlZahnrad1(z1);
             double b1 = Convert.ToDouble(tbx_Breite_Zahnrad1.Text);
             dat.setBreiteZahnrad1(b1);
@@ -231,7 +231,7 @@ namespace WPF_Sprint2
             double m12 = Convert.ToDouble(cmb_ModulZahnrad1.Text);
             dat.setModulZahnrad2(m12);
             lab_Modul_Zahnrad2Ergebnis.Content = m12 + " mm";
-            int z12 = Convert.ToInt32(tbx_Zaehnezahl_Zahnrad2.Text);
+            double z12 = Convert.ToInt32(tbx_Zaehnezahl_Zahnrad2.Text);
             dat.setZaehnezahlZahnrad2(z12);
             double b12 = Convert.ToDouble(tbx_Breite_Zahnrad2.Text);
             dat.setBreiteZahnrad2(b12);
@@ -564,6 +564,8 @@ namespace WPF_Sprint2
                     MessageBox.Show("Es konnte kein Objekt erzeugt werden.\nBitte überprüfen Sie die Eingangsparameter.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
                     tbx_Zaehnezahl_Zahnrad1.Background = Brushes.OrangeRed;
                     tbi_Eingabe.Focus();
+                    btn_Catia.Visibility = Visibility.Hidden;
+                    btn_CATIAStart.Visibility = Visibility.Hidden;
                 }
             }
             else if (modus == "außen1" && cbx_Bohrung.IsChecked == true && cbx_WelleNabeVerbindung.IsChecked == false && cc.CatiaLaeuft())
@@ -580,6 +582,8 @@ namespace WPF_Sprint2
                     MessageBox.Show("Es konnte kein Objekt erzeugt werden.\nBitte überprüfen Sie die Eingangsparameter.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
                     tbx_Zaehnezahl_Zahnrad1.Background = Brushes.OrangeRed;
                     tbi_Eingabe.Focus();
+                    btn_Catia.Visibility = Visibility.Hidden;
+                    btn_CATIAStart.Visibility = Visibility.Hidden;
                 }
             }
             else if (modus == "innen1" && cbx_Bohrung.IsChecked == false && cbx_WelleNabeVerbindung.IsChecked == false && cc.CatiaLaeuft())
@@ -588,16 +592,18 @@ namespace WPF_Sprint2
                 //{
                     cc.ErzeugePart();
                     cc.ErstelleProfilInnen(dat);
-                    //cc.ErzeugeKreismusterInnen(dat);
-                    
-                    //cc.ErstelleProfilInnen(dat);
-                    //cc.ErzeugeKreismusterInnen(dat);
+                //cc.ErzeugeKreismusterInnen(dat);
+
+                //cc.ErstelleProfilInnen(dat);
+                //cc.ErzeugeKreismusterInnen(dat);
                 /*}
                 catch(Exception)
                 {
                     MessageBox.Show("Es konnte kein Objekt erzeugt werden.\nBitte überprüfen Sie die Eingangsparameter.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
                     tbx_Zaehnezahl_Zahnrad1.Background = Brushes.OrangeRed;
                     tbi_Eingabe.Focus();
+                 btn_Catia.Visibility = Visibility.Hidden;
+                    btn_CATIAStart.Visibility = Visibility.Hidden;
                 }*/
             }
             /*else if (modus == "außen2" && cbx_Bohrung.IsChecked == false && cbx_WelleNabeVerbindung.IsChecked == false && cc.CatiaLaeuft())
