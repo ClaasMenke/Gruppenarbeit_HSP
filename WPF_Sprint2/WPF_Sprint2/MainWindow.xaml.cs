@@ -480,13 +480,21 @@ namespace WPF_Sprint2
             TextBox tb = (TextBox)sender;
             Double res;
 
-            if (Double.TryParse(tb.Text, out res) && res > 8)
+            if (modus == "innen1" && Double.TryParse(tb.Text, out res) && res > 9)
+            {
+                tb.Background = Brushes.LightGreen;
+            }
+            else if (modus == "außen1" && Double.TryParse(tb.Text, out res) && res > 8)
+            {
+                tb.Background = Brushes.LightGreen;
+            }
+            else if (modus == "außen2" && Double.TryParse(tb.Text, out res) && res > 8)
             {
                 tb.Background = Brushes.LightGreen;
             }
             else
             {
-                MessageBox.Show("Bitte geben Sie einen gültigen Wert (größer als 8) für die Zähnezahl ein.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Bitte geben Sie einen gültigen Wert für die Zähnezahl ein.\nBei außenverzahnten Zahnrädern sollte diese größer als 8,\nbei innenverzahnten größer als 9 sein.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
                 tb.Background = Brushes.OrangeRed;
             }
         }
@@ -583,23 +591,19 @@ namespace WPF_Sprint2
             }
             else if (modus == "innen1" && cbx_Bohrung.IsChecked == false && cc.CatiaLaeuft())
             {
-                //try
-                //{
+                try
+                {
                     cc.ErzeugePart();
                     cc.ErstelleProfilInnen(dat);
-                //cc.ErzeugeKreismusterInnen(dat);
-
-                //cc.ErstelleProfilInnen(dat);
-                //cc.ErzeugeKreismusterInnen(dat);
-                /*}
+                }
                 catch(Exception)
                 {
                     MessageBox.Show("Es konnte kein Objekt erzeugt werden.\nBitte überprüfen Sie die Eingangsparameter.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
                     tbx_Zaehnezahl_Zahnrad1.Background = Brushes.OrangeRed;
                     tbi_Eingabe.Focus();
-                 btn_Catia.Visibility = Visibility.Hidden;
+                    btn_Catia.Visibility = Visibility.Hidden;
                     btn_CATIAStart.Visibility = Visibility.Hidden;
-                }*/
+                }
             }
             /*else if (modus == "außen2" && cbx_Bohrung.IsChecked == false && cbx_WelleNabeVerbindung.IsChecked == false && cc.CatiaLaeuft())
             {
@@ -619,14 +623,21 @@ namespace WPF_Sprint2
             CatiaConnection cc = new CatiaConnection();
             if (cc.CatiaLaeuft())
             {
-                MessageBox.Show("CATIA V5 wurde bereits gestartet.", "Fehler", MessageBoxButton.OK,MessageBoxImage.Information);
+                MessageBox.Show("CATIA V5 wurde bereits gestartet.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
             {
-                Process StarteCatia = new Process();
-                StarteCatia.StartInfo.FileName = "CNext.exe";
-                StarteCatia.Start();
-            }
+                try
+                {
+                    Process StarteCatia = new Process();
+                    StarteCatia.StartInfo.FileName = "CNext.exe";
+                    StarteCatia.Start();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("CATIA V5 konnte nicht gestartet werden.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            } 
         }
     }
 }
