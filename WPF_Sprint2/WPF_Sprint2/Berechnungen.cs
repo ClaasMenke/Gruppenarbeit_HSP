@@ -88,9 +88,9 @@ namespace WPF_Sprint2
         }
 
         //Volumen
-        public double Volumen(double da, double b)  // da = zuvor berechneter Kopfkreisdurchmesser
-        {                                           // b = Breite Zahnrad
-            double v = Math.PI * Math.Pow(da / 2, 2) * b;     // Math.pow = da/2 wird potenziert mit 2 als Exponenten
+        public double Volumen(double da, double b) 
+        {
+            double v = Math.PI * Math.Pow(da / 2, 2) * b;     
             return Math.Round(v, 2);
         }
 

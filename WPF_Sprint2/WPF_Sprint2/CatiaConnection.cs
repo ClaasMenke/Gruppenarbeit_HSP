@@ -16,8 +16,8 @@ namespace WPF_Sprint2
     class CatiaConnection
     {
         INFITF.Application hsp_catiaApp;
-        PartDocument hsp_catiaPart;
-        Sketch hsp_catiaProfil;
+        MECMOD.PartDocument hsp_catiaPart;
+        MECMOD.Sketch hsp_catiaProfil;
 
         public bool CatiaLaeuft()
         {
@@ -82,7 +82,7 @@ namespace WPF_Sprint2
         public void ErstelleProfilAußenverzahnung(Data dat)
         { 
             //HilfsRadien
-            double d_r = dat.getTeilkreisdurchmesserZahnrad1() / 2;
+            double d_r = (dat.getModulZahnrad1() * dat.getZaehnezahlZahnrad1()) / 2;
             double hk_r = d_r * 0.94;
             double df_r = d_r - (1.25 * dat.getModulZahnrad1());
             double da_r = d_r + dat.getModulZahnrad1();
@@ -301,6 +301,7 @@ namespace WPF_Sprint2
         //InnenVerzahnung
         public void ErstelleProfilInnen(Data dat)
         {
+            
             //geometrisches set auswählen und umbenennen
             HybridBodies catHybridBodies_I = hsp_catiaPart.Part.HybridBodies;
             HybridBody catHybridBody_I;
@@ -362,7 +363,7 @@ namespace WPF_Sprint2
 
             //HilfsRadien
             double d_r = (dat.getModulZahnrad1() * dat.getZaehnezahlZahnrad1()) / 2;
-            double hk_r = d_r * 1.06;
+            double hk_r = d_r * 1.12;
             double da_r = d_r - (1.25 * dat.getModulZahnrad1());
             double df_r = d_r + dat.getModulZahnrad1();
             double vd_r = 0.35 * dat.getModulZahnrad1();
@@ -396,8 +397,8 @@ namespace WPF_Sprint2
             double SP_EvolventenKopfKreis_y = Schnittpunkt_y(x0, y0, da_r, MP_EvolventenKreis_x, MP_EvolventenKreis_y, Evolventenkreis_r);
 
             //MittelPunkt VerrundungsRadius
-            double MP_Verrundung_x = Schnittpunkt_x(x0, y0, df_r + vd_r, MP_EvolventenKreis_x, MP_EvolventenKreis_y, Evolventenkreis_r + vd_r);
-            double MP_Verrundung_y = Schnittpunkt_y(x0, y0, df_r + vd_r, MP_EvolventenKreis_x, MP_EvolventenKreis_y, Evolventenkreis_r + vd_r);
+            double MP_Verrundung_x = Schnittpunkt_x(x0, y0, df_r - vd_r, MP_EvolventenKreis_x, MP_EvolventenKreis_y, Evolventenkreis_r + vd_r);
+            double MP_Verrundung_y = Schnittpunkt_y(x0, y0, df_r - vd_r, MP_EvolventenKreis_x, MP_EvolventenKreis_y, Evolventenkreis_r + vd_r);
 
             //SchnittPunkt Evolventenkreis & Verrundungsradius
             double SP_EvolventeVerrundung_x = Schnittpunkt_x(MP_EvolventenKreis_x, MP_EvolventenKreis_y, Evolventenkreis_r, MP_Verrundung_x, MP_Verrundung_y, vd_r);
@@ -415,6 +416,7 @@ namespace WPF_Sprint2
             //Skizze umbenennen und öffnen
             hsp_catiaProfil.set_Name("InnenverzahnungEinzel");
             Factory2D catFactory2D1 = hsp_catiaProfil.OpenEdition();
+            ShapeFactory SF = (ShapeFactory)hsp_catiaPart.Part.ShapeFactory;
 
             //Punkte 
             Point2D catP2D_Ursprung = catFactory2D1.CreatePoint(x0, y0);
@@ -437,32 +439,32 @@ namespace WPF_Sprint2
 
 
             //Kreise
-            Circle2D catC2D_Frußkreis = catFactory2D1.CreateCircle(x0, y0, df_r, 0, 0);
+            Circle2D catC2D_Frußkreis = catFactory2D1.CreateCircle(x0, y0, df_r, 0, Math.PI * 2);
             catC2D_Frußkreis.CenterPoint = catP2D_Ursprung;
             catC2D_Frußkreis.StartPoint = catP2D_SP_FußkreisVerrundungsRadius1;
             catC2D_Frußkreis.EndPoint = catP2D_StartPkt_Fußkreis;
 
-            Circle2D catC2D_Kopfkreis = catFactory2D1.CreateCircle(x0, y0, da_r, 0, 0);
+            Circle2D catC2D_Kopfkreis = catFactory2D1.CreateCircle(x0, y0, da_r, 0, Math.PI * 2);
             catC2D_Kopfkreis.CenterPoint = catP2D_Ursprung;
             catC2D_Kopfkreis.StartPoint = catP2D_SP_EvolventenKopfKreis2;
             catC2D_Kopfkreis.EndPoint = catP2D_SP_EvolventenKopfKreis1;
 
-            Circle2D catC2D_EvolventenKreis1 = catFactory2D1.CreateCircle(MP_EvolventenKreis_x, MP_EvolventenKreis_y, Evolventenkreis_r, 0, 0);
+            Circle2D catC2D_EvolventenKreis1 = catFactory2D1.CreateCircle(MP_EvolventenKreis_x, MP_EvolventenKreis_y, Evolventenkreis_r, 0, Math.PI * 2);
             catC2D_EvolventenKreis1.CenterPoint = catP2D_MP_EvolventenKreis1;
             catC2D_EvolventenKreis1.StartPoint = catP2D_SP_EvolventenKopfKreis1;
             catC2D_EvolventenKreis1.EndPoint = catP2D_SP_EvolventeVerrundung1;
 
-            Circle2D catC2D_Evolventenkreis2 = catFactory2D1.CreateCircle(-MP_EvolventenKreis_x, MP_EvolventenKreis_y, Evolventenkreis_r, 0, 0);
+            Circle2D catC2D_Evolventenkreis2 = catFactory2D1.CreateCircle(-MP_EvolventenKreis_x, MP_EvolventenKreis_y, Evolventenkreis_r, 0, Math.PI * 2);
             catC2D_Evolventenkreis2.CenterPoint = catP2D_MP_EvolventenKreis2;
             catC2D_Evolventenkreis2.StartPoint = catP2D_SP_EvolventeVerrundung2;
             catC2D_Evolventenkreis2.EndPoint = catP2D_SP_EvolventenKopfKreis2;
 
-            Circle2D catC2D_VerrundungsKreis1 = catFactory2D1.CreateCircle(MP_Verrundung_x, MP_Verrundung_y, vd_r, 0, 0);
+            Circle2D catC2D_VerrundungsKreis1 = catFactory2D1.CreateCircle(MP_Verrundung_x, MP_Verrundung_y, vd_r, 0, Math.PI * 2);
             catC2D_VerrundungsKreis1.CenterPoint = catP2D_MP_Verrundung1;
             catC2D_VerrundungsKreis1.StartPoint = catP2D_SP_FußkreisVerrundungsRadius1;
             catC2D_VerrundungsKreis1.EndPoint = catP2D_SP_EvolventeVerrundung1;
 
-            Circle2D catC2D_VerrundungsKreis2 = catFactory2D1.CreateCircle(-MP_Verrundung_x, MP_Verrundung_y, vd_r, 0, 0);
+            Circle2D catC2D_VerrundungsKreis2 = catFactory2D1.CreateCircle(-MP_Verrundung_x, MP_Verrundung_y, vd_r, 0, Math.PI * 2);
             catC2D_VerrundungsKreis2.CenterPoint = catP2D_MP_Verrundung2;
             catC2D_VerrundungsKreis2.StartPoint = catP2D_SP_EvolventeVerrundung2;
             catC2D_VerrundungsKreis2.EndPoint = catP2D_SP_FußkreisVerrundungsRadius2;
@@ -480,7 +482,7 @@ namespace WPF_Sprint2
             Reference RefXDir = hsp_catiaPart.Part.CreateReferenceFromObject(XDir);
 
             //Kreismuster mit Daten füllen
-            CircPattern Kreismuster = SF_I.AddNewSurfacicCircPattern(Factory2D1, 1, 2, 0, 0, 1, 1, RefUrsprung, RefXDir, false, 0, true, false);
+            CircPattern Kreismuster = SF.AddNewSurfacicCircPattern(Factory2D1, 1, 2, 0, 0, 1, 1, RefUrsprung, RefXDir, false, 0, true, false);
             Kreismuster.CircularPatternParameters = CatCircularPatternParameters.catInstancesandAngularSpacing;
             AngularRepartition angularRepartition1 = Kreismuster.AngularRepartition;
             Angle angle1 = angularRepartition1.AngularSpacing;
@@ -496,19 +498,20 @@ namespace WPF_Sprint2
 
             HSF_I.GSMVisibility(Ref_Verbindung, 0);
 
-            hsp_catiaPart.Part.Update();
+            //hsp_catiaPart.Part.Update();
 
             /*Bodies bodies = hsp_catiaPart.Part.Bodies;
             Body myBody = bodies.Add();
-            myBody.set_Name("Zahnrad");
-            myBody.InsertHybridShape(Verbindung);
+            myBody.set_Name("Zahnrad");*/
+            hsp_catiaPart.Part.MainBody.InsertHybridShape(Verbindung);
 
-            hsp_catiaPart.Part.Update();*/
+            hsp_catiaPart.Part.Update();
 
             //Tasche für Innenverzahnung(grob)
             hsp_catiaPart.Part.InWorkObject = hsp_catiaPart.Part.MainBody;
 
-            Pocket catPocketInnen = SF_I.AddNewPocketFromRef(Ref_Verbindung, dat.getBreiteZahnrad1());
+            Pocket catPocketInnen = SF.AddNewPocketFromRef(Ref_Verbindung, dat.getBreiteZahnrad1());
+            //hsp_catiaProfil = catSketches1.Parent as MECMOD.Sketch;
             hsp_catiaPart.Part.Update();
 
         }
@@ -558,6 +561,13 @@ namespace WPF_Sprint2
             Pocket catPocketInnen = SF.AddNewPocketFromRef(Ref_Verbindung, dat.getBreiteZahnrad1());
             hsp_catiaPart.Part.Update();
         }*/
+
+
+
+
+
+
+
         /*public void AußenverzahnungGegenrad(Data dat)
         {
             //HilfsRadien

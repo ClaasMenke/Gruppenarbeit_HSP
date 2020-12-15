@@ -80,7 +80,6 @@ namespace WPF_Sprint2
             lab_AchsabstandErgebnis.Content = "";
 
             cbx_Bohrung.IsChecked = false;
-            cbx_WelleNabeVerbindung.IsChecked = false;
             tbc_allgemein.Visibility = Visibility.Visible;
             tbi_Eingabe.Focus();
             btn_Berechne.Visibility = Visibility.Visible;
@@ -328,7 +327,6 @@ namespace WPF_Sprint2
             tvi_innen2.Background = Brushes.White;
 
             cbx_Bohrung.Visibility = Visibility.Visible;
-            cbx_WelleNabeVerbindung.Visibility = Visibility.Visible;
         }
 
         private void tvi_außen2_Selected(object sender, RoutedEventArgs e)
@@ -351,7 +349,6 @@ namespace WPF_Sprint2
             tvi_innen2.Background = Brushes.White;
 
             cbx_Bohrung.Visibility = Visibility.Hidden;
-            cbx_WelleNabeVerbindung.Visibility = Visibility.Hidden;
         }
 
         private void tvi_innen1_Selected(object sender, RoutedEventArgs e)
@@ -373,7 +370,6 @@ namespace WPF_Sprint2
             tvi_außen2.Background = Brushes.White;
 
             cbx_Bohrung.Visibility = Visibility.Hidden;
-            cbx_WelleNabeVerbindung.Visibility = Visibility.Hidden;
         }
 
         private void tvi_innen2_Selected(object sender, RoutedEventArgs e)
@@ -396,7 +392,6 @@ namespace WPF_Sprint2
             tvi_außen2.Background = Brushes.White;
 
             cbx_Bohrung.Visibility = Visibility.Hidden;
-            cbx_WelleNabeVerbindung.Visibility = Visibility.Hidden;
         }
 
         //Exit Button
@@ -549,7 +544,7 @@ namespace WPF_Sprint2
         {
             CatiaConnection cc = new CatiaConnection();
 
-            if (modus == "außen1" && cbx_Bohrung.IsChecked == false && cbx_WelleNabeVerbindung.IsChecked == false && cc.CatiaLaeuft())
+            if (modus == "außen1" && cbx_Bohrung.IsChecked == false && cc.CatiaLaeuft())
             {
                 try
                 {
@@ -568,7 +563,7 @@ namespace WPF_Sprint2
                     btn_CATIAStart.Visibility = Visibility.Hidden;
                 }
             }
-            else if (modus == "außen1" && cbx_Bohrung.IsChecked == true && cbx_WelleNabeVerbindung.IsChecked == false && cc.CatiaLaeuft())
+            else if (modus == "außen1" && cbx_Bohrung.IsChecked == true && cc.CatiaLaeuft())
             {
                 try
                 {
@@ -586,7 +581,7 @@ namespace WPF_Sprint2
                     btn_CATIAStart.Visibility = Visibility.Hidden;
                 }
             }
-            else if (modus == "innen1" && cbx_Bohrung.IsChecked == false && cbx_WelleNabeVerbindung.IsChecked == false && cc.CatiaLaeuft())
+            else if (modus == "innen1" && cbx_Bohrung.IsChecked == false && cc.CatiaLaeuft())
             {
                 //try
                 //{
@@ -632,16 +627,6 @@ namespace WPF_Sprint2
                 StarteCatia.StartInfo.FileName = "CNext.exe";
                 StarteCatia.Start();
             }
-        }
-
-        private void cbx_Bohrung_Checked(object sender, RoutedEventArgs e)
-        {
-            cbx_WelleNabeVerbindung.IsChecked = false;
-        }
-
-        private void cbx_WelleNabeVerbindung_Checked(object sender, RoutedEventArgs e)
-        {
-            cbx_Bohrung.IsChecked = false;
         }
     }
 }

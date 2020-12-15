@@ -75,8 +75,7 @@
                             <ComboBoxItem x:Name="cbi_50" Content="50" HorizontalAlignment="Left" Width="118"/>
                             <ComboBoxItem x:Name="cbi_60" Content="60" HorizontalAlignment="Left" Width="118"/>
                         </ComboBox>
-                        <CheckBox x:Name="cbx_Bohrung" Content="Bohrung" HorizontalAlignment="Left" Margin="10,0,0,50" VerticalAlignment="Bottom" Checked="cbx_Bohrung_Checked"/>
-                        <CheckBox x:Name="cbx_WelleNabeVerbindung" Content="Welle-Nabe-Verbindung" HorizontalAlignment="Left" Margin="10,0,0,25" VerticalAlignment="Bottom" Checked="cbx_WelleNabeVerbindung_Checked"/>
+                        <CheckBox x:Name="cbx_Bohrung" Content="Bohrung" HorizontalAlignment="Left" Margin="15,0,0,50" VerticalAlignment="Bottom"/>
                     </Grid>
                     <!--Grid für die EingabeParameter für Zahnrad2-->
                     <Grid x:Name="grd_EingabeZahnrad2" HorizontalAlignment="Left" Margin="0,0,0,10" Width="550" Height="315" VerticalAlignment="Bottom">
