@@ -80,6 +80,8 @@ namespace WPF_Sprint2
             lab_AchsabstandErgebnis.Content = "";
 
             cbx_Bohrung.IsChecked = false;
+            cbx_Bohrung2.IsChecked = false;
+
             tbc_allgemein.Visibility = Visibility.Visible;
             tbi_Eingabe.Focus();
             btn_Berechne.Visibility = Visibility.Visible;
@@ -108,8 +110,8 @@ namespace WPF_Sprint2
 
             double m1 = Convert.ToDouble(cmb_ModulZahnrad1.Text);
             dat.setModulZahnrad1(m1);
-            double z1 = Convert.ToInt32(tbx_Zaehnezahl_Zahnrad1.Text);
-            dat.setZaehnezahlZahnrad1(z1);
+            /*double z1 = Convert.ToInt32(tbx_Zaehnezahl_Zahnrad1.Text);
+            dat.setZaehnezahlZahnrad1(z1);*/
             double b1 = Convert.ToDouble(tbx_Breite_Zahnrad1.Text);
             dat.setBreiteZahnrad1(b1);
 
@@ -169,8 +171,8 @@ namespace WPF_Sprint2
 
             double m1 = Convert.ToDouble(cmb_ModulZahnrad1.Text);
             dat.setModulZahnrad1(m1);
-            double z1 = Convert.ToInt32(tbx_Zaehnezahl_Zahnrad1.Text);
-            dat.setZaehnezahlZahnrad1(z1);
+            /*double z1 = Convert.ToInt32(tbx_Zaehnezahl_Zahnrad1.Text);
+            dat.setZaehnezahlZahnrad1(z1);*/
             double b1 = Convert.ToDouble(tbx_Breite_Zahnrad1.Text);
             dat.setBreiteZahnrad1(b1);
 
@@ -348,7 +350,7 @@ namespace WPF_Sprint2
             tvi_innen1.Background = Brushes.White;
             tvi_innen2.Background = Brushes.White;
 
-            cbx_Bohrung.Visibility = Visibility.Hidden;
+            cbx_Bohrung.Visibility = Visibility.Visible;
         }
 
         private void tvi_innen1_Selected(object sender, RoutedEventArgs e)
@@ -426,8 +428,8 @@ namespace WPF_Sprint2
                 {
                     AußenverzahnungEinzel();
                     Gegenrad();
-                    //btn_Catia.Visibility = Visibility.Visible;
-                    //btn_CATIAStart.Visibility = Visibility.Visible;
+                    btn_Catia.Visibility = Visibility.Visible;
+                    btn_CATIAStart.Visibility = Visibility.Visible;
 
 
                     //Ergebnis Achsabstand außenliegend
@@ -461,11 +463,13 @@ namespace WPF_Sprint2
                 {
                     InnenverzahnungEinzel();
                     Gegenrad();
+                    btn_Catia.Visibility = Visibility.Visible;
+                    btn_CATIAStart.Visibility = Visibility.Visible;
 
-                    //Ergebnis Achsabstand außenliegend
-                    double aa = brg.Achsabstand_i(Convert.ToDouble(cmb_ModulZahnrad1.Text), Convert.ToInt32(tbx_Zaehnezahl_Zahnrad2.Text), Convert.ToInt32(tbx_Zaehnezahl_Zahnrad1.Text));
-                    dat.setAchsabstand_i(aa);
-                    lab_AchsabstandErgebnis.Content = aa + " mm";
+                    //Ergebnis Achsabstand innenliegend
+                    double ai = brg.Achsabstand_i(Convert.ToDouble(cmb_ModulZahnrad1.Text), Convert.ToInt32(tbx_Zaehnezahl_Zahnrad2.Text), Convert.ToInt32(tbx_Zaehnezahl_Zahnrad1.Text));
+                    dat.setAchsabstand_i(ai);
+                    lab_AchsabstandErgebnis.Content = ai + " mm";
                 }
                 catch(Exception)
                 {
@@ -483,14 +487,26 @@ namespace WPF_Sprint2
             if (modus == "innen1" && Double.TryParse(tb.Text, out res) && res > 9)
             {
                 tb.Background = Brushes.LightGreen;
+                double z1 = Convert.ToInt32(tbx_Zaehnezahl_Zahnrad1.Text);
+                dat.setZaehnezahlZahnrad1(z1);
             }
             else if (modus == "außen1" && Double.TryParse(tb.Text, out res) && res > 8)
             {
                 tb.Background = Brushes.LightGreen;
+                double z1 = Convert.ToInt32(tbx_Zaehnezahl_Zahnrad1.Text);
+                dat.setZaehnezahlZahnrad1(z1);
             }
             else if (modus == "außen2" && Double.TryParse(tb.Text, out res) && res > 8)
             {
                 tb.Background = Brushes.LightGreen;
+                double z1 = Convert.ToInt32(tbx_Zaehnezahl_Zahnrad1.Text);
+                dat.setZaehnezahlZahnrad1(z1);
+            }
+            else if (modus == "innen2" && Double.TryParse(tb.Text, out res) && res > 9)
+            {
+                tb.Background = Brushes.LightGreen;
+                double z1 = Convert.ToInt32(tbx_Zaehnezahl_Zahnrad1.Text);
+                dat.setZaehnezahlZahnrad1(z1);
             }
             else
             {
@@ -520,13 +536,17 @@ namespace WPF_Sprint2
             TextBox tb = (TextBox)sender;
             Double res;
 
-            if (Double.TryParse(tb.Text, out res) && res > 8)
+            if (modus == "außen2" && Double.TryParse(tb.Text, out res) && res > 8)
+            {
+                tb.Background = Brushes.LightGreen;
+            }
+            else if (modus == "innen2" && Double.TryParse(tb.Text, out res) && res > 8 && res < dat.getZaehnezahlZahnrad1())
             {
                 tb.Background = Brushes.LightGreen;
             }
             else
             {
-                MessageBox.Show("Bitte geben Sie einen gültigen Wert (größer als 8) für die Zähnezahl ein.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Bitte geben Sie einen gültigen Wert für die Zähnezahl ein.\nDie Zähnezahl des gegenliegenden Zahnrades sollte größer als 8\nund bei einer Innenverzahnung mit Gegenrad, kleiner als die des ersten Zahnrades sein.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
                 tb.Background = Brushes.OrangeRed;
             }
         }
@@ -548,11 +568,12 @@ namespace WPF_Sprint2
         }
         #endregion
 
+        #region CatiaControl
         private void btn_Catia_Click(object sender, RoutedEventArgs e)
         {
             CatiaConnection cc = new CatiaConnection();
 
-            if (modus == "außen1" && cbx_Bohrung.IsChecked == false && cc.CatiaLaeuft())
+            if (modus == "außen1" && cbx_Bohrung.IsChecked == false && cbx_Bohrung2.IsChecked == false && cc.CatiaLaeuft())
             {
                 try
                 {
@@ -571,7 +592,7 @@ namespace WPF_Sprint2
                     btn_CATIAStart.Visibility = Visibility.Hidden;
                 }
             }
-            else if (modus == "außen1" && cbx_Bohrung.IsChecked == true && cc.CatiaLaeuft())
+            else if (modus == "außen1" && cbx_Bohrung.IsChecked == true && cbx_Bohrung2.IsChecked == false && cc.CatiaLaeuft())
             {
                 try
                 {
@@ -589,7 +610,8 @@ namespace WPF_Sprint2
                     btn_CATIAStart.Visibility = Visibility.Hidden;
                 }
             }
-            else if (modus == "innen1" && cbx_Bohrung.IsChecked == false && cc.CatiaLaeuft())
+
+            else if (modus == "innen1" && cbx_Bohrung.IsChecked == false && cbx_Bohrung2.IsChecked == false && cc.CatiaLaeuft())
             {
                 try
                 {
@@ -605,18 +627,117 @@ namespace WPF_Sprint2
                     btn_CATIAStart.Visibility = Visibility.Hidden;
                 }
             }
-            /*else if (modus == "außen2" && cbx_Bohrung.IsChecked == false && cbx_WelleNabeVerbindung.IsChecked == false && cc.CatiaLaeuft())
+
+            else if (modus == "außen2" && cbx_Bohrung.IsChecked == false && cbx_Bohrung2.IsChecked == false && cc.CatiaLaeuft())
             {
-                cc.ErzeugePart();
-                cc.ErstelleLeereSkizze();
-                cc.AußenverzahnungGegenrad(dat);
-                cc.ErzeugeKreismusterGegenrad(dat);
-            }*/
+                try
+                {
+                    cc.ErzeugePart();
+                    cc.AußenverzahnungGegenrad(dat);
+                }
+                catch(Exception)
+                {
+                    MessageBox.Show("Es konnte kein Objekt erzeugt werden.\nBitte überprüfen Sie die Eingangsparameter.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                    tbx_Zaehnezahl_Zahnrad1.Background = Brushes.OrangeRed;
+                    tbx_Zaehnezahl_Zahnrad2.Background = Brushes.OrangeRed;
+                    tbi_Eingabe.Focus();
+                    btn_Catia.Visibility = Visibility.Hidden;
+                    btn_CATIAStart.Visibility = Visibility.Hidden;
+                }
+            }
+            else if (modus == "außen2" && cbx_Bohrung.IsChecked == true && cbx_Bohrung2.IsChecked == false && cc.CatiaLaeuft())
+            {
+                try
+                {
+                    cc.ErzeugePart();
+                    cc.AußenverzahnungGegenradBohrung1(dat);
+                }
+                catch(Exception)
+                {
+                    MessageBox.Show("Es konnte kein Objekt erzeugt werden.\nBitte überprüfen Sie die Eingangsparameter.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                    tbx_Zaehnezahl_Zahnrad1.Background = Brushes.OrangeRed;
+                    tbx_Zaehnezahl_Zahnrad2.Background = Brushes.OrangeRed;
+                    tbi_Eingabe.Focus();
+                    btn_Catia.Visibility = Visibility.Hidden;
+                    btn_CATIAStart.Visibility = Visibility.Hidden;
+                }
+            }
+            else if (modus == "außen2" && cbx_Bohrung.IsChecked == true && cbx_Bohrung2.IsChecked == true && cc.CatiaLaeuft())
+            {
+                try
+                {
+                    cc.ErzeugePart();
+                    cc.AußenverzahnungGegenradBohrung2(dat);
+                }
+                catch(Exception)
+                {
+                    MessageBox.Show("Es konnte kein Objekt erzeugt werden.\nBitte überprüfen Sie die Eingangsparameter.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                    tbx_Zaehnezahl_Zahnrad1.Background = Brushes.OrangeRed;
+                    tbx_Zaehnezahl_Zahnrad2.Background = Brushes.OrangeRed;
+                    tbi_Eingabe.Focus();
+                    btn_Catia.Visibility = Visibility.Hidden;
+                    btn_CATIAStart.Visibility = Visibility.Hidden;
+                }
+            }
+            else if (modus == "außen2" && cbx_Bohrung.IsChecked == false && cbx_Bohrung2.IsChecked == true && cc.CatiaLaeuft())
+            {
+                try
+                {
+                    cc.ErzeugePart();
+                    cc.AußenverzahnungGegnradBohrung3(dat);
+                }
+                catch(Exception)
+                {
+                    MessageBox.Show("Es konnte kein Objekt erzeugt werden.\nBitte überprüfen Sie die Eingangsparameter.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                    tbx_Zaehnezahl_Zahnrad1.Background = Brushes.OrangeRed;
+                    tbx_Zaehnezahl_Zahnrad2.Background = Brushes.OrangeRed;
+                    tbi_Eingabe.Focus();
+                    btn_Catia.Visibility = Visibility.Hidden;
+                    btn_CATIAStart.Visibility = Visibility.Hidden;
+                }
+            }
+
+            else if (modus == "innen2" && cbx_Bohrung.IsChecked == false && cbx_Bohrung2.IsChecked == false && cc.CatiaLaeuft())
+            {
+                try
+                {
+                    cc.ErzeugePart();
+                    cc.InnenverzahnungMitGegenrad(dat);
+                }
+                catch(Exception)
+                {
+                    MessageBox.Show("Es konnte kein Objekt erzeugt werden.\nBitte überprüfen Sie die Eingangsparameter.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                    tbx_Zaehnezahl_Zahnrad1.Background = Brushes.OrangeRed;
+                    tbx_Zaehnezahl_Zahnrad2.Background = Brushes.OrangeRed;
+                    tbi_Eingabe.Focus();
+                    btn_Catia.Visibility = Visibility.Hidden;
+                    btn_CATIAStart.Visibility = Visibility.Hidden;
+                }
+            }
+            else if (modus == "innen2" && cbx_Bohrung.IsChecked == false && cbx_Bohrung2.IsChecked == true && cc.CatiaLaeuft())
+            {
+                try
+                {
+                    cc.ErzeugePart();
+                    cc.InnenVerzahnungGegenradBohrung(dat);
+                }
+                catch(Exception)
+                {
+                    MessageBox.Show("Es konnte kein Objekt erzeugt werden.\nBitte überprüfen Sie die Eingangsparameter.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                    tbx_Zaehnezahl_Zahnrad1.Background = Brushes.OrangeRed;
+                    tbx_Zaehnezahl_Zahnrad2.Background = Brushes.OrangeRed;
+                    tbi_Eingabe.Focus();
+                    btn_Catia.Visibility = Visibility.Hidden;
+                    btn_CATIAStart.Visibility = Visibility.Hidden;
+                }
+            }
+
             else
             {
                 MessageBox.Show("Bitte überprüfen Sie ob CATIA V5 gestartet wurde.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+        #endregion
 
         private void btn_CATIAStart_Click(object sender, RoutedEventArgs e)
         {

@@ -88,6 +88,7 @@
                         <Label x:Name="lab_Teilkreisdurchmesser_Zahnrad2Ergebnis" Content="wird berechnet..." HorizontalAlignment="Left" Margin="420,0,0,150" VerticalAlignment="Bottom" FontStyle="Italic"/>
                         <TextBox x:Name="tbx_Breite_Zahnrad2" HorizontalAlignment="Right" Height="23" Margin="0,0,10,100" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Width="120" LostFocus="tbx_Breite_Zahnrad2_LostFocus"/>
                         <Label x:Name="lab_EingabeZahnrad2" Content="" VerticalAlignment="Top" Margin="300,0,0,0" FontWeight="Bold"/>
+                        <CheckBox x:Name="cbx_Bohrung2" Content="Bohrung" HorizontalAlignment="Left" Margin="305,0,0,50" VerticalAlignment="Bottom"/>
                     </Grid>
                 </Grid>
             </TabItem>
